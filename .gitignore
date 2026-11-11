@@ -10,3 +10,5 @@ data
 data/*
 experiments_mnist
 output/
+cifar100/*.db
+cifar100/*.log

@@ -27,6 +27,7 @@ from .evaluation import (
     fit_linear_probe,
     representation_diagnostics,
 )
+from .locally_connected import localize
 from .model import LayerLocalEncoder, OfflineEncoder
 from .objective import LossCoefficients
 from .provenance import TestGateError, assert_test_gate
@@ -82,6 +83,8 @@ class EncoderExperimentConfig:
     lateral_matrix_mode: str = "two_matrix"
     combined_lateral_state_weight: float = 0.5
     temporal_term_enabled: bool = True
+    locally_connected: tuple | None = None
+    input_shape: tuple = (3, 32, 32)
 
 
 @dataclass(frozen=True)
@@ -435,6 +438,8 @@ def run_representation_experiment(
             statistics_momentum=encoder.statistics_momentum,
             lateral_momentum=encoder.lateral_momentum,
         ).to(device)
+        if encoder.locally_connected:
+            localize(model.layers, encoder.locally_connected, encoder.input_shape)
         if encoder.batch_norm_calibration_passes and method != "random":
             raise ValueError(
                 "BatchNorm calibration is only defined for random encoders"
@@ -658,6 +663,8 @@ def run_representation_experiment(
             hidden_dims=encoder.hidden_dims,
             activation=encoder.activation,
         ).to(device)
+        if encoder.locally_connected:
+            localize(model.layers, encoder.locally_connected, encoder.input_shape)
         optimizer = _optimizer(
             encoder.optimizer,
             model.encoder_parameters(),
@@ -684,6 +691,7 @@ def run_representation_experiment(
             ),
             variance_target=encoder.variance_target,
             device=device,
+            augmentation=encoder.augmentation,
         )
         train_representations = extract_representations(
             model,
@@ -755,6 +763,8 @@ def run_representation_experiment(
             activation=encoder.activation,
             normalization=encoder.normalization,
         ).to(device)
+        if encoder.locally_connected:
+            localize(model.hidden_layers, encoder.locally_connected, encoder.input_shape)
         optimizer = _optimizer(
             encoder.optimizer,
             model.parameters(),

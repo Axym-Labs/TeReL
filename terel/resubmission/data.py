@@ -890,6 +890,13 @@ def encoder_order(
             boundaries[offset] = True
             offset += len(segment)
         order = np.concatenate(segments) if segments else np.empty(0, dtype=np.int64)
+    elif order_mode == "repeated_views":
+        # Each observation is presented chunk_size consecutive times; with a
+        # per-sample augmentation this forms a short view sequence per image.
+        images = np.random.default_rng(seed).permutation(len(dataset))
+        order = np.repeat(images, chunk_size)
+        boundaries = torch.zeros(len(order), dtype=torch.bool)
+        boundaries[::chunk_size] = True
     elif order_mode == "class_chunks":
         order, boundary_array = class_chunk_order(
             dataset.labels.detach().cpu().numpy(),
@@ -926,8 +933,8 @@ def encoder_batches(
         chunk_size=chunk_size,
     )
     ordered_features = dataset.features[index]
-    for start in range(0, len(dataset), batch_size):
-        stop = min(start + batch_size, len(dataset))
+    for start in range(0, len(index), batch_size):
+        stop = min(start + batch_size, len(index))
         yield ordered_features[start:stop], ordered_boundaries[start:stop]
 
 

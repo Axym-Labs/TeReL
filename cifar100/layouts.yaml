@@ -1,0 +1,17 @@
+evaluation_split: validation
+data_root: /home/davwis/main/data/cifar-100/cifar-100-python
+seeds: [401]
+probe: {epochs: 60, batch_size: 2048, optimizer: adamw, learning_rate: 0.003, weight_decay: 0.0001, readout: all}
+runs:
+  - id: bp-2048x2
+    encoder: {method: bp, hidden_dims: [2048, 2048], activation: relu, normalization: none, epochs: 20, batch_size: 256, optimizer: adamw, learning_rate: 0.0003, weight_decay: 0.0001}
+  - id: random-2048x2
+    encoder: {method: random, hidden_dims: [2048, 2048], activation: relu, normalization: none}
+  - id: bp-1024x3
+    encoder: {method: bp, hidden_dims: [1024, 1024, 1024], activation: relu, normalization: none, epochs: 20, batch_size: 256, optimizer: adamw, learning_rate: 0.0003, weight_decay: 0.0001}
+  - id: random-1024x3
+    encoder: {method: random, hidden_dims: [1024, 1024, 1024], activation: relu, normalization: none}
+  - id: bp-4096
+    encoder: {method: bp, hidden_dims: [4096], activation: relu, normalization: none, epochs: 20, batch_size: 256, optimizer: adamw, learning_rate: 0.0003, weight_decay: 0.0001}
+  - id: random-4096
+    encoder: {method: random, hidden_dims: [4096], activation: relu, normalization: none}

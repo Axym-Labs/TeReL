@@ -27,6 +27,8 @@ from terel.resubmission.experiments import (
     _optimizer,
     set_reproducible_seed,
 )
+from terel.resubmission.cifar100 import load_cifar100_protocol
+from terel.resubmission.locally_connected import localize
 from terel.resubmission.model import LayerLocalEncoder
 from terel.resubmission.objective import LossCoefficients
 from terel.resubmission.provenance import git_provenance
@@ -66,6 +68,8 @@ def _load_configuration(path: Path) -> tuple[dict, EncoderExperimentConfig]:
     raw = yaml.safe_load(path.read_text())
     values = dict(raw["encoder"])
     values["hidden_dims"] = tuple(values["hidden_dims"])
+    if values.get("locally_connected"):
+        values["locally_connected"] = tuple(tuple(x) for x in values["locally_connected"])
     return raw, EncoderExperimentConfig(**values)
 
 
@@ -89,6 +93,8 @@ def _train(
         statistics_momentum=config.statistics_momentum,
         lateral_momentum=config.lateral_momentum,
     ).to(device)
+    if config.locally_connected:
+        localize(model.layers, config.locally_connected, config.input_shape)
     optimizer = _optimizer(
         config.optimizer,
         model.encoder_parameters(),
@@ -211,6 +217,8 @@ def main() -> None:
     seed = int(raw["seed"])
     if raw["dataset"] == "mnist":
         splits = load_mnist_protocol(raw["data_root"], allow_download=False)
+    elif raw["dataset"] == "cifar100":
+        splits = load_cifar100_protocol(raw["data_root"])
     elif raw["dataset"] == "capture24-cache":
         splits = _load_capture24_cache(Path(raw["data_root"]))
     else:

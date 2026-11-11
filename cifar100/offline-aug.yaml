@@ -1,0 +1,81 @@
+evaluation_split: validation
+data_root: /home/davwis/main/data/cifar-100/cifar-100-python
+seeds:
+- 401
+probe:
+  epochs: 60
+  batch_size: 2048
+  optimizer: adamw
+  learning_rate: 0.003
+  weight_decay: 0.0001
+  readout: all
+runs:
+- id: offline-t18
+  encoder:
+    method: terel_offline
+    hidden_dims: &id001
+    - 4096
+    - 2048
+    locally_connected: &id002
+    - - 16
+      - 5
+      - 2
+      - 2
+    - - 32
+      - 5
+      - 2
+      - 2
+    activation: relu
+    normalization: none
+    epochs: 5
+    batch_size: 128
+    order_mode: class_chunks
+    chunk_size: 16
+    optimizer: sgd
+    optimizer_momentum: 0.95
+    learning_rate: 0.0017008088246835272
+    weight_decay: 0.0001
+    similarity_coefficient: 1.0
+    variance_coefficient: 0.19359817043840408
+    covariance_coefficient: 0.09680240515839734
+    variance_target: 0.7426829369979788
+- id: offline-t18-aug
+  encoder:
+    method: terel_offline
+    hidden_dims: *id001
+    locally_connected: *id002
+    activation: relu
+    normalization: none
+    epochs: 5
+    batch_size: 128
+    order_mode: class_chunks
+    chunk_size: 16
+    optimizer: sgd
+    optimizer_momentum: 0.95
+    learning_rate: 0.0017008088246835272
+    weight_decay: 0.0001
+    similarity_coefficient: 1.0
+    variance_coefficient: 0.19359817043840408
+    covariance_coefficient: 0.09680240515839734
+    variance_target: 0.7426829369979788
+    augmentation: cifar_crop_flip
+- id: offline-t18-aug-20ep
+  encoder:
+    method: terel_offline
+    hidden_dims: *id001
+    locally_connected: *id002
+    activation: relu
+    normalization: none
+    epochs: 20
+    batch_size: 128
+    order_mode: class_chunks
+    chunk_size: 16
+    optimizer: sgd
+    optimizer_momentum: 0.95
+    learning_rate: 0.0017008088246835272
+    weight_decay: 0.0001
+    similarity_coefficient: 1.0
+    variance_coefficient: 0.19359817043840408
+    covariance_coefficient: 0.09680240515839734
+    variance_target: 0.7426829369979788
+    augmentation: cifar_crop_flip

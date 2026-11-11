@@ -50,11 +50,35 @@ def augment_mnist_batch(features: torch.Tensor, *, seed: int) -> torch.Tensor:
     return ((augmented.reshape(count, -1) - 0.1307) / 0.3081).detach()
 
 
+def stream_length(dataset, order_mode: str, chunk_size: int) -> int:
+    return len(dataset) * (chunk_size if order_mode == "repeated_views" else 1)
+
+
+def augment_cifar_batch(features: torch.Tensor, *, seed: int) -> torch.Tensor:
+    """Random 4-pixel-padded crop and horizontal flip of flattened 3x32x32 images."""
+    if features.ndim != 2 or features.shape[1] != 3 * 32 * 32:
+        raise ValueError("CIFAR augmentation expects flattened 3x32x32 images")
+    generator = torch.Generator(device=features.device).manual_seed(int(seed))
+    count = len(features)
+    images = F.pad(features.reshape(count, 3, 32, 32), (4, 4, 4, 4))
+    offsets = torch.randint(0, 9, (count, 2), device=features.device, generator=generator)
+    flips = torch.rand(count, device=features.device, generator=generator) < 0.5
+    rows = offsets[:, 0, None] + torch.arange(32, device=features.device)
+    columns = offsets[:, 1, None] + torch.arange(32, device=features.device)
+    columns = torch.where(flips[:, None], columns.flip(1), columns)
+    batch = torch.arange(count, device=features.device)[:, None, None, None]
+    channel = torch.arange(3, device=features.device)[None, :, None, None]
+    cropped = images[batch, channel, rows[:, None, :, None], columns[:, None, None, :]]
+    return cropped.reshape(count, -1)
+
+
 def _augment(features: torch.Tensor, *, mode: str, seed: int) -> torch.Tensor:
     if mode == "none":
         return features
     if mode == "mnist_affine":
         return augment_mnist_batch(features, seed=seed)
+    if mode == "cifar_crop_flip":
+        return augment_cifar_batch(features, seed=seed)
     raise ValueError(f"Unsupported augmentation '{mode}'")
 
 
@@ -204,6 +228,7 @@ def train_offline_encoder(
     coefficients: LossCoefficients,
     variance_target: float,
     device: torch.device,
+    augmentation: str = "none",
 ) -> OfflineTrainingSummary:
     """Train TeReL-Offline on full subsequence graphs and a final-layer loss."""
     if epochs <= 0 or batch_size <= 0:
@@ -233,7 +258,7 @@ def train_offline_encoder(
             metrics = offline_train_step(
                 model=model,
                 optimizer=optimizer,
-                x=features.to(device),
+                x=_augment(features.to(device), mode=augmentation, seed=order_seed * 100_000 + epoch * 10_000 + steps),
                 boundaries=boundaries.to(device),
                 coefficients=coefficients,
                 variance_target=variance_target,
@@ -329,7 +354,7 @@ def train_local_encoder(
         name: [[] for _ in model.layers]
         for name in ("temporal", "variance", "covariance")
     }
-    batches_per_epoch = math.ceil(len(dataset) / batch_size)
+    batches_per_epoch = math.ceil(stream_length(dataset, order_mode, chunk_size) / batch_size)
     stages = range(len(model.layers)) if training_mode == "greedy" else (None,)
     for active_layer in stages:
         for epoch in range(epochs):

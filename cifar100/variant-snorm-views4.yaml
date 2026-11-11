@@ -1,0 +1,56 @@
+evaluation_split: validation
+data_root: /home/davwis/main/data/cifar-100/cifar-100-python
+seeds:
+- 401
+probe:
+  epochs: 60
+  batch_size: 2048
+  optimizer: adamw
+  learning_rate: 0.003
+  weight_decay: 0.0001
+  readout: all
+runs:
+- id: snorm-views4
+  encoder:
+    method: terel_residual
+    hidden_dims:
+    - 4096
+    - 2048
+    activation: relu
+    normalization: streaming_norm
+    training_mode: joint
+    epochs: 1
+    batch_size: 1
+    order_mode: repeated_views
+    chunk_size: 4
+    optimizer: plain_sgd
+    learning_rate: 0.0014
+    weight_decay: 0.0
+    similarity_coefficient: 1.0
+    variance_coefficient: 3.6425
+    covariance_coefficient: 0.0349
+    variance_target: 0.7417
+    statistics_momentum: 0.99
+    lateral_momentum: 0.995
+    residual_lateral_rule: dual_inhibitory
+    residual_lateral_coefficient: 0.0315
+    residual_lateral_steps: 1
+    residual_lateral_step_size: 0.1
+    residual_lateral_include_diagonal: true
+    postsynaptic_state_mode: exact
+    lateral_matrix_mode: combined
+    combined_lateral_state_weight: 0.7707
+    temporal_term_enabled: true
+    inference_mode: offline
+    locally_connected:
+    - - 16
+      - 5
+      - 2
+      - 2
+    - - 32
+      - 5
+      - 2
+      - 2
+    augmentation: cifar_crop_flip
+    normalization_momentum: 0.99
+    normalization_affine: false
