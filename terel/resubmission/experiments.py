@@ -92,6 +92,7 @@ class ProbeExperimentConfig:
     learning_rate: float = 3e-3
     weight_decay: float = 1e-4
     readout: str = "last"
+    standardize: bool = False
 
 
 @dataclass(frozen=True)
@@ -546,6 +547,7 @@ def run_representation_experiment(
             learning_rate=probe.learning_rate,
             weight_decay=probe.weight_decay,
             device=device,
+            standardize=probe.standardize,
         )
         if encoder.inference_mode in {"online", "paired"}:
             offline_evaluation_representations = evaluation_representations
@@ -716,6 +718,7 @@ def run_representation_experiment(
             learning_rate=probe.learning_rate,
             weight_decay=probe.weight_decay,
             device=device,
+            standardize=probe.standardize,
         )
         with torch.no_grad():
             logits = linear_probe(evaluation_probe_representations.to(device)).cpu()
@@ -741,6 +744,7 @@ def run_representation_experiment(
             learning_rate=probe.learning_rate,
             weight_decay=probe.weight_decay,
             device=device,
+            standardize=probe.standardize,
         )
         model = linear_probe
         with torch.no_grad():
@@ -806,6 +810,7 @@ def run_representation_experiment(
             learning_rate=probe.learning_rate,
             weight_decay=probe.weight_decay,
             device=device,
+            standardize=probe.standardize,
         )
         with torch.no_grad():
             logits = linear_probe(evaluation_probe_representations.to(device)).cpu()
@@ -848,6 +853,7 @@ def run_representation_experiment(
             learning_rate=probe.learning_rate,
             weight_decay=probe.weight_decay,
             device=device,
+            standardize=probe.standardize,
         )
         with torch.no_grad():
             logits = linear_probe(evaluation_probe_representations.to(device)).cpu()
@@ -899,6 +905,7 @@ def run_representation_experiment(
             learning_rate=probe.learning_rate,
             weight_decay=probe.weight_decay,
             device=device,
+            standardize=probe.standardize,
         )
         with torch.no_grad():
             logits = linear_probe(evaluation_probe_representations.to(device)).cpu()

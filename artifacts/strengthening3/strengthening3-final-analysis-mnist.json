@@ -1,0 +1,3441 @@
+{
+  "mnist": {
+    "contrasts": {
+      "terel-minus-batch-sfa": {
+        "bootstrap_samples": 10000,
+        "bootstrap_seed": 260803,
+        "ci95_high": 0.06687999999999997,
+        "ci95_low": 0.06163999999999996,
+        "mean_difference": 0.06411999999999998,
+        "raw_differences": [
+          0.059799999999999964,
+          0.06369999999999998,
+          0.06899999999999995,
+          0.06520000000000004,
+          0.06289999999999996
+        ],
+        "sample_sd": 0.0033655608745051706,
+        "seeds": [
+          1101,
+          1202,
+          1303,
+          1404,
+          1505
+        ],
+        "student_t_ci95_high": 0.06829889577163623,
+        "student_t_ci95_low": 0.05994110422836374,
+        "student_t_degrees_of_freedom": 4
+      },
+      "terel-minus-incremental-sfa": {
+        "bootstrap_samples": 10000,
+        "bootstrap_seed": 260803,
+        "ci95_high": 0.06623999999999997,
+        "ci95_low": 0.06361999999999997,
+        "mean_difference": 0.06499999999999997,
+        "raw_differences": [
+          0.06530000000000002,
+          0.06489999999999996,
+          0.06699999999999995,
+          0.0625,
+          0.06529999999999991
+        ],
+        "sample_sd": 0.0016155494421403332,
+        "seeds": [
+          1101,
+          1202,
+          1303,
+          1404,
+          1505
+        ],
+        "student_t_ci95_high": 0.0670059695796238,
+        "student_t_ci95_low": 0.06299403042037614,
+        "student_t_degrees_of_freedom": 4
+      },
+      "terel-minus-layer-local-supcon": {
+        "bootstrap_samples": 10000,
+        "bootstrap_seed": 260803,
+        "ci95_high": -0.002220000000000044,
+        "ci95_low": -0.006979999999999986,
+        "mean_difference": -0.004760000000000009,
+        "raw_differences": [
+          -0.006099999999999994,
+          -0.00660000000000005,
+          -0.0006000000000000449,
+          -0.007799999999999918,
+          -0.0027000000000000357
+        ],
+        "sample_sd": 0.002998833106393183,
+        "seeds": [
+          1101,
+          1202,
+          1303,
+          1404,
+          1505
+        ],
+        "student_t_ci95_high": -0.0010364568951700356,
+        "student_t_ci95_low": -0.008483543104829983,
+        "student_t_degrees_of_freedom": 4
+      },
+      "terel-minus-no-temporal": {
+        "bootstrap_samples": 10000,
+        "bootstrap_seed": 260803,
+        "ci95_high": 0.016059999999999942,
+        "ci95_low": 0.013900000000000001,
+        "mean_difference": 0.014979999999999993,
+        "raw_differences": [
+          0.0131,
+          0.014399999999999968,
+          0.016799999999999926,
+          0.01550000000000007,
+          0.015100000000000002
+        ],
+        "sample_sd": 0.0013663820841916653,
+        "seeds": [
+          1101,
+          1202,
+          1303,
+          1404,
+          1505
+        ],
+        "student_t_ci95_high": 0.016676587441731408,
+        "student_t_ci95_low": 0.013283412558268579,
+        "student_t_degrees_of_freedom": 4
+      },
+      "terel-minus-no-variance": {
+        "bootstrap_samples": 10000,
+        "bootstrap_seed": 260803,
+        "ci95_high": 0.8124,
+        "ci95_low": 0.80984,
+        "mean_difference": 0.81114,
+        "raw_differences": [
+          0.8107,
+          0.8109999999999999,
+          0.8089,
+          0.8118000000000001,
+          0.8132999999999999
+        ],
+        "sample_sd": 0.0016071714283174626,
+        "seeds": [
+          1101,
+          1202,
+          1303,
+          1404,
+          1505
+        ],
+        "student_t_ci95_high": 0.8131355669014835,
+        "student_t_ci95_low": 0.8091444330985165,
+        "student_t_degrees_of_freedom": 4
+      },
+      "terel-minus-random": {
+        "bootstrap_samples": 10000,
+        "bootstrap_seed": 260803,
+        "ci95_high": 0.016159999999999973,
+        "ci95_low": 0.011780000000000035,
+        "mean_difference": 0.013919999999999998,
+        "raw_differences": [
+          0.016199999999999992,
+          0.011800000000000033,
+          0.01759999999999995,
+          0.011300000000000088,
+          0.012699999999999934
+        ],
+        "sample_sd": 0.0028101601377857077,
+        "seeds": [
+          1101,
+          1202,
+          1303,
+          1404,
+          1505
+        ],
+        "student_t_ci95_high": 0.01740927467227584,
+        "student_t_ci95_low": 0.010430725327724155,
+        "student_t_degrees_of_freedom": 4
+      },
+      "terel-minus-shuffled-order": {
+        "bootstrap_samples": 10000,
+        "bootstrap_seed": 260803,
+        "ci95_high": 0.012739999999999974,
+        "ci95_low": 0.008780000000000033,
+        "mean_difference": 0.010759999999999992,
+        "raw_differences": [
+          0.007800000000000029,
+          0.013499999999999956,
+          0.013599999999999945,
+          0.009400000000000075,
+          0.009499999999999953
+        ],
+        "sample_sd": 0.0026349573051569165,
+        "seeds": [
+          1101,
+          1202,
+          1303,
+          1404,
+          1505
+        ],
+        "student_t_ci95_high": 0.014031731622617344,
+        "student_t_ci95_low": 0.00748826837738264,
+        "student_t_degrees_of_freedom": 4
+      },
+      "terel-minus-supervised-linear": {
+        "bootstrap_samples": 10000,
+        "bootstrap_seed": 260803,
+        "ci95_high": 0.04059999999999999,
+        "ci95_low": 0.03834,
+        "mean_difference": 0.03939999999999999,
+        "raw_differences": [
+          0.0383,
+          0.03849999999999998,
+          0.04139999999999999,
+          0.0383,
+          0.04049999999999998
+        ],
+        "sample_sd": 0.0014525839046333918,
+        "seeds": [
+          1101,
+          1202,
+          1303,
+          1404,
+          1505
+        ],
+        "student_t_ci95_high": 0.041203621138753525,
+        "student_t_ci95_low": 0.037596378861246456,
+        "student_t_degrees_of_freedom": 4
+      },
+      "terel-minus-supervised-offline": {
+        "bootstrap_samples": 10000,
+        "bootstrap_seed": 260803,
+        "ci95_high": -0.018100000000000026,
+        "ci95_low": -0.020940000000000004,
+        "mean_difference": -0.01958000000000002,
+        "raw_differences": [
+          -0.01990000000000003,
+          -0.021100000000000008,
+          -0.016900000000000026,
+          -0.021299999999999986,
+          -0.01870000000000005
+        ],
+        "sample_sd": 0.0018253766734567256,
+        "seeds": [
+          1101,
+          1202,
+          1303,
+          1404,
+          1505
+        ],
+        "student_t_ci95_high": -0.017313495501407858,
+        "student_t_ci95_low": -0.021846504498592184,
+        "student_t_degrees_of_freedom": 4
+      },
+      "terel-minus-terel-offline": {
+        "bootstrap_samples": 10000,
+        "bootstrap_seed": 260803,
+        "ci95_high": -0.01806000000000001,
+        "ci95_low": -0.020460000000000013,
+        "mean_difference": -0.01928000000000001,
+        "raw_differences": [
+          -0.02100000000000002,
+          -0.019000000000000017,
+          -0.017000000000000015,
+          -0.020299999999999985,
+          -0.019100000000000006
+        ],
+        "sample_sd": 0.0015254507530562855,
+        "seeds": [
+          1101,
+          1202,
+          1303,
+          1404,
+          1505
+        ],
+        "student_t_ci95_high": -0.0173859027188972,
+        "student_t_ci95_low": -0.021174097281102817,
+        "student_t_degrees_of_freedom": 4
+      }
+    },
+    "dataset": "mnist",
+    "expected_seeds": [
+      1101,
+      1202,
+      1303,
+      1404,
+      1505
+    ],
+    "failures": {
+      "no-covariance": {
+        "dataset": "mnist",
+        "error": "FloatingPointError: TeReL objective became non-finite",
+        "failed_seeds": [
+          1101,
+          1202,
+          1303,
+          1404,
+          1505
+        ],
+        "manifest_configuration_sha256": "4d4b84fafe999e4982f18daa3355842b7af124575f8a02226d9585d73dd79fe2",
+        "run_id": "no-covariance",
+        "status": "non-finite"
+      }
+    },
+    "methods": {
+      "batch-sfa": {
+        "accuracy": {
+          "bootstrap_samples": 10000,
+          "bootstrap_seed": 260803,
+          "by_seed": {
+            "1101": 0.9039,
+            "1202": 0.901,
+            "1303": 0.8981,
+            "1404": 0.8981,
+            "1505": 0.9022
+          },
+          "ci95_high": 0.9026400000000001,
+          "ci95_low": 0.89868,
+          "mean": 0.9006599999999999,
+          "raw": [
+            0.9039,
+            0.901,
+            0.8981,
+            0.8981,
+            0.9022
+          ],
+          "sample_sd": 0.002554016444739548,
+          "student_t_ci95_high": 0.9038312302702534,
+          "student_t_ci95_low": 0.8974887697297464,
+          "student_t_degrees_of_freedom": 4
+        },
+        "representation_diagnostics": {
+          "active_feature_fraction": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 1.0,
+              "1202": 1.0,
+              "1303": 1.0,
+              "1404": 1.0,
+              "1505": 1.0
+            },
+            "ci95_high": 1.0,
+            "ci95_low": 1.0,
+            "mean": 1.0,
+            "raw": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "sample_sd": 0.0,
+            "student_t_ci95_high": 1.0,
+            "student_t_ci95_low": 1.0,
+            "student_t_degrees_of_freedom": 4
+          },
+          "effective_rank": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 32.96584308925364,
+              "1202": 10.130952618972312,
+              "1303": 98.00211650566378,
+              "1404": 101.58452194243624,
+              "1505": 65.90489048433798
+            },
+            "ci95_high": 93.0156334761076,
+            "ci95_low": 30.41969638015798,
+            "mean": 61.717664928132784,
+            "raw": [
+              32.96584308925364,
+              10.130952618972312,
+              98.00211650566378,
+              101.58452194243624,
+              65.90489048433798
+            ],
+            "sample_sd": 40.03534912506191,
+            "student_t_ci95_high": 111.42811659224073,
+            "student_t_ci95_low": 12.007213264024841,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_absolute_offdiagonal_correlation": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.04962724552800475,
+              "1202": 0.03816626514020014,
+              "1303": 0.05071914416080555,
+              "1404": 0.04856474786883093,
+              "1505": 0.06549118548257404
+            },
+            "ci95_high": 0.059151489695471716,
+            "ci95_low": 0.042969037021882144,
+            "mean": 0.05051371763608309,
+            "raw": [
+              0.04962724552800475,
+              0.03816626514020014,
+              0.05071914416080555,
+              0.04856474786883093,
+              0.06549118548257404
+            ],
+            "sample_sd": 0.009764868691383922,
+            "student_t_ci95_high": 0.06263840353736161,
+            "student_t_ci95_low": 0.03838903173480457,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 1.2224410308311326,
+              "1202": 1.4850845255691312,
+              "1303": 1.0889732202855391,
+              "1404": 1.0742389318508425,
+              "1505": 1.1306953137318176
+            },
+            "ci95_high": 1.3503867078778737,
+            "ci95_low": 1.0914239236009162,
+            "mean": 1.2002866044536928,
+            "raw": [
+              1.2224410308311326,
+              1.4850845255691312,
+              1.0889732202855391,
+              1.0742389318508425,
+              1.1306953137318176
+            ],
+            "sample_sd": 0.16935340820875713,
+            "student_t_ci95_high": 1.4105666343996124,
+            "student_t_ci95_low": 0.9900065745077733,
+            "student_t_degrees_of_freedom": 4
+          },
+          "median_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 1.0763135907168586,
+              "1202": 1.0547179630777301,
+              "1303": 1.055606588067659,
+              "1404": 1.0616096782545013,
+              "1505": 1.0944411788060489
+            },
+            "ci95_high": 1.0830487430405327,
+            "ci95_low": 1.056451756109056,
+            "mean": 1.0685377997845595,
+            "raw": [
+              1.0763135907168586,
+              1.0547179630777301,
+              1.055606588067659,
+              1.0616096782545013,
+              1.0944411788060489
+            ],
+            "sample_sd": 0.016864540909551525,
+            "student_t_ci95_high": 1.0894778930781843,
+            "student_t_ci95_low": 1.0475977064909348,
+            "student_t_degrees_of_freedom": 4
+          },
+          "temporal_slowness": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 2.4372222450776553,
+              "1202": 2.9622371810453236,
+              "1303": 2.1707144352261314,
+              "1404": 2.138023569093031,
+              "1505": 2.254400449215103
+            },
+            "ci95_high": 2.692391471461332,
+            "ci95_low": 2.1743752915706853,
+            "mean": 2.392519575931449,
+            "raw": [
+              2.4372222450776553,
+              2.9622371810453236,
+              2.1707144352261314,
+              2.138023569093031,
+              2.254400449215103
+            ],
+            "sample_sd": 0.3389760719100892,
+            "student_t_ci95_high": 2.813413960674737,
+            "student_t_ci95_low": 1.9716251911881608,
+            "student_t_degrees_of_freedom": 4
+          }
+        },
+        "resource_accounting_by_seed": {
+          "1101": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": null,
+              "same_layer_pairwise_mac_proxy": null,
+              "training_examples": 50000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 1611904,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 256
+          },
+          "1202": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": null,
+              "same_layer_pairwise_mac_proxy": null,
+              "training_examples": 50000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 1611904,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 256
+          },
+          "1303": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": null,
+              "same_layer_pairwise_mac_proxy": null,
+              "training_examples": 50000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 1611904,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 256
+          },
+          "1404": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": null,
+              "same_layer_pairwise_mac_proxy": null,
+              "training_examples": 50000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 1611904,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 256
+          },
+          "1505": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": null,
+              "same_layer_pairwise_mac_proxy": null,
+              "training_examples": 50000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 1611904,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 256
+          }
+        }
+      },
+      "incremental-sfa": {
+        "accuracy": {
+          "bootstrap_samples": 10000,
+          "bootstrap_seed": 260803,
+          "by_seed": {
+            "1101": 0.8984,
+            "1202": 0.8998,
+            "1303": 0.9001,
+            "1404": 0.9008,
+            "1505": 0.8998
+          },
+          "ci95_high": 0.9004000000000001,
+          "ci95_low": 0.8990199999999999,
+          "mean": 0.89978,
+          "raw": [
+            0.8984,
+            0.8998,
+            0.9001,
+            0.9008,
+            0.8998
+          ],
+          "sample_sd": 0.0008729261137118318,
+          "student_t_ci95_high": 0.9008638809284879,
+          "student_t_ci95_low": 0.8986961190715121,
+          "student_t_degrees_of_freedom": 4
+        },
+        "representation_diagnostics": {
+          "active_feature_fraction": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 1.0,
+              "1202": 1.0,
+              "1303": 1.0,
+              "1404": 1.0,
+              "1505": 1.0
+            },
+            "ci95_high": 1.0,
+            "ci95_low": 1.0,
+            "mean": 1.0,
+            "raw": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "sample_sd": 0.0,
+            "student_t_ci95_high": 1.0,
+            "student_t_ci95_low": 1.0,
+            "student_t_degrees_of_freedom": 4
+          },
+          "effective_rank": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 31.432458333179852,
+              "1202": 31.36612642910745,
+              "1303": 31.37522910480939,
+              "1404": 31.330176308242763,
+              "1505": 31.443673193790517
+            },
+            "ci95_high": 31.425920868731772,
+            "ci95_low": 31.35356691590196,
+            "mean": 31.389532673825993,
+            "raw": [
+              31.432458333179852,
+              31.36612642910745,
+              31.37522910480939,
+              31.330176308242763,
+              31.443673193790517
+            ],
+            "sample_sd": 0.0475642477252603,
+            "student_t_ci95_high": 31.448591487828093,
+            "student_t_ci95_low": 31.330473859823893,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_absolute_offdiagonal_correlation": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.018797790959068188,
+              "1202": 0.019119778632598096,
+              "1303": 0.019165371192633753,
+              "1404": 0.02002469934293723,
+              "1505": 0.018483983388402656
+            },
+            "ci95_high": 0.019607452036102722,
+            "ci95_low": 0.018683022463381983,
+            "mean": 0.019118324703127985,
+            "raw": [
+              0.018797790959068188,
+              0.019119778632598096,
+              0.019165371192633753,
+              0.02002469934293723,
+              0.018483983388402656
+            ],
+            "sample_sd": 0.0005763812233286903,
+            "student_t_ci95_high": 0.019833996517375864,
+            "student_t_ci95_low": 0.018402652888880107,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 1.0057629934704582,
+              "1202": 1.030864944824782,
+              "1303": 1.032343759428968,
+              "1404": 1.0249662183663153,
+              "1505": 1.0126735014339032
+            },
+            "ci95_high": 1.0302767253747631,
+            "ci95_low": 1.0121654853340118,
+            "mean": 1.0213222835048854,
+            "raw": [
+              1.0057629934704582,
+              1.030864944824782,
+              1.032343759428968,
+              1.0249662183663153,
+              1.0126735014339032
+            ],
+            "sample_sd": 0.011648031116593212,
+            "student_t_ci95_high": 1.0357852243923165,
+            "student_t_ci95_low": 1.0068593426174544,
+            "student_t_degrees_of_freedom": 4
+          },
+          "median_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.9936264212455319,
+              "1202": 1.0357640550258134,
+              "1303": 1.0265182306274723,
+              "1404": 1.022603639728246,
+              "1505": 1.0087603374404877
+            },
+            "ci95_high": 1.0294336422069634,
+            "ci95_low": 1.003231566360911,
+            "mean": 1.0174545368135102,
+            "raw": [
+              0.9936264212455319,
+              1.0357640550258134,
+              1.0265182306274723,
+              1.022603639728246,
+              1.0087603374404877
+            ],
+            "sample_sd": 0.016486892201118836,
+            "student_t_ci95_high": 1.0379257173019059,
+            "student_t_ci95_low": 0.9969833563251145,
+            "student_t_degrees_of_freedom": 4
+          },
+          "temporal_slowness": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 1.9533110996933214,
+              "1202": 2.0007012281380763,
+              "1303": 2.0034041070032056,
+              "1404": 1.9894055647881401,
+              "1505": 1.965299312664572
+            },
+            "ci95_high": 1.9995232470141406,
+            "ci95_low": 1.9651867679765225,
+            "mean": 1.982424262457463,
+            "raw": [
+              1.9533110996933214,
+              2.0007012281380763,
+              2.0034041070032056,
+              1.9894055647881401,
+              1.965299312664572
+            ],
+            "sample_sd": 0.02215727919571015,
+            "student_t_ci95_high": 2.0099361583329256,
+            "student_t_ci95_low": 1.9549123665820005,
+            "student_t_degrees_of_freedom": 4
+          }
+        },
+        "resource_accounting_by_seed": {
+          "1101": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 817808,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": null,
+              "same_layer_pairwise_mac_proxy": null,
+              "training_examples": 50000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 200704,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 32
+          },
+          "1202": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 817808,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": null,
+              "same_layer_pairwise_mac_proxy": null,
+              "training_examples": 50000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 200704,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 32
+          },
+          "1303": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 817808,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": null,
+              "same_layer_pairwise_mac_proxy": null,
+              "training_examples": 50000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 200704,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 32
+          },
+          "1404": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 817808,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": null,
+              "same_layer_pairwise_mac_proxy": null,
+              "training_examples": 50000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 200704,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 32
+          },
+          "1505": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 817808,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": null,
+              "same_layer_pairwise_mac_proxy": null,
+              "training_examples": 50000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 200704,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 32
+          }
+        }
+      },
+      "layer-local-supcon": {
+        "accuracy": {
+          "bootstrap_samples": 10000,
+          "bootstrap_seed": 260803,
+          "by_seed": {
+            "1101": 0.9698,
+            "1202": 0.9713,
+            "1303": 0.9677,
+            "1404": 0.9711,
+            "1505": 0.9678
+          },
+          "ci95_high": 0.9709199999999999,
+          "ci95_low": 0.9681599999999999,
+          "mean": 0.96954,
+          "raw": [
+            0.9698,
+            0.9713,
+            0.9677,
+            0.9711,
+            0.9678
+          ],
+          "sample_sd": 0.0017329166165745017,
+          "student_t_ci95_high": 0.9716917001746896,
+          "student_t_ci95_low": 0.9673882998253103,
+          "student_t_degrees_of_freedom": 4
+        },
+        "representation_diagnostics": {
+          "active_feature_fraction": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 1.0,
+              "1202": 1.0,
+              "1303": 1.0,
+              "1404": 1.0,
+              "1505": 1.0
+            },
+            "ci95_high": 1.0,
+            "ci95_low": 1.0,
+            "mean": 1.0,
+            "raw": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "sample_sd": 0.0,
+            "student_t_ci95_high": 1.0,
+            "student_t_ci95_low": 1.0,
+            "student_t_degrees_of_freedom": 4
+          },
+          "effective_rank": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 7.7412985333131195,
+              "1202": 8.14551629800696,
+              "1303": 8.397730844616243,
+              "1404": 8.253969557616367,
+              "1505": 8.495436085613644
+            },
+            "ci95_high": 8.40806068361523,
+            "ci95_low": 7.9534285485125125,
+            "mean": 8.206790263833266,
+            "raw": [
+              7.7412985333131195,
+              8.14551629800696,
+              8.397730844616243,
+              8.253969557616367,
+              8.495436085613644
+            ],
+            "sample_sd": 0.292590862662185,
+            "student_t_ci95_high": 8.570089804204283,
+            "student_t_ci95_low": 7.843490723462249,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_absolute_offdiagonal_correlation": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.24685137432099008,
+              "1202": 0.24595302083680007,
+              "1303": 0.24718331405589417,
+              "1404": 0.2461094820813727,
+              "1505": 0.24609972629468188
+            },
+            "ci95_high": 0.24690020855667089,
+            "ci95_low": 0.24604299526886733,
+            "mean": 0.24643938351794778,
+            "raw": [
+              0.24685137432099008,
+              0.24595302083680007,
+              0.24718331405589417,
+              0.2461094820813727,
+              0.24609972629468188
+            ],
+            "sample_sd": 0.0005440403734707628,
+            "student_t_ci95_high": 0.24711489886325574,
+            "student_t_ci95_low": 0.24576386817263982,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.3058777617215018,
+              "1202": 0.30538947077205303,
+              "1303": 0.2924727945239817,
+              "1404": 0.2969220679461053,
+              "1505": 0.2886842925658296
+            },
+            "ci95_high": 0.303891306586643,
+            "ci95_low": 0.29184724842514564,
+            "mean": 0.2978692775058943,
+            "raw": [
+              0.3058777617215018,
+              0.30538947077205303,
+              0.2924727945239817,
+              0.2969220679461053,
+              0.2886842925658296
+            ],
+            "sample_sd": 0.00766603399851344,
+            "student_t_ci95_high": 0.3073879159308545,
+            "student_t_ci95_low": 0.2883506390809341,
+            "student_t_degrees_of_freedom": 4
+          },
+          "median_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.216139648115,
+              "1202": 0.21150197558192185,
+              "1303": 0.2056652557995549,
+              "1404": 0.2088697712173142,
+              "1505": 0.19912458753246215
+            },
+            "ci95_high": 0.21311723514529532,
+            "ci95_low": 0.20302266100640298,
+            "mean": 0.2082602476492506,
+            "raw": [
+              0.216139648115,
+              0.21150197558192185,
+              0.2056652557995549,
+              0.2088697712173142,
+              0.19912458753246215
+            ],
+            "sample_sd": 0.006386695920791205,
+            "student_t_ci95_high": 0.21619037804157187,
+            "student_t_ci95_low": 0.20033011725692934,
+            "student_t_degrees_of_freedom": 4
+          },
+          "temporal_slowness": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.6169373440127485,
+              "1202": 0.6166254033591255,
+              "1303": 0.5905734216161916,
+              "1404": 0.5989269289927683,
+              "1505": 0.5830893581452327
+            },
+            "ci95_high": 0.6132104847473033,
+            "ci95_low": 0.5892504977031234,
+            "mean": 0.6012304912252133,
+            "raw": [
+              0.6169373440127485,
+              0.6166254033591255,
+              0.5905734216161916,
+              0.5989269289927683,
+              0.5830893581452327
+            ],
+            "sample_sd": 0.01526178876423097,
+            "student_t_ci95_high": 0.6201805048819496,
+            "student_t_ci95_low": 0.582280477568477,
+            "student_t_degrees_of_freedom": 4
+          }
+        },
+        "resource_accounting_by_seed": {
+          "1101": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 4792320000000,
+              "same_layer_pairwise_mac_proxy": 1183800360960,
+              "training_examples": 3000000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2139136,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1202": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 4792320000000,
+              "same_layer_pairwise_mac_proxy": 1183800360960,
+              "training_examples": 3000000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2139136,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1303": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 4792320000000,
+              "same_layer_pairwise_mac_proxy": 1183800360960,
+              "training_examples": 3000000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2139136,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1404": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 4792320000000,
+              "same_layer_pairwise_mac_proxy": 1183800360960,
+              "training_examples": 3000000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2139136,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1505": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 4792320000000,
+              "same_layer_pairwise_mac_proxy": 1183800360960,
+              "training_examples": 3000000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2139136,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          }
+        }
+      },
+      "no-temporal": {
+        "accuracy": {
+          "bootstrap_samples": 10000,
+          "bootstrap_seed": 260803,
+          "by_seed": {
+            "1101": 0.9506,
+            "1202": 0.9503,
+            "1303": 0.9503,
+            "1404": 0.9478,
+            "1505": 0.95
+          },
+          "ci95_high": 0.95042,
+          "ci95_low": 0.9488,
+          "mean": 0.9498,
+          "raw": [
+            0.9506,
+            0.9503,
+            0.9503,
+            0.9478,
+            0.95
+          ],
+          "sample_sd": 0.0011379806676741204,
+          "student_t_ci95_high": 0.9512129896257028,
+          "student_t_ci95_low": 0.9483870103742972,
+          "student_t_degrees_of_freedom": 4
+        },
+        "representation_diagnostics": {
+          "active_feature_fraction": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 1.0,
+              "1202": 1.0,
+              "1303": 1.0,
+              "1404": 0.9986979166666666,
+              "1505": 0.9986979166666666
+            },
+            "ci95_high": 1.0,
+            "ci95_low": 0.9989583333333332,
+            "mean": 0.9994791666666666,
+            "raw": [
+              1.0,
+              1.0,
+              1.0,
+              0.9986979166666666,
+              0.9986979166666666
+            ],
+            "sample_sd": 0.0007131804134182053,
+            "student_t_ci95_high": 1.000364697110232,
+            "student_t_ci95_low": 0.9985936362231012,
+            "student_t_degrees_of_freedom": 4
+          },
+          "effective_rank": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 165.681298336982,
+              "1202": 167.23534200460497,
+              "1303": 166.54582341007443,
+              "1404": 169.72825524582333,
+              "1505": 169.0796540310344
+            },
+            "ci95_high": 168.97023211166407,
+            "ci95_low": 166.33791709974358,
+            "mean": 167.6540746057038,
+            "raw": [
+              165.681298336982,
+              167.23534200460497,
+              166.54582341007443,
+              169.72825524582333,
+              169.0796540310344
+            ],
+            "sample_sd": 1.7051323948627464,
+            "student_t_ci95_high": 169.77127611257586,
+            "student_t_ci95_low": 165.53687309883176,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_absolute_offdiagonal_correlation": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.052692437842114595,
+              "1202": 0.05237196175890291,
+              "1303": 0.05282711561106536,
+              "1404": 0.05197830011590884,
+              "1505": 0.052017979656658296
+            },
+            "ci95_high": 0.05268221373305256,
+            "ci95_low": 0.05207290426080744,
+            "mean": 0.052377558996929995,
+            "raw": [
+              0.052692437842114595,
+              0.05237196175890291,
+              0.05282711561106536,
+              0.05197830011590884,
+              0.052017979656658296
+            ],
+            "sample_sd": 0.00038405277031798124,
+            "student_t_ci95_high": 0.05285442349524425,
+            "student_t_ci95_low": 0.051900694498615736,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.955940017176505,
+              "1202": 0.9621591185517994,
+              "1303": 0.9873192842152827,
+              "1404": 0.936678097461113,
+              "1505": 0.9535029222526114
+            },
+            "ci95_high": 0.9747675773997717,
+            "ci95_low": 0.9456145001477091,
+            "mean": 0.9591198879314623,
+            "raw": [
+              0.955940017176505,
+              0.9621591185517994,
+              0.9873192842152827,
+              0.936678097461113,
+              0.9535029222526114
+            ],
+            "sample_sd": 0.018369395162240797,
+            "student_t_ci95_high": 0.9819285045731951,
+            "student_t_ci95_low": 0.9363112712897295,
+            "student_t_degrees_of_freedom": 4
+          },
+          "median_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.913648538289857,
+              "1202": 0.9277309947153799,
+              "1303": 0.964974532337489,
+              "1404": 0.9083897186579856,
+              "1505": 0.9334252855917222
+            },
+            "ci95_high": 0.9483994841788093,
+            "ci95_low": 0.914361501722213,
+            "mean": 0.9296338139184867,
+            "raw": [
+              0.913648538289857,
+              0.9277309947153799,
+              0.964974532337489,
+              0.9083897186579856,
+              0.9334252855917222
+            ],
+            "sample_sd": 0.02221375124275712,
+            "student_t_ci95_high": 0.9572158291016722,
+            "student_t_ci95_low": 0.9020517987353011,
+            "student_t_degrees_of_freedom": 4
+          },
+          "temporal_slowness": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 1.8833304494931535,
+              "1202": 1.8965876248838494,
+              "1303": 1.9459470056795367,
+              "1404": 1.8475224323416224,
+              "1505": 1.879569573755621
+            },
+            "ci95_high": 1.9209003832049834,
+            "ci95_low": 1.8644782699016862,
+            "mean": 1.8905914172307567,
+            "raw": [
+              1.8833304494931535,
+              1.8965876248838494,
+              1.9459470056795367,
+              1.8475224323416224,
+              1.879569573755621
+            ],
+            "sample_sd": 0.035809690811940485,
+            "student_t_ci95_high": 1.9350550210987514,
+            "student_t_ci95_low": 1.846127813362762,
+            "student_t_degrees_of_freedom": 4
+          }
+        },
+        "resource_accounting_by_seed": {
+          "1101": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1202": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1303": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1404": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1505": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          }
+        }
+      },
+      "no-variance": {
+        "accuracy": {
+          "bootstrap_samples": 10000,
+          "bootstrap_seed": 260803,
+          "by_seed": {
+            "1101": 0.153,
+            "1202": 0.1537,
+            "1303": 0.1582,
+            "1404": 0.1515,
+            "1505": 0.1518
+          },
+          "ci95_high": 0.15602,
+          "ci95_low": 0.15192,
+          "mean": 0.15364,
+          "raw": [
+            0.153,
+            0.1537,
+            0.1582,
+            0.1515,
+            0.1518
+          ],
+          "sample_sd": 0.0027005554984113975,
+          "student_t_ci95_high": 0.15699318253752864,
+          "student_t_ci95_low": 0.15028681746247136,
+          "student_t_degrees_of_freedom": 4
+        },
+        "representation_diagnostics": {
+          "active_feature_fraction": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.0,
+              "1202": 0.00390625,
+              "1303": 0.0026041666666666665,
+              "1404": 0.0026041666666666665,
+              "1505": 0.00390625
+            },
+            "ci95_high": 0.003645833333333333,
+            "ci95_low": 0.0013020833333333333,
+            "mean": 0.0026041666666666665,
+            "raw": [
+              0.0,
+              0.00390625,
+              0.0026041666666666665,
+              0.0026041666666666665,
+              0.00390625
+            ],
+            "sample_sd": 0.001594719884624465,
+            "student_t_ci95_high": 0.004584272934624525,
+            "student_t_ci95_low": 0.0006240603987088082,
+            "student_t_degrees_of_freedom": 4
+          },
+          "effective_rank": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 146.3361146074417,
+              "1202": 128.8630470847633,
+              "1303": 149.29822477619865,
+              "1404": 162.5769895824344,
+              "1505": 130.22142081280677
+            },
+            "ci95_high": 154.01730866494157,
+            "ci95_low": 132.9010100805164,
+            "mean": 143.45915937272895,
+            "raw": [
+              146.3361146074417,
+              128.8630470847633,
+              149.29822477619865,
+              162.5769895824344,
+              130.22142081280677
+            ],
+            "sample_sd": 14.108040298349524,
+            "student_t_ci95_high": 160.97660509639744,
+            "student_t_ci95_low": 125.94171364906046,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_absolute_offdiagonal_correlation": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.03726021409680325,
+              "1202": 0.03856793213072991,
+              "1303": 0.0356601927083165,
+              "1404": 0.034963410576306454,
+              "1505": 0.039767515312529644
+            },
+            "ci95_high": 0.03878622179666448,
+            "ci95_low": 0.03570148413320983,
+            "mean": 0.03724385296493715,
+            "raw": [
+              0.03726021409680325,
+              0.03856793213072991,
+              0.0356601927083165,
+              0.034963410576306454,
+              0.039767515312529644
+            ],
+            "sample_sd": 0.0019893920091853382,
+            "student_t_ci95_high": 0.039714009401056835,
+            "student_t_ci95_low": 0.03477369652881747,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 1.8950686313818564e-05,
+              "1202": 1.992167935562689e-05,
+              "1303": 1.95573452136581e-05,
+              "1404": 1.9656747378042293e-05,
+              "1505": 2.065058280422712e-05
+            },
+            "ci95_high": 2.025304863375319e-05,
+            "ci95_low": 1.9266216702148137e-05,
+            "mean": 1.9747408213074596e-05,
+            "raw": [
+              1.8950686313818564e-05,
+              1.992167935562689e-05,
+              1.95573452136581e-05,
+              1.9656747378042293e-05,
+              2.065058280422712e-05
+            ],
+            "sample_sd": 6.174957264508189e-07,
+            "student_t_ci95_high": 2.0514130425653256e-05,
+            "student_t_ci95_low": 1.8980686000495936e-05,
+            "student_t_degrees_of_freedom": 4
+          },
+          "median_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 1.2592840790666401e-05,
+              "1202": 1.3872645385194324e-05,
+              "1303": 1.481388542642536e-05,
+              "1404": 1.4540677410414107e-05,
+              "1505": 1.5050939418600406e-05
+            },
+            "ci95_high": 1.4854065420093129e-05,
+            "ci95_low": 1.3340421435158785e-05,
+            "mean": 1.417419768626012e-05,
+            "raw": [
+              1.2592840790666401e-05,
+              1.3872645385194324e-05,
+              1.481388542642536e-05,
+              1.4540677410414107e-05,
+              1.5050939418600406e-05
+            ],
+            "sample_sd": 9.8790273811249e-07,
+            "student_t_ci95_high": 1.540084094990132e-05,
+            "student_t_ci95_low": 1.2947554422618919e-05,
+            "student_t_degrees_of_freedom": 4
+          },
+          "temporal_slowness": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 3.791841943217832e-05,
+              "1202": 3.984491549438028e-05,
+              "1303": 3.910902998687507e-05,
+              "1404": 3.929015005364917e-05,
+              "1505": 4.130559728694598e-05
+            },
+            "ci95_high": 4.049941839362726e-05,
+            "ci95_low": 3.8541840755558065e-05,
+            "mean": 3.9493622450805765e-05,
+            "raw": [
+              3.791841943217832e-05,
+              3.984491549438028e-05,
+              3.910902998687507e-05,
+              3.929015005364917e-05,
+              4.130559728694598e-05
+            ],
+            "sample_sd": 1.2326025858807013e-06,
+            "student_t_ci95_high": 4.102410070578669e-05,
+            "student_t_ci95_low": 3.796314419582484e-05,
+            "student_t_degrees_of_freedom": 4
+          }
+        },
+        "resource_accounting_by_seed": {
+          "1101": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1202": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1303": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1404": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1505": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          }
+        }
+      },
+      "random": {
+        "accuracy": {
+          "bootstrap_samples": 10000,
+          "bootstrap_seed": 260803,
+          "by_seed": {
+            "1101": 0.9475,
+            "1202": 0.9529,
+            "1303": 0.9495,
+            "1404": 0.952,
+            "1505": 0.9524
+          },
+          "ci95_high": 0.95252,
+          "ci95_low": 0.9488800000000002,
+          "mean": 0.9508599999999999,
+          "raw": [
+            0.9475,
+            0.9529,
+            0.9495,
+            0.952,
+            0.9524
+          ],
+          "sample_sd": 0.002289759812731445,
+          "student_t_ci95_high": 0.9537031123240024,
+          "student_t_ci95_low": 0.9480168876759975,
+          "student_t_degrees_of_freedom": 4
+        },
+        "representation_diagnostics": {
+          "active_feature_fraction": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.984375,
+              "1202": 0.99609375,
+              "1303": 0.9947916666666666,
+              "1404": 0.9947916666666666,
+              "1505": 0.99609375
+            },
+            "ci95_high": 0.9958333333333332,
+            "ci95_low": 0.9888020833333332,
+            "mean": 0.9932291666666666,
+            "raw": [
+              0.984375,
+              0.99609375,
+              0.9947916666666666,
+              0.9947916666666666,
+              0.99609375
+            ],
+            "sample_sd": 0.004992262893927289,
+            "student_t_ci95_high": 0.9994278797716246,
+            "student_t_ci95_low": 0.9870304535617086,
+            "student_t_degrees_of_freedom": 4
+          },
+          "effective_rank": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 35.566108931479455,
+              "1202": 34.180740023476076,
+              "1303": 34.564125666642205,
+              "1404": 33.91079256579771,
+              "1505": 32.08851653994847
+            },
+            "ci95_high": 35.01196136827811,
+            "ci95_low": 32.94809357045707,
+            "mean": 34.06205674546879,
+            "raw": [
+              35.566108931479455,
+              34.180740023476076,
+              34.564125666642205,
+              33.91079256579771,
+              32.08851653994847
+            ],
+            "sample_sd": 1.2694559558317684,
+            "student_t_ci95_high": 35.63829450313044,
+            "student_t_ci95_low": 32.485818987807136,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_absolute_offdiagonal_correlation": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.09654566700803906,
+              "1202": 0.10034834798444664,
+              "1303": 0.0969994789324867,
+              "1404": 0.09934553385609189,
+              "1505": 0.09933125056678954
+            },
+            "ci95_high": 0.09974380284957332,
+            "ci95_low": 0.09719640276253916,
+            "mean": 0.09851405566957078,
+            "raw": [
+              0.09654566700803906,
+              0.10034834798444664,
+              0.0969994789324867,
+              0.09934553385609189,
+              0.09933125056678954
+            ],
+            "sample_sd": 0.0016501733535053498,
+            "student_t_ci95_high": 0.10056301651341354,
+            "student_t_ci95_low": 0.09646509482572801,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.06394304027251835,
+              "1202": 0.0637795057637539,
+              "1303": 0.06046770405721325,
+              "1404": 0.0659871931979659,
+              "1505": 0.06420675306185912
+            },
+            "ci95_high": 0.06513764279857781,
+            "ci95_low": 0.06187787419945055,
+            "mean": 0.06367683927066212,
+            "raw": [
+              0.06394304027251835,
+              0.0637795057637539,
+              0.06046770405721325,
+              0.0659871931979659,
+              0.06420675306185912
+            ],
+            "sample_sd": 0.001999906003784883,
+            "student_t_ci95_high": 0.06616005055535337,
+            "student_t_ci95_low": 0.06119362798597087,
+            "student_t_degrees_of_freedom": 4
+          },
+          "median_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.042036510100611615,
+              "1202": 0.04420430480984559,
+              "1303": 0.03861231378205998,
+              "1404": 0.04392143345989763,
+              "1505": 0.041107766596476726
+            },
+            "ci95_high": 0.04365759732801962,
+            "ci95_low": 0.040173228280510856,
+            "mean": 0.041976465749778306,
+            "raw": [
+              0.042036510100611615,
+              0.04420430480984559,
+              0.03861231378205998,
+              0.04392143345989763,
+              0.041107766596476726
+            ],
+            "sample_sd": 0.0022815525566971524,
+            "student_t_ci95_high": 0.04480938741943891,
+            "student_t_ci95_low": 0.0391435440801177,
+            "student_t_degrees_of_freedom": 4
+          },
+          "temporal_slowness": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.12301771336262132,
+              "1202": 0.12285286347978498,
+              "1303": 0.1171609137191841,
+              "1404": 0.12691002942454707,
+              "1505": 0.12355463562797095
+            },
+            "ci95_high": 0.12532095727262368,
+            "ci95_low": 0.11957804805306167,
+            "mean": 0.1226992311228217,
+            "raw": [
+              0.12301771336262132,
+              0.12285286347978498,
+              0.1171609137191841,
+              0.12691002942454707,
+              0.12355463562797095
+            ],
+            "sample_sd": 0.003509292403991574,
+            "student_t_ci95_high": 0.127056593160028,
+            "student_t_ci95_low": 0.11834186908561542,
+            "student_t_degrees_of_freedom": 4
+          }
+        },
+        "resource_accounting_by_seed": {
+          "1101": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 0,
+              "same_layer_pairwise_mac_proxy": 0,
+              "training_examples": 0
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1202": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 0,
+              "same_layer_pairwise_mac_proxy": 0,
+              "training_examples": 0
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1303": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 0,
+              "same_layer_pairwise_mac_proxy": 0,
+              "training_examples": 0
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1404": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 0,
+              "same_layer_pairwise_mac_proxy": 0,
+              "training_examples": 0
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1505": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 0,
+              "same_layer_pairwise_mac_proxy": 0,
+              "training_examples": 0
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          }
+        }
+      },
+      "shuffled-order": {
+        "accuracy": {
+          "bootstrap_samples": 10000,
+          "bootstrap_seed": 260803,
+          "by_seed": {
+            "1101": 0.9559,
+            "1202": 0.9512,
+            "1303": 0.9535,
+            "1404": 0.9539,
+            "1505": 0.9556
+          },
+          "ci95_high": 0.9553799999999999,
+          "ci95_low": 0.9525400000000002,
+          "mean": 0.9540199999999999,
+          "raw": [
+            0.9559,
+            0.9512,
+            0.9535,
+            0.9539,
+            0.9556
+          ],
+          "sample_sd": 0.0018886503117305521,
+          "student_t_ci95_high": 0.956365069097272,
+          "student_t_ci95_low": 0.9516749309027277,
+          "student_t_degrees_of_freedom": 4
+        },
+        "representation_diagnostics": {
+          "active_feature_fraction": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.77734375,
+              "1202": 0.7890625,
+              "1303": 0.78515625,
+              "1404": 0.78515625,
+              "1505": 0.8046875
+            },
+            "ci95_high": 0.796875,
+            "ci95_low": 0.78125,
+            "mean": 0.78828125,
+            "raw": [
+              0.77734375,
+              0.7890625,
+              0.78515625,
+              0.78515625,
+              0.8046875
+            ],
+            "sample_sd": 0.010111077426206863,
+            "student_t_ci95_high": 0.8008358108231719,
+            "student_t_ci95_low": 0.7757266891768282,
+            "student_t_degrees_of_freedom": 4
+          },
+          "effective_rank": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 137.1068642584507,
+              "1202": 133.8179874375669,
+              "1303": 140.74600279065325,
+              "1404": 133.72588167665404,
+              "1505": 139.27050691104597
+            },
+            "ci95_high": 139.4279767323698,
+            "ci95_low": 134.43892049737852,
+            "mean": 136.93344861487418,
+            "raw": [
+              137.1068642584507,
+              133.8179874375669,
+              140.74600279065325,
+              133.72588167665404,
+              139.27050691104597
+            ],
+            "sample_sd": 3.1631498470221366,
+            "student_t_ci95_high": 140.8610179008453,
+            "student_t_ci95_low": 133.00587932890306,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_absolute_offdiagonal_correlation": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.037144038001336435,
+              "1202": 0.038367143239492994,
+              "1303": 0.03657710115463914,
+              "1404": 0.038414525596555504,
+              "1505": 0.03789693845904609
+            },
+            "ci95_high": 0.038292055226228625,
+            "ci95_low": 0.037048496940949374,
+            "mean": 0.03767994929021403,
+            "raw": [
+              0.037144038001336435,
+              0.038367143239492994,
+              0.03657710115463914,
+              0.038414525596555504,
+              0.03789693845904609
+            ],
+            "sample_sd": 0.0008003744581197263,
+            "student_t_ci95_high": 0.03867374543994314,
+            "student_t_ci95_low": 0.03668615314048492,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.3785540178839295,
+              "1202": 0.384009097312183,
+              "1303": 0.36994473044469717,
+              "1404": 0.382360305485004,
+              "1505": 0.383210343762207
+            },
+            "ci95_high": 0.3833598375267568,
+            "ci95_low": 0.3744794613060408,
+            "mean": 0.37961569897760417,
+            "raw": [
+              0.3785540178839295,
+              0.384009097312183,
+              0.36994473044469717,
+              0.382360305485004,
+              0.383210343762207
+            ],
+            "sample_sd": 0.005796789715941003,
+            "student_t_ci95_high": 0.38681336407304595,
+            "student_t_ci95_low": 0.3724180338821624,
+            "student_t_degrees_of_freedom": 4
+          },
+          "median_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.5127916382230479,
+              "1202": 0.5167217020578521,
+              "1303": 0.5044761531859732,
+              "1404": 0.5136437665484807,
+              "1505": 0.5181426316690166
+            },
+            "ci95_high": 0.51678824705759,
+            "ci95_low": 0.5085883599677639,
+            "mean": 0.5131551783368742,
+            "raw": [
+              0.5127916382230479,
+              0.5167217020578521,
+              0.5044761531859732,
+              0.5136437665484807,
+              0.5181426316690166
+            ],
+            "sample_sd": 0.005321915529615509,
+            "student_t_ci95_high": 0.5197632092514792,
+            "student_t_ci95_low": 0.5065471474222691,
+            "student_t_degrees_of_freedom": 4
+          },
+          "temporal_slowness": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.7423072451789792,
+              "1202": 0.7534723685047134,
+              "1303": 0.7262365685500289,
+              "1404": 0.7504103564125563,
+              "1505": 0.7532784401084079
+            },
+            "ci95_high": 0.7527823947277598,
+            "ci95_low": 0.7348978638667558,
+            "mean": 0.7451409957509372,
+            "raw": [
+              0.7423072451789792,
+              0.7534723685047134,
+              0.7262365685500289,
+              0.7504103564125563,
+              0.7532784401084079
+            ],
+            "sample_sd": 0.011497863328832326,
+            "student_t_ci95_high": 0.7594174787026156,
+            "student_t_ci95_low": 0.7308645127992588,
+            "student_t_degrees_of_freedom": 4
+          }
+        },
+        "resource_accounting_by_seed": {
+          "1101": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1202": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1303": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1404": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1505": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          }
+        }
+      },
+      "supervised-linear": {
+        "accuracy": {
+          "bootstrap_samples": 10000,
+          "bootstrap_seed": 260803,
+          "by_seed": {
+            "1101": 0.9254,
+            "1202": 0.9262,
+            "1303": 0.9257,
+            "1404": 0.925,
+            "1505": 0.9246
+          },
+          "ci95_high": 0.9258599999999999,
+          "ci95_low": 0.9249,
+          "mean": 0.92538,
+          "raw": [
+            0.9254,
+            0.9262,
+            0.9257,
+            0.925,
+            0.9246
+          ],
+          "sample_sd": 0.0006180614856145016,
+          "student_t_ci95_high": 0.9261474246953638,
+          "student_t_ci95_low": 0.9246125753046361,
+          "student_t_degrees_of_freedom": 4
+        },
+        "representation_diagnostics": {
+          "active_feature_fraction": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.8278061224489796,
+              "1202": 0.8278061224489796,
+              "1303": 0.8278061224489796,
+              "1404": 0.8278061224489796,
+              "1505": 0.8278061224489796
+            },
+            "ci95_high": 0.8278061224489794,
+            "ci95_low": 0.8278061224489794,
+            "mean": 0.8278061224489794,
+            "raw": [
+              0.8278061224489796,
+              0.8278061224489796,
+              0.8278061224489796,
+              0.8278061224489796,
+              0.8278061224489796
+            ],
+            "sample_sd": 1.2412670766236366e-16,
+            "student_t_ci95_high": 0.8278061224489796,
+            "student_t_ci95_low": 0.8278061224489793,
+            "student_t_degrees_of_freedom": 4
+          },
+          "effective_rank": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 29.387118386805138,
+              "1202": 29.387118386805138,
+              "1303": 29.387118386805138,
+              "1404": 29.387118386805138,
+              "1505": 29.387118386805138
+            },
+            "ci95_high": 29.387118386805138,
+            "ci95_low": 29.387118386805138,
+            "mean": 29.387118386805138,
+            "raw": [
+              29.387118386805138,
+              29.387118386805138,
+              29.387118386805138,
+              29.387118386805138,
+              29.387118386805138
+            ],
+            "sample_sd": 0.0,
+            "student_t_ci95_high": 29.387118386805138,
+            "student_t_ci95_low": 29.387118386805138,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_absolute_offdiagonal_correlation": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.0427835278739787,
+              "1202": 0.0427835278739787,
+              "1303": 0.0427835278739787,
+              "1404": 0.0427835278739787,
+              "1505": 0.0427835278739787
+            },
+            "ci95_high": 0.0427835278739787,
+            "ci95_low": 0.0427835278739787,
+            "mean": 0.0427835278739787,
+            "raw": [
+              0.0427835278739787,
+              0.0427835278739787,
+              0.0427835278739787,
+              0.0427835278739787,
+              0.0427835278739787
+            ],
+            "sample_sd": 0.0,
+            "student_t_ci95_high": 0.0427835278739787,
+            "student_t_ci95_low": 0.0427835278739787,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.7101191263791521,
+              "1202": 0.7101191263791521,
+              "1303": 0.7101191263791521,
+              "1404": 0.7101191263791521,
+              "1505": 0.7101191263791521
+            },
+            "ci95_high": 0.7101191263791521,
+            "ci95_low": 0.7101191263791521,
+            "mean": 0.7101191263791521,
+            "raw": [
+              0.7101191263791521,
+              0.7101191263791521,
+              0.7101191263791521,
+              0.7101191263791521,
+              0.7101191263791521
+            ],
+            "sample_sd": 0.0,
+            "student_t_ci95_high": 0.7101191263791521,
+            "student_t_ci95_low": 0.7101191263791521,
+            "student_t_degrees_of_freedom": 4
+          },
+          "median_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.20719183821803053,
+              "1202": 0.20719183821803053,
+              "1303": 0.20719183821803053,
+              "1404": 0.20719183821803053,
+              "1505": 0.20719183821803053
+            },
+            "ci95_high": 0.20719183821803053,
+            "ci95_low": 0.20719183821803053,
+            "mean": 0.20719183821803053,
+            "raw": [
+              0.20719183821803053,
+              0.20719183821803053,
+              0.20719183821803053,
+              0.20719183821803053,
+              0.20719183821803053
+            ],
+            "sample_sd": 0.0,
+            "student_t_ci95_high": 0.20719183821803053,
+            "student_t_ci95_low": 0.20719183821803053,
+            "student_t_degrees_of_freedom": 4
+          },
+          "temporal_slowness": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 1.3669774421320355,
+              "1202": 1.3669774421320355,
+              "1303": 1.3669774421320355,
+              "1404": 1.3669774421320355,
+              "1505": 1.3669774421320355
+            },
+            "ci95_high": 1.3669774421320355,
+            "ci95_low": 1.3669774421320355,
+            "mean": 1.3669774421320355,
+            "raw": [
+              1.3669774421320355,
+              1.3669774421320355,
+              1.3669774421320355,
+              1.3669774421320355,
+              1.3669774421320355
+            ],
+            "sample_sd": 0.0,
+            "student_t_ci95_high": 1.3669774421320355,
+            "student_t_ci95_low": 1.3669774421320355,
+            "student_t_degrees_of_freedom": 4
+          }
+        },
+        "resource_accounting_by_seed": {
+          "1101": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": null,
+              "same_layer_pairwise_mac_proxy": null,
+              "training_examples": 0
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 31400,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 784
+          },
+          "1202": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": null,
+              "same_layer_pairwise_mac_proxy": null,
+              "training_examples": 0
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 31400,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 784
+          },
+          "1303": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": null,
+              "same_layer_pairwise_mac_proxy": null,
+              "training_examples": 0
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 31400,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 784
+          },
+          "1404": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": null,
+              "same_layer_pairwise_mac_proxy": null,
+              "training_examples": 0
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 31400,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 784
+          },
+          "1505": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 256,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": null,
+              "same_layer_pairwise_mac_proxy": null,
+              "training_examples": 0
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 31400,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 784
+          }
+        }
+      },
+      "supervised-offline": {
+        "accuracy": {
+          "bootstrap_samples": 10000,
+          "bootstrap_seed": 260803,
+          "by_seed": {
+            "1101": 0.9836,
+            "1202": 0.9858,
+            "1303": 0.984,
+            "1404": 0.9846,
+            "1505": 0.9838
+          },
+          "ci95_high": 0.98512,
+          "ci95_low": 0.98376,
+          "mean": 0.98436,
+          "raw": [
+            0.9836,
+            0.9858,
+            0.984,
+            0.9846,
+            0.9838
+          ],
+          "sample_sd": 0.0008876936408468856,
+          "student_t_ci95_high": 0.985462217235274,
+          "student_t_ci95_low": 0.983257782764726,
+          "student_t_degrees_of_freedom": 4
+        },
+        "representation_diagnostics": {
+          "active_feature_fraction": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 1.0,
+              "1202": 0.9986979166666666,
+              "1303": 0.9986979166666666,
+              "1404": 0.9986979166666666,
+              "1505": 1.0
+            },
+            "ci95_high": 0.9997395833333333,
+            "ci95_low": 0.9986979166666666,
+            "mean": 0.99921875,
+            "raw": [
+              1.0,
+              0.9986979166666666,
+              0.9986979166666666,
+              0.9986979166666666,
+              1.0
+            ],
+            "sample_sd": 0.0007131804134182053,
+            "student_t_ci95_high": 1.0001042804435656,
+            "student_t_ci95_low": 0.9983332195564346,
+            "student_t_degrees_of_freedom": 4
+          },
+          "effective_rank": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 21.331504800938717,
+              "1202": 21.169105407249166,
+              "1303": 21.96853560029744,
+              "1404": 21.527353614496196,
+              "1505": 22.4931271170939
+            },
+            "ci95_high": 22.155884350503573,
+            "ci95_low": 21.305714806174393,
+            "mean": 21.697925308015083,
+            "raw": [
+              21.331504800938717,
+              21.169105407249166,
+              21.96853560029744,
+              21.527353614496196,
+              22.4931271170939
+            ],
+            "sample_sd": 0.535860295583989,
+            "student_t_ci95_high": 22.36328374510855,
+            "student_t_ci95_low": 21.032566870921617,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_absolute_offdiagonal_correlation": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.12475981358565497,
+              "1202": 0.12605138434972216,
+              "1303": 0.1275445212621757,
+              "1404": 0.12236815613795507,
+              "1505": 0.12378599651944476
+            },
+            "ci95_high": 0.12649418893113878,
+            "ci95_low": 0.12338836985660642,
+            "mean": 0.12490197437099053,
+            "raw": [
+              0.12475981358565497,
+              0.12605138434972216,
+              0.1275445212621757,
+              0.12236815613795507,
+              0.12378599651944476
+            ],
+            "sample_sd": 0.001999377932221112,
+            "student_t_ci95_high": 0.12738452996823257,
+            "student_t_ci95_low": 0.12241941877374848,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.9002080731779815,
+              "1202": 0.8985992660074844,
+              "1303": 0.8749995299874023,
+              "1404": 0.9279650569442408,
+              "1505": 0.8622056398845187
+            },
+            "ci95_high": 0.9118205547996212,
+            "ci95_low": 0.8724388557817495,
+            "mean": 0.8927955132003256,
+            "raw": [
+              0.9002080731779815,
+              0.8985992660074844,
+              0.8749995299874023,
+              0.9279650569442408,
+              0.8622056398845187
+            ],
+            "sample_sd": 0.02538682614672361,
+            "student_t_ci95_high": 0.9243174212553703,
+            "student_t_ci95_low": 0.8612736051452808,
+            "student_t_degrees_of_freedom": 4
+          },
+          "median_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.6480514550549876,
+              "1202": 0.6844721861498899,
+              "1303": 0.6691611159983222,
+              "1404": 0.6921591031230592,
+              "1505": 0.6536156446064114
+            },
+            "ci95_high": 0.684484738908844,
+            "ci95_low": 0.654499063064224,
+            "mean": 0.6694919009865341,
+            "raw": [
+              0.6480514550549876,
+              0.6844721861498899,
+              0.6691611159983222,
+              0.6921591031230592,
+              0.6536156446064114
+            ],
+            "sample_sd": 0.019039883490799818,
+            "student_t_ci95_high": 0.6931330388470545,
+            "student_t_ci95_low": 0.6458507631260137,
+            "student_t_degrees_of_freedom": 4
+          },
+          "temporal_slowness": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 1.78987843781286,
+              "1202": 1.7892272463702925,
+              "1303": 1.7388933482462086,
+              "1404": 1.8438334675520316,
+              "1505": 1.711816705114819
+            },
+            "ci95_high": 1.8120544377430328,
+            "ci95_low": 1.73346217863645,
+            "mean": 1.7747298410192425,
+            "raw": [
+              1.78987843781286,
+              1.7892272463702925,
+              1.7388933482462086,
+              1.8438334675520316,
+              1.711816705114819
+            ],
+            "sample_sd": 0.05113042839227837,
+            "student_t_ci95_high": 1.8382166531666702,
+            "student_t_ci95_low": 1.7112430288718148,
+            "student_t_degrees_of_freedom": 4
+          }
+        },
+        "resource_accounting_by_seed": {
+          "1101": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 64,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 802560000000,
+              "same_layer_pairwise_mac_proxy": 0,
+              "training_examples": 500000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2143272,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1202": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 64,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 802560000000,
+              "same_layer_pairwise_mac_proxy": 0,
+              "training_examples": 500000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2143272,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1303": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 64,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 802560000000,
+              "same_layer_pairwise_mac_proxy": 0,
+              "training_examples": 500000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2143272,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1404": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 64,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 802560000000,
+              "same_layer_pairwise_mac_proxy": 0,
+              "training_examples": 500000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2143272,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1505": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 64,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 802560000000,
+              "same_layer_pairwise_mac_proxy": 0,
+              "training_examples": 500000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2143272,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          }
+        }
+      },
+      "terel": {
+        "accuracy": {
+          "bootstrap_samples": 10000,
+          "bootstrap_seed": 260803,
+          "by_seed": {
+            "1101": 0.9637,
+            "1202": 0.9647,
+            "1303": 0.9671,
+            "1404": 0.9633,
+            "1505": 0.9651
+          },
+          "ci95_high": 0.96602,
+          "ci95_low": 0.9637399999999999,
+          "mean": 0.9647799999999999,
+          "raw": [
+            0.9637,
+            0.9647,
+            0.9671,
+            0.9633,
+            0.9651
+          ],
+          "sample_sd": 0.001487279395406227,
+          "student_t_ci95_high": 0.9666267012805461,
+          "student_t_ci95_low": 0.9629332987194537,
+          "student_t_degrees_of_freedom": 4
+        },
+        "representation_diagnostics": {
+          "active_feature_fraction": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.984375,
+              "1202": 0.9817708333333334,
+              "1303": 0.9895833333333334,
+              "1404": 0.9622395833333334,
+              "1505": 0.9791666666666666
+            },
+            "ci95_high": 0.9864583333333334,
+            "ci95_low": 0.9700520833333334,
+            "mean": 0.9794270833333334,
+            "raw": [
+              0.984375,
+              0.9817708333333334,
+              0.9895833333333334,
+              0.9622395833333334,
+              0.9791666666666666
+            ],
+            "sample_sd": 0.010351357767891554,
+            "student_t_ci95_high": 0.9922799916062512,
+            "student_t_ci95_low": 0.9665741750604155,
+            "student_t_degrees_of_freedom": 4
+          },
+          "effective_rank": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 87.2586235292764,
+              "1202": 90.38586585462981,
+              "1303": 85.88333408995575,
+              "1404": 98.87799127552628,
+              "1505": 96.50279219351441
+            },
+            "ci95_high": 96.22948655854225,
+            "ci95_low": 87.33395621861882,
+            "mean": 91.78172138858054,
+            "raw": [
+              87.2586235292764,
+              90.38586585462981,
+              85.88333408995575,
+              98.87799127552628,
+              96.50279219351441
+            ],
+            "sample_sd": 5.697441432227554,
+            "student_t_ci95_high": 98.85602929685199,
+            "student_t_ci95_low": 84.70741348030909,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_absolute_offdiagonal_correlation": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.0692493088620294,
+              "1202": 0.06663608173414012,
+              "1303": 0.07051815164003893,
+              "1404": 0.0628961845242099,
+              "1505": 0.06415997597560008
+            },
+            "ci95_high": 0.06923420054765536,
+            "ci95_low": 0.06414968054675202,
+            "mean": 0.06669194054720369,
+            "raw": [
+              0.0692493088620294,
+              0.06663608173414012,
+              0.07051815164003893,
+              0.0628961845242099,
+              0.06415997597560008
+            ],
+            "sample_sd": 0.003240437956880066,
+            "student_t_ci95_high": 0.07071547569667463,
+            "student_t_ci95_low": 0.06266840539773275,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.4767204811471801,
+              "1202": 0.47402287587271497,
+              "1303": 0.49845976354104166,
+              "1404": 0.43345676258479077,
+              "1505": 0.4479837407276011
+            },
+            "ci95_high": 0.48487667304983173,
+            "ci95_low": 0.44507834509903904,
+            "mean": 0.46612872477466577,
+            "raw": [
+              0.4767204811471801,
+              0.47402287587271497,
+              0.49845976354104166,
+              0.43345676258479077,
+              0.4479837407276011
+            ],
+            "sample_sd": 0.025575850678576078,
+            "student_t_ci95_high": 0.497885337785689,
+            "student_t_ci95_low": 0.43437211176364254,
+            "student_t_degrees_of_freedom": 4
+          },
+          "median_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.5384589767654727,
+              "1202": 0.5372810383685139,
+              "1303": 0.5517831422621718,
+              "1404": 0.5207937273677156,
+              "1505": 0.5275025205353905
+            },
+            "ci95_high": 0.5442621848174757,
+            "ci95_low": 0.5261607619018556,
+            "mean": 0.5351638810598529,
+            "raw": [
+              0.5384589767654727,
+              0.5372810383685139,
+              0.5517831422621718,
+              0.5207937273677156,
+              0.5275025205353905
+            ],
+            "sample_sd": 0.011797644001146522,
+            "student_t_ci95_high": 0.5498125908797011,
+            "student_t_ci95_low": 0.5205151712400047,
+            "student_t_degrees_of_freedom": 4
+          },
+          "temporal_slowness": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.9403541593173207,
+              "1202": 0.9348986491859969,
+              "1303": 0.9842392515045563,
+              "1404": 0.8544271542816885,
+              "1505": 0.8837553962191549
+            },
+            "ci95_high": 0.9568170941659501,
+            "ci95_low": 0.8778897478316615,
+            "mean": 0.9195349221017434,
+            "raw": [
+              0.9403541593173207,
+              0.9348986491859969,
+              0.9842392515045563,
+              0.8544271542816885,
+              0.8837553962191549
+            ],
+            "sample_sd": 0.05092968411083711,
+            "student_t_ci95_high": 0.9827724773020601,
+            "student_t_ci95_low": 0.8562973669014267,
+            "student_t_degrees_of_freedom": 4
+          }
+        },
+        "resource_accounting_by_seed": {
+          "1101": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1202": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1303": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1404": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1505": {
+            "auxiliary_parameter_bytes": 1310720,
+            "causal_dynamic_state_bytes": 9218,
+            "dynamic_state_bytes": 1319938,
+            "encoder_batch_size": 1,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 159744000000,
+              "same_layer_pairwise_mac_proxy": 131072000000,
+              "training_examples": 100000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          }
+        }
+      },
+      "terel-offline": {
+        "accuracy": {
+          "bootstrap_samples": 10000,
+          "bootstrap_seed": 260803,
+          "by_seed": {
+            "1101": 0.9847,
+            "1202": 0.9837,
+            "1303": 0.9841,
+            "1404": 0.9836,
+            "1505": 0.9842
+          },
+          "ci95_high": 0.9844000000000002,
+          "ci95_low": 0.9837399999999998,
+          "mean": 0.9840599999999998,
+          "raw": [
+            0.9847,
+            0.9837,
+            0.9841,
+            0.9836,
+            0.9842
+          ],
+          "sample_sd": 0.00043931765272976796,
+          "student_t_ci95_high": 0.9846054849131698,
+          "student_t_ci95_low": 0.9835145150868299,
+          "student_t_degrees_of_freedom": 4
+        },
+        "representation_diagnostics": {
+          "active_feature_fraction": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 1.0,
+              "1202": 1.0,
+              "1303": 1.0,
+              "1404": 1.0,
+              "1505": 1.0
+            },
+            "ci95_high": 1.0,
+            "ci95_low": 1.0,
+            "mean": 1.0,
+            "raw": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "sample_sd": 0.0,
+            "student_t_ci95_high": 1.0,
+            "student_t_ci95_low": 1.0,
+            "student_t_degrees_of_freedom": 4
+          },
+          "effective_rank": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 21.73277514040623,
+              "1202": 20.735641944006428,
+              "1303": 21.435822939811388,
+              "1404": 20.216100122484086,
+              "1505": 21.037671654183544
+            },
+            "ci95_high": 21.474973562923758,
+            "ci95_low": 20.563953050254014,
+            "mean": 21.031602360178333,
+            "raw": [
+              21.73277514040623,
+              20.735641944006428,
+              21.435822939811388,
+              20.216100122484086,
+              21.037671654183544
+            ],
+            "sample_sd": 0.5932349552846017,
+            "student_t_ci95_high": 21.76820084663124,
+            "student_t_ci95_low": 20.295003873725424,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_absolute_offdiagonal_correlation": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.13146094646064463,
+              "1202": 0.13255054739548652,
+              "1303": 0.13022761763594043,
+              "1404": 0.13432202515819727,
+              "1505": 0.13195368957625192
+            },
+            "ci95_high": 0.13337469092541915,
+            "ci95_low": 0.1309388693527905,
+            "mean": 0.13210296524530415,
+            "raw": [
+              0.13146094646064463,
+              0.13255054739548652,
+              0.13022761763594043,
+              0.13432202515819727,
+              0.13195368957625192
+            ],
+            "sample_sd": 0.0015063164242070798,
+            "student_t_ci95_high": 0.13397330411914513,
+            "student_t_ci95_low": 0.13023262637146318,
+            "student_t_degrees_of_freedom": 4
+          },
+          "mean_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.43350921334012504,
+              "1202": 0.4820379466611315,
+              "1303": 0.4172117517837444,
+              "1404": 0.46687450328280783,
+              "1505": 0.4600385025901759
+            },
+            "ci95_high": 0.4715726804956109,
+            "ci95_low": 0.43040379439483323,
+            "mean": 0.45193438353159693,
+            "raw": [
+              0.43350921334012504,
+              0.4820379466611315,
+              0.4172117517837444,
+              0.46687450328280783,
+              0.4600385025901759
+            ],
+            "sample_sd": 0.026173729620898967,
+            "student_t_ci95_high": 0.4844333613005866,
+            "student_t_ci95_low": 0.41943540576260724,
+            "student_t_degrees_of_freedom": 4
+          },
+          "median_feature_variance": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.4485401244823139,
+              "1202": 0.5327838572668625,
+              "1303": 0.44824511083970664,
+              "1404": 0.4889332692417046,
+              "1505": 0.5063518872643485
+            },
+            "ci95_high": 0.5152436220567994,
+            "ci95_low": 0.4565007479771491,
+            "mean": 0.4849708498189872,
+            "raw": [
+              0.4485401244823139,
+              0.5327838572668625,
+              0.44824511083970664,
+              0.4889332692417046,
+              0.5063518872643485
+            ],
+            "sample_sd": 0.0368609239685552,
+            "student_t_ci95_high": 0.5307397320512683,
+            "student_t_ci95_low": 0.439201967586706,
+            "student_t_degrees_of_freedom": 4
+          },
+          "temporal_slowness": {
+            "bootstrap_samples": 10000,
+            "bootstrap_seed": 260803,
+            "by_seed": {
+              "1101": 0.86034216075781,
+              "1202": 0.9569077467060224,
+              "1303": 0.8292629530312193,
+              "1404": 0.9281236320879666,
+              "1505": 0.9137383024733333
+            },
+            "ci95_high": 0.9367602120122622,
+            "ci95_low": 0.8552509303878869,
+            "mean": 0.8976749590112704,
+            "raw": [
+              0.86034216075781,
+              0.9569077467060224,
+              0.8292629530312193,
+              0.9281236320879666,
+              0.9137383024733333
+            ],
+            "sample_sd": 0.051883562476596104,
+            "student_t_ci95_high": 0.9620969106370155,
+            "student_t_ci95_low": 0.8332530073855252,
+            "student_t_degrees_of_freedom": 4
+          }
+        },
+        "resource_accounting_by_seed": {
+          "1101": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 128,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 1597440000000,
+              "same_layer_pairwise_mac_proxy": 1024983040,
+              "training_examples": 1000000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1202": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 128,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 1597440000000,
+              "same_layer_pairwise_mac_proxy": 1024983040,
+              "training_examples": 1000000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1303": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 128,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 1597440000000,
+              "same_layer_pairwise_mac_proxy": 1024983040,
+              "training_examples": 1000000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1404": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 128,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 1597440000000,
+              "same_layer_pairwise_mac_proxy": 1024983040,
+              "training_examples": 1000000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          },
+          "1505": {
+            "auxiliary_parameter_bytes": 0,
+            "causal_dynamic_state_bytes": 0,
+            "dynamic_state_bytes": 0,
+            "encoder_batch_size": 128,
+            "normalization_calibration_batches": 0,
+            "normalization_calibration_examples": 0,
+            "normalization_calibration_seconds": 0.0,
+            "operation_proxy": {
+              "linear_forward_backward_mac_proxy": 1597440000000,
+              "same_layer_pairwise_mac_proxy": 1024983040,
+              "training_examples": 1000000
+            },
+            "optimizer_state_bytes": 0,
+            "parameter_bytes": 2132992,
+            "probe_batch_size": 1024,
+            "probe_input_dim": 768
+          }
+        }
+      }
+    },
+    "online_continuation": {
+      "accuracy_difference": {
+        "bootstrap_samples": 10000,
+        "bootstrap_seed": 260803,
+        "by_seed": {
+          "1101": 0.00029999999999996696,
+          "1202": 0.0,
+          "1303": 0.0,
+          "1404": 9.999999999998899e-05,
+          "1505": 0.000500000000000056
+        },
+        "ci95_high": 0.00036000000000002697,
+        "ci95_low": 1.9999999999997796e-05,
+        "mean": 0.00018000000000000237,
+        "raw": [
+          0.00029999999999996696,
+          0.0,
+          0.0,
+          9.999999999998899e-05,
+          0.000500000000000056
+        ],
+        "sample_sd": 0.0002167948338868051,
+        "student_t_ci95_high": 0.00044918634023381364,
+        "student_t_ci95_low": -8.91863402338089e-05,
+        "student_t_degrees_of_freedom": 4
+      },
+      "effective_rank_difference": {
+        "bootstrap_samples": 10000,
+        "bootstrap_seed": 260803,
+        "by_seed": {
+          "1101": 0.3627293191094054,
+          "1202": 0.7420963347862966,
+          "1303": 1.2574852784857313,
+          "1404": -0.06601572236313302,
+          "1505": 0.5535776875941423
+        },
+        "ci95_high": 0.9754562978705792,
+        "ci95_low": 0.19123130252039006,
+        "mean": 0.5699745795224885,
+        "raw": [
+          0.3627293191094054,
+          0.7420963347862966,
+          1.2574852784857313,
+          -0.06601572236313302,
+          0.5535776875941423
+        ],
+        "sample_sd": 0.48733971209649574,
+        "student_t_ci95_high": 1.1750867549276949,
+        "student_t_ci95_low": -0.0351375958827177,
+        "student_t_degrees_of_freedom": 4
+      },
+      "lateral_delta_l2": {
+        "bootstrap_samples": 10000,
+        "bootstrap_seed": 260803,
+        "by_seed": {
+          "1101": 22.09086087125631,
+          "1202": 23.679265425345957,
+          "1303": 22.914958136476802,
+          "1404": 20.48179078259783,
+          "1505": 21.746483529491325
+        },
+        "ci95_high": 23.067819594250633,
+        "ci95_low": 21.221362802752324,
+        "mean": 22.182671749033645,
+        "raw": [
+          22.09086087125631,
+          23.679265425345957,
+          22.914958136476802,
+          20.48179078259783,
+          21.746483529491325
+        ],
+        "sample_sd": 1.211169006305677,
+        "student_t_ci95_high": 23.68653669990363,
+        "student_t_ci95_low": 20.67880679816366,
+        "student_t_degrees_of_freedom": 4
+      },
+      "mean_loss": {
+        "bootstrap_samples": 10000,
+        "bootstrap_seed": 260803,
+        "by_seed": {
+          "1101": 0.8048252128198743,
+          "1202": 0.8060748538628221,
+          "1303": 0.866618970450759,
+          "1404": 0.6986727075874806,
+          "1505": 0.7348476473718881
+        },
+        "ci95_high": 0.8300425722894073,
+        "ci95_low": 0.7276126594150065,
+        "mean": 0.7822078784185648,
+        "raw": [
+          0.8048252128198743,
+          0.8060748538628221,
+          0.866618970450759,
+          0.6986727075874806,
+          0.7348476473718881
+        ],
+        "sample_sd": 0.06600667587622863,
+        "student_t_ci95_high": 0.8641659914951827,
+        "student_t_ci95_low": 0.7002497653419468,
+        "student_t_degrees_of_freedom": 4
+      },
+      "offline_accuracy": {
+        "bootstrap_samples": 10000,
+        "bootstrap_seed": 260803,
+        "by_seed": {
+          "1101": 0.9637,
+          "1202": 0.9647,
+          "1303": 0.9671,
+          "1404": 0.9633,
+          "1505": 0.9651
+        },
+        "ci95_high": 0.96602,
+        "ci95_low": 0.9637399999999999,
+        "mean": 0.9647799999999999,
+        "raw": [
+          0.9637,
+          0.9647,
+          0.9671,
+          0.9633,
+          0.9651
+        ],
+        "sample_sd": 0.001487279395406227,
+        "student_t_ci95_high": 0.9666267012805461,
+        "student_t_ci95_low": 0.9629332987194537,
+        "student_t_degrees_of_freedom": 4
+      },
+      "online_accuracy": {
+        "bootstrap_samples": 10000,
+        "bootstrap_seed": 260803,
+        "by_seed": {
+          "1101": 0.964,
+          "1202": 0.9647,
+          "1303": 0.9671,
+          "1404": 0.9634,
+          "1505": 0.9656
+        },
+        "ci95_high": 0.9661799999999999,
+        "ci95_low": 0.9639,
+        "mean": 0.9649599999999999,
+        "raw": [
+          0.964,
+          0.9647,
+          0.9671,
+          0.9634,
+          0.9656
+        ],
+        "sample_sd": 0.001450172403543782,
+        "student_t_ci95_high": 0.9667606268646689,
+        "student_t_ci95_low": 0.963159373135331,
+        "student_t_degrees_of_freedom": 4
+      },
+      "parameter_delta_l2": {
+        "bootstrap_samples": 10000,
+        "bootstrap_seed": 260803,
+        "by_seed": {
+          "1101": 0.04577571340307624,
+          "1202": 0.04884392001843985,
+          "1303": 0.05126669511581199,
+          "1404": 0.04372093067610524,
+          "1505": 0.046516189114348544
+        },
+        "ci95_high": 0.04968394375379041,
+        "ci95_low": 0.0451018954545423,
+        "mean": 0.047224689665556374,
+        "raw": [
+          0.04577571340307624,
+          0.04884392001843985,
+          0.05126669511581199,
+          0.04372093067610524,
+          0.046516189114348544
+        ],
+        "sample_sd": 0.00290850250524422,
+        "student_t_ci95_high": 0.05083607251500358,
+        "student_t_ci95_low": 0.04361330681610917,
+        "student_t_degrees_of_freedom": 4
+      }
+    },
+    "schema_version": 1
+  }
+}

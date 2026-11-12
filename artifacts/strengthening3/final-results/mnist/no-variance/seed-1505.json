@@ -1,0 +1,350 @@
+{
+  "class_structure_diagnostics": {
+    "between_class_scatter": 2.434373095714084e-05,
+    "between_within_scatter_ratio": 0.0015373074724823492,
+    "mean_prototype_cosine": 0.9995481691748659,
+    "median_unit_class_selectivity": 0.11463174229629232,
+    "nearest_centroid_accuracy": 0.1639,
+    "observed_classes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "p90_unit_class_selectivity": 0.17932963491392168,
+    "within_class_scatter": 0.015835303862689283
+  },
+  "dataset": "mnist",
+  "dataset_metadata": {
+    "dataset": "MNIST",
+    "source_sha256": {
+      "t10k-images-idx3-ubyte.gz": "8d422c7b0a1c1c79245a5bcf07fe86e33eeafee792b84584aec276f5a2dbc4e6",
+      "t10k-labels-idx1-ubyte.gz": "f7ae60f92e00ec6debd23a6088c31dbd2371eca3ffa0defaefb259924204aec6",
+      "train-images-idx3-ubyte.gz": "440fcabf73cc546fa21475e81ea370265605f56be210a4024d2ca8f203523609",
+      "train-labels-idx1-ubyte.gz": "3552534a0a558bbed6aed32b30c495cca23d567ec52cac8be1a0730e8010255c"
+    },
+    "source_test_rows": 10000,
+    "source_train_rows": 60000,
+    "split_seed": 1701,
+    "validation_source": "official_train"
+  },
+  "encoder_config": {
+    "activation": "relu",
+    "audit_lateral_proxy": false,
+    "audit_residual_components": false,
+    "augmentation": "none",
+    "batch_norm_calibration_passes": 0,
+    "batch_size": 1,
+    "chunk_size": 16,
+    "combined_lateral_state_weight": 0.5911099660677379,
+    "contrastive_temperature": 0.2,
+    "covariance_coefficient": 0.6061334936982908,
+    "epochs": 2,
+    "gradient_accumulation_steps": 1,
+    "hidden_dims": [
+      512,
+      256
+    ],
+    "incsfa_learning_rate": 0.001,
+    "incsfa_output_dim": null,
+    "incsfa_whitening_dim": null,
+    "inference_mode": "offline",
+    "input_shape": [
+      3,
+      32,
+      32
+    ],
+    "lateral_matrix_mode": "combined",
+    "lateral_momentum": 0.995,
+    "learning_rate": 0.013870266872900201,
+    "locally_connected": null,
+    "method": "terel_residual",
+    "normalization": "none",
+    "normalization_affine": true,
+    "normalization_momentum": 0.9,
+    "online_learning_rate_scale": 1.0,
+    "optimizer": "plain_sgd",
+    "optimizer_beta1": 0.9,
+    "optimizer_beta2": 0.999,
+    "optimizer_epsilon": 1e-08,
+    "optimizer_momentum": 0.9,
+    "order_mode": "class_chunks",
+    "postsynaptic_state_mode": "exact",
+    "residual_lateral_coefficient": 0.5749502865863861,
+    "residual_lateral_include_diagonal": true,
+    "residual_lateral_moment_normalization": "none",
+    "residual_lateral_rule": "dual_inhibitory",
+    "residual_lateral_signal_offset": 0,
+    "residual_lateral_step_size": 0.1,
+    "residual_lateral_steps": 1,
+    "sfa_components": null,
+    "similarity_coefficient": 1.0,
+    "statistics_momentum": 0.99,
+    "temporal_term_enabled": true,
+    "training_mode": "joint",
+    "variance_coefficient": 0.0,
+    "variance_target": 1.0,
+    "weight_decay": 1e-06
+  },
+  "encoder_training": {
+    "auxiliary_parameter_numel": 327680,
+    "base_residual_state_rms_mean": [
+      0.007538113334122639,
+      0.003971467949086878
+    ],
+    "causal_dynamic_state_numel": 2306,
+    "covariance_state_rms_mean": [
+      0.0,
+      0.0
+    ],
+    "dynamic_state_numel": 329986,
+    "epochs": 2,
+    "epochs_per_layer": 2,
+    "examples": 100000,
+    "gradient_accumulation_steps": 1,
+    "lateral_proxy_audited_batches": [
+      0,
+      0
+    ],
+    "lateral_proxy_cosine_mean": [
+      0.0,
+      0.0
+    ],
+    "lateral_proxy_norm_ratio_mean": [
+      0.0,
+      0.0
+    ],
+    "lateral_proxy_relative_error_mean": [
+      0.0,
+      0.0
+    ],
+    "layer_lateral_delta_l2": [
+      0.005006540101021528,
+      0.0005030470783822238
+    ],
+    "layer_parameter_delta_l2": [
+      2.120226006370651,
+      0.1303434181841356
+    ],
+    "mean_loss": 0.0006772202112016949,
+    "optimizer_steps": 100000,
+    "parameter_numel": 533248,
+    "peak_device_memory_bytes": 78240256,
+    "residual_dynamics_delta_rms_mean": [
+      6.259882039730525e-05,
+      1.5549190457294295e-06
+    ],
+    "residual_lateral_delta_l2": [
+      0.0,
+      0.0
+    ],
+    "residual_state_rms_mean": [
+      0.007508094623176815,
+      0.0039706901563818465
+    ],
+    "seconds": 1369.6397522259504,
+    "steps": 100000,
+    "temporal_state_rms_mean": [
+      0.0,
+      0.0
+    ],
+    "training_mode": "joint",
+    "variance_state_rms_mean": [
+      0.0,
+      0.0
+    ]
+  },
+  "evaluation_split": "test",
+  "manifest_code_commit": "036e8617c59ef6ed063a2f119467e870a8b44b6c",
+  "manifest_configuration_sha256": "4d4b84fafe999e4982f18daa3355842b7af124575f8a02226d9585d73dd79fe2",
+  "manifest_path": "/home/davwis/main/workspace/terel-paper-internal/strengthening-2/artifacts/strengthening3/manifest.json",
+  "method": "terel_residual",
+  "metrics": {
+    "accuracy": 0.1518,
+    "balanced_accuracy": 0.14033880361089174,
+    "confusion_matrix": [
+      [
+        36,
+        799,
+        23,
+        10,
+        10,
+        26,
+        16,
+        29,
+        16,
+        15
+      ],
+      [
+        6,
+        1066,
+        6,
+        6,
+        5,
+        9,
+        11,
+        15,
+        6,
+        5
+      ],
+      [
+        20,
+        783,
+        73,
+        25,
+        21,
+        20,
+        34,
+        24,
+        13,
+        19
+      ],
+      [
+        16,
+        854,
+        21,
+        39,
+        13,
+        10,
+        13,
+        25,
+        7,
+        12
+      ],
+      [
+        9,
+        800,
+        15,
+        10,
+        60,
+        29,
+        19,
+        16,
+        7,
+        17
+      ],
+      [
+        24,
+        647,
+        31,
+        15,
+        14,
+        97,
+        17,
+        21,
+        14,
+        12
+      ],
+      [
+        15,
+        780,
+        16,
+        8,
+        16,
+        18,
+        61,
+        27,
+        11,
+        6
+      ],
+      [
+        13,
+        843,
+        20,
+        20,
+        9,
+        19,
+        14,
+        63,
+        11,
+        16
+      ],
+      [
+        9,
+        880,
+        9,
+        11,
+        11,
+        12,
+        11,
+        11,
+        14,
+        6
+      ],
+      [
+        6,
+        944,
+        2,
+        6,
+        6,
+        9,
+        6,
+        15,
+        6,
+        9
+      ]
+    ],
+    "macro_f1": 0.09920680347703591,
+    "support": 10000
+  },
+  "normalization_calibration": null,
+  "online_inference": null,
+  "optimizer_dynamics": {
+    "decay_type": "coupled_l2",
+    "exact_leaky_integrator": true,
+    "optimizer": "plain_sgd",
+    "weight_decay": 1e-06,
+    "weight_retention_per_step": 0.9999999861297332
+  },
+  "paired_inference": null,
+  "probe_config": {
+    "batch_size": 1024,
+    "epochs": 60,
+    "learning_rate": 0.3,
+    "optimizer": "plain_sgd",
+    "readout": "all",
+    "standardize": true,
+    "weight_decay": 0.0
+  },
+  "probe_training": {
+    "epochs": 60,
+    "examples": 3000000,
+    "final_loss": 2.118842601776123,
+    "seconds": 6.432186583057046,
+    "steps": 2940
+  },
+  "representation_diagnostics": {
+    "active_feature_fraction": 0.00390625,
+    "effective_rank": 130.22142081280677,
+    "mean_absolute_offdiagonal_correlation": 0.039767515312529644,
+    "mean_feature_variance": 2.065058280422712e-05,
+    "median_feature_variance": 1.5050939418600406e-05,
+    "temporal_slowness": 4.130559728694598e-05
+  },
+  "resource_accounting": {
+    "auxiliary_parameter_bytes": 1310720,
+    "causal_dynamic_state_bytes": 9218,
+    "dynamic_state_bytes": 1319938,
+    "encoder_batch_size": 1,
+    "normalization_calibration_batches": 0,
+    "normalization_calibration_examples": 0,
+    "normalization_calibration_seconds": 0.0,
+    "operation_proxy": {
+      "linear_forward_backward_mac_proxy": 159744000000,
+      "same_layer_pairwise_mac_proxy": 131072000000,
+      "training_examples": 100000
+    },
+    "optimizer_state_bytes": 0,
+    "parameter_bytes": 2132992,
+    "probe_batch_size": 1024,
+    "probe_input_dim": 768
+  },
+  "run_id": "no-variance",
+  "seed": 1505
+}

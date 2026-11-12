@@ -1,0 +1,83 @@
+{
+ "reference_probe": {
+  "epochs": 60,
+  "batch_size": 1024,
+  "optimizer": "plain_sgd",
+  "learning_rate": 0.01,
+  "weight_decay": 0.0,
+  "readout": "all",
+  "standardize": true
+ },
+ "reference_accuracy": 0.9803,
+ "encoder": {
+  "method": "terel_offline",
+  "hidden_dims": [
+   512,
+   256
+  ],
+  "activation": "relu",
+  "normalization": "none",
+  "epochs": 20,
+  "batch_size": 128,
+  "order_mode": "class_chunks",
+  "chunk_size": 16,
+  "optimizer": "plain_sgd",
+  "learning_rate": 0.4,
+  "weight_decay": 1e-06,
+  "similarity_coefficient": 1.0,
+  "variance_coefficient": 2.5299242416163943,
+  "covariance_coefficient": 0.021847119973486238,
+  "variance_target": 0.8627892708624838
+ },
+ "diagnostics": {
+  "median_feature_variance": 0.5007315067060963,
+  "mean_feature_variance": 0.4483310480178795,
+  "effective_rank": 21.598109883051077,
+  "active_feature_fraction": 1.0,
+  "mean_absolute_offdiagonal_correlation": 0.13052855768951452,
+  "temporal_slowness": 0.8981116519445279
+ },
+ "paired_inference": null,
+ "grid": [
+  {
+   "learning_rate": 0.01,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.9803,
+   "final_loss": 0.018102800473570824
+  },
+  {
+   "learning_rate": 0.03,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.9817,
+   "final_loss": 0.012304007075726986
+  },
+  {
+   "learning_rate": 0.1,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.9836,
+   "final_loss": 0.0071950638666749
+  },
+  {
+   "learning_rate": 0.3,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.9848,
+   "final_loss": 0.00392420357093215
+  },
+  {
+   "learning_rate": 1.0,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.985,
+   "final_loss": 0.001702544279396534
+  }
+ ]
+}

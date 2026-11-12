@@ -1,0 +1,638 @@
+{
+  "class_structure_diagnostics": {
+    "between_class_scatter": 62.92309782466792,
+    "between_within_scatter_ratio": 0.1966998371697957,
+    "mean_prototype_cosine": 0.9938505871748392,
+    "median_unit_class_selectivity": 1.1066394635147285,
+    "nearest_centroid_accuracy": 0.9089,
+    "observed_classes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "p90_unit_class_selectivity": 1.674003100321237,
+    "within_class_scatter": 319.894000574852
+  },
+  "dataset": "mnist",
+  "dataset_metadata": {
+    "dataset": "MNIST",
+    "source_sha256": {
+      "t10k-images-idx3-ubyte.gz": "8d422c7b0a1c1c79245a5bcf07fe86e33eeafee792b84584aec276f5a2dbc4e6",
+      "t10k-labels-idx1-ubyte.gz": "f7ae60f92e00ec6debd23a6088c31dbd2371eca3ffa0defaefb259924204aec6",
+      "train-images-idx3-ubyte.gz": "440fcabf73cc546fa21475e81ea370265605f56be210a4024d2ca8f203523609",
+      "train-labels-idx1-ubyte.gz": "3552534a0a558bbed6aed32b30c495cca23d567ec52cac8be1a0730e8010255c"
+    },
+    "source_test_rows": 10000,
+    "source_train_rows": 60000,
+    "split_seed": 1701,
+    "validation_source": "official_train"
+  },
+  "encoder_config": {
+    "activation": "relu",
+    "audit_lateral_proxy": false,
+    "audit_residual_components": false,
+    "augmentation": "none",
+    "batch_norm_calibration_passes": 0,
+    "batch_size": 1,
+    "chunk_size": 16,
+    "combined_lateral_state_weight": 0.5911099660677379,
+    "contrastive_temperature": 0.2,
+    "covariance_coefficient": 0.6061334936982908,
+    "epochs": 2,
+    "gradient_accumulation_steps": 1,
+    "hidden_dims": [
+      512,
+      256
+    ],
+    "incsfa_learning_rate": 0.001,
+    "incsfa_output_dim": null,
+    "incsfa_whitening_dim": null,
+    "inference_mode": "paired",
+    "input_shape": [
+      3,
+      32,
+      32
+    ],
+    "lateral_matrix_mode": "combined",
+    "lateral_momentum": 0.995,
+    "learning_rate": 0.013870266872900201,
+    "locally_connected": null,
+    "method": "terel_residual",
+    "normalization": "none",
+    "normalization_affine": true,
+    "normalization_momentum": 0.9,
+    "online_learning_rate_scale": 1.0,
+    "optimizer": "plain_sgd",
+    "optimizer_beta1": 0.9,
+    "optimizer_beta2": 0.999,
+    "optimizer_epsilon": 1e-08,
+    "optimizer_momentum": 0.9,
+    "order_mode": "class_chunks",
+    "postsynaptic_state_mode": "exact",
+    "residual_lateral_coefficient": 0.5749502865863861,
+    "residual_lateral_include_diagonal": true,
+    "residual_lateral_moment_normalization": "none",
+    "residual_lateral_rule": "dual_inhibitory",
+    "residual_lateral_signal_offset": 0,
+    "residual_lateral_step_size": 0.1,
+    "residual_lateral_steps": 1,
+    "sfa_components": null,
+    "similarity_coefficient": 1.0,
+    "statistics_momentum": 0.99,
+    "temporal_term_enabled": true,
+    "training_mode": "joint",
+    "variance_coefficient": 3.001981471213246,
+    "variance_target": 1.0,
+    "weight_decay": 1e-06
+  },
+  "encoder_training": {
+    "auxiliary_parameter_numel": 327680,
+    "base_residual_state_rms_mean": [
+      0.674541661625281,
+      0.7350452880499512
+    ],
+    "causal_dynamic_state_numel": 2306,
+    "covariance_state_rms_mean": [
+      0.0,
+      0.0
+    ],
+    "dynamic_state_numel": 329986,
+    "epochs": 2,
+    "epochs_per_layer": 2,
+    "examples": 100000,
+    "gradient_accumulation_steps": 1,
+    "lateral_proxy_audited_batches": [
+      0,
+      0
+    ],
+    "lateral_proxy_cosine_mean": [
+      0.0,
+      0.0
+    ],
+    "lateral_proxy_norm_ratio_mean": [
+      0.0,
+      0.0
+    ],
+    "lateral_proxy_relative_error_mean": [
+      0.0,
+      0.0
+    ],
+    "layer_lateral_delta_l2": [
+      19.144887924194336,
+      17.345916748046875
+    ],
+    "layer_parameter_delta_l2": [
+      14.576140533417659,
+      10.403902505024769
+    ],
+    "mean_loss": 0.78321579785374,
+    "optimizer_steps": 100000,
+    "parameter_numel": 533248,
+    "peak_device_memory_bytes": 78240256,
+    "residual_dynamics_delta_rms_mean": [
+      0.0930702253428736,
+      0.18279395260641268
+    ],
+    "residual_lateral_delta_l2": [
+      0.0,
+      0.0
+    ],
+    "residual_state_rms_mean": [
+      0.6125106531833857,
+      0.620103860728927
+    ],
+    "seconds": 1418.448682409944,
+    "steps": 100000,
+    "temporal_state_rms_mean": [
+      0.0,
+      0.0
+    ],
+    "training_mode": "joint",
+    "variance_state_rms_mean": [
+      0.0,
+      0.0
+    ]
+  },
+  "evaluation_split": "test",
+  "manifest_code_commit": "036e8617c59ef6ed063a2f119467e870a8b44b6c",
+  "manifest_configuration_sha256": "4d4b84fafe999e4982f18daa3355842b7af124575f8a02226d9585d73dd79fe2",
+  "manifest_path": "/home/davwis/main/workspace/terel-paper-internal/strengthening-2/artifacts/strengthening3/manifest.json",
+  "method": "terel_residual",
+  "metrics": {
+    "accuracy": 0.9671,
+    "balanced_accuracy": 0.9667274021001759,
+    "confusion_matrix": [
+      [
+        964,
+        0,
+        2,
+        0,
+        1,
+        5,
+        2,
+        1,
+        3,
+        2
+      ],
+      [
+        0,
+        1124,
+        1,
+        2,
+        0,
+        1,
+        2,
+        2,
+        3,
+        0
+      ],
+      [
+        3,
+        3,
+        989,
+        7,
+        3,
+        3,
+        4,
+        10,
+        5,
+        5
+      ],
+      [
+        2,
+        0,
+        6,
+        972,
+        0,
+        14,
+        0,
+        3,
+        8,
+        5
+      ],
+      [
+        1,
+        0,
+        1,
+        0,
+        958,
+        0,
+        4,
+        3,
+        0,
+        15
+      ],
+      [
+        3,
+        2,
+        2,
+        13,
+        1,
+        850,
+        6,
+        4,
+        8,
+        3
+      ],
+      [
+        6,
+        2,
+        4,
+        1,
+        5,
+        8,
+        929,
+        1,
+        2,
+        0
+      ],
+      [
+        0,
+        5,
+        9,
+        7,
+        4,
+        1,
+        0,
+        987,
+        2,
+        13
+      ],
+      [
+        4,
+        1,
+        7,
+        9,
+        4,
+        7,
+        3,
+        2,
+        932,
+        5
+      ],
+      [
+        3,
+        6,
+        1,
+        4,
+        12,
+        3,
+        0,
+        9,
+        5,
+        966
+      ]
+    ],
+    "macro_f1": 0.9667578525132997,
+    "support": 10000
+  },
+  "normalization_calibration": null,
+  "online_inference": {
+    "examples": 10000,
+    "labels_accessed": false,
+    "lateral_delta_l2": 26.89112661138777,
+    "mean_loss": 0.8502029184013605,
+    "optimizer_steps": 10000,
+    "parameter_delta_l2": 3.617639419032075,
+    "seconds": 174.00030780408997
+  },
+  "optimizer_dynamics": {
+    "decay_type": "coupled_l2",
+    "exact_leaky_integrator": true,
+    "optimizer": "plain_sgd",
+    "weight_decay": 1e-06,
+    "weight_retention_per_step": 0.9999999861297332
+  },
+  "paired_inference": {
+    "accuracy_difference": -0.6533,
+    "offline": {
+      "metrics": {
+        "accuracy": 0.9671,
+        "balanced_accuracy": 0.9667274021001759,
+        "confusion_matrix": [
+          [
+            964,
+            0,
+            2,
+            0,
+            1,
+            5,
+            2,
+            1,
+            3,
+            2
+          ],
+          [
+            0,
+            1124,
+            1,
+            2,
+            0,
+            1,
+            2,
+            2,
+            3,
+            0
+          ],
+          [
+            3,
+            3,
+            989,
+            7,
+            3,
+            3,
+            4,
+            10,
+            5,
+            5
+          ],
+          [
+            2,
+            0,
+            6,
+            972,
+            0,
+            14,
+            0,
+            3,
+            8,
+            5
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            958,
+            0,
+            4,
+            3,
+            0,
+            15
+          ],
+          [
+            3,
+            2,
+            2,
+            13,
+            1,
+            850,
+            6,
+            4,
+            8,
+            3
+          ],
+          [
+            6,
+            2,
+            4,
+            1,
+            5,
+            8,
+            929,
+            1,
+            2,
+            0
+          ],
+          [
+            0,
+            5,
+            9,
+            7,
+            4,
+            1,
+            0,
+            987,
+            2,
+            13
+          ],
+          [
+            4,
+            1,
+            7,
+            9,
+            4,
+            7,
+            3,
+            2,
+            932,
+            5
+          ],
+          [
+            3,
+            6,
+            1,
+            4,
+            12,
+            3,
+            0,
+            9,
+            5,
+            966
+          ]
+        ],
+        "macro_f1": 0.9667578525132997,
+        "support": 10000
+      },
+      "representation_diagnostics": {
+        "active_feature_fraction": 0.9895833333333334,
+        "effective_rank": 85.88333408995575,
+        "mean_absolute_offdiagonal_correlation": 0.07051815164003893,
+        "mean_feature_variance": 0.49845976354104166,
+        "median_feature_variance": 0.5517831422621718,
+        "temporal_slowness": 0.9842392515045563
+      }
+    },
+    "online": {
+      "metrics": {
+        "accuracy": 0.3138,
+        "balanced_accuracy": 0.3138163489152443,
+        "confusion_matrix": [
+          [
+            625,
+            6,
+            4,
+            0,
+            67,
+            11,
+            7,
+            13,
+            13,
+            234
+          ],
+          [
+            55,
+            321,
+            3,
+            4,
+            79,
+            8,
+            57,
+            27,
+            0,
+            581
+          ],
+          [
+            209,
+            62,
+            146,
+            5,
+            20,
+            5,
+            55,
+            30,
+            5,
+            495
+          ],
+          [
+            81,
+            51,
+            9,
+            97,
+            24,
+            9,
+            24,
+            0,
+            14,
+            701
+          ],
+          [
+            79,
+            2,
+            4,
+            1,
+            270,
+            15,
+            33,
+            48,
+            1,
+            529
+          ],
+          [
+            139,
+            63,
+            2,
+            21,
+            24,
+            108,
+            43,
+            7,
+            18,
+            467
+          ],
+          [
+            200,
+            16,
+            11,
+            0,
+            1,
+            61,
+            433,
+            1,
+            4,
+            231
+          ],
+          [
+            127,
+            104,
+            33,
+            27,
+            9,
+            4,
+            39,
+            73,
+            22,
+            590
+          ],
+          [
+            102,
+            32,
+            6,
+            6,
+            44,
+            3,
+            26,
+            3,
+            156,
+            596
+          ],
+          [
+            12,
+            11,
+            2,
+            10,
+            45,
+            10,
+            3,
+            0,
+            7,
+            909
+          ]
+        ],
+        "macro_f1": 0.2948007574841319,
+        "support": 10000
+      },
+      "representation_diagnostics": {
+        "active_feature_fraction": 0.9947916666666666,
+        "effective_rank": 13.040214758278383,
+        "mean_absolute_offdiagonal_correlation": 0.06144447240670332,
+        "mean_feature_variance": 1.193430253712763,
+        "median_feature_variance": 0.6260111874154749,
+        "temporal_slowness": 2.365771656566043
+      }
+    },
+    "same_fitted_probe": true,
+    "same_trained_checkpoint": true
+  },
+  "probe_config": {
+    "batch_size": 1024,
+    "epochs": 60,
+    "learning_rate": 0.3,
+    "optimizer": "plain_sgd",
+    "readout": "all",
+    "standardize": true,
+    "weight_decay": 0.0
+  },
+  "probe_training": {
+    "epochs": 60,
+    "examples": 3000000,
+    "final_loss": 0.06732173264026642,
+    "seconds": 7.58399583294522,
+    "steps": 2940
+  },
+  "representation_diagnostics": {
+    "active_feature_fraction": 0.9895833333333334,
+    "effective_rank": 85.88333408995575,
+    "mean_absolute_offdiagonal_correlation": 0.07051815164003893,
+    "mean_feature_variance": 0.49845976354104166,
+    "median_feature_variance": 0.5517831422621718,
+    "temporal_slowness": 0.9842392515045563
+  },
+  "resource_accounting": {
+    "auxiliary_parameter_bytes": 1310720,
+    "causal_dynamic_state_bytes": 9218,
+    "dynamic_state_bytes": 1319938,
+    "encoder_batch_size": 1,
+    "normalization_calibration_batches": 0,
+    "normalization_calibration_examples": 0,
+    "normalization_calibration_seconds": 0.0,
+    "operation_proxy": {
+      "linear_forward_backward_mac_proxy": 159744000000,
+      "same_layer_pairwise_mac_proxy": 131072000000,
+      "training_examples": 100000
+    },
+    "optimizer_state_bytes": 0,
+    "parameter_bytes": 2132992,
+    "probe_batch_size": 1024,
+    "probe_input_dim": 768
+  },
+  "run_id": "terel",
+  "seed": 1303
+}

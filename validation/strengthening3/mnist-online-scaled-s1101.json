@@ -1,0 +1,349 @@
+{
+ "reference_probe": {
+  "epochs": 60,
+  "batch_size": 1024,
+  "optimizer": "plain_sgd",
+  "learning_rate": 0.3,
+  "weight_decay": 0.0,
+  "readout": "all",
+  "standardize": true
+ },
+ "reference_accuracy": 0.9648,
+ "encoder": {
+  "method": "terel_residual",
+  "hidden_dims": [
+   512,
+   256
+  ],
+  "activation": "relu",
+  "normalization": "none",
+  "training_mode": "joint",
+  "augmentation": "none",
+  "gradient_accumulation_steps": 1,
+  "epochs": 2,
+  "batch_size": 1,
+  "order_mode": "class_chunks",
+  "chunk_size": 16,
+  "optimizer": "plain_sgd",
+  "learning_rate": 0.013870266872900201,
+  "weight_decay": 1e-06,
+  "similarity_coefficient": 1.0,
+  "variance_coefficient": 3.001981471213246,
+  "covariance_coefficient": 0.6061334936982908,
+  "variance_target": 1.0,
+  "statistics_momentum": 0.99,
+  "lateral_momentum": 0.995,
+  "residual_lateral_rule": "dual_inhibitory",
+  "residual_lateral_coefficient": 0.5749502865863861,
+  "residual_lateral_steps": 1,
+  "residual_lateral_step_size": 0.1,
+  "residual_lateral_include_diagonal": true,
+  "residual_lateral_moment_normalization": "none",
+  "residual_lateral_signal_offset": 0,
+  "postsynaptic_state_mode": "exact",
+  "lateral_matrix_mode": "combined",
+  "combined_lateral_state_weight": 0.5911099660677379,
+  "temporal_term_enabled": true,
+  "inference_mode": "paired",
+  "online_learning_rate_scale": 0.001
+ },
+ "diagnostics": {
+  "median_feature_variance": 0.5486487831367752,
+  "mean_feature_variance": 0.483812420833327,
+  "effective_rank": 90.00868318485229,
+  "active_feature_fraction": 0.9869791666666666,
+  "mean_absolute_offdiagonal_correlation": 0.0683390354555513,
+  "temporal_slowness": 0.9650321342748567
+ },
+ "paired_inference": {
+  "same_trained_checkpoint": true,
+  "same_fitted_probe": true,
+  "offline": {
+   "metrics": {
+    "accuracy": 0.9648,
+    "support": 10000,
+    "macro_f1": 0.964460963846056,
+    "balanced_accuracy": 0.9645200182576857,
+    "confusion_matrix": [
+     [
+      971,
+      0,
+      0,
+      0,
+      1,
+      4,
+      7,
+      0,
+      2,
+      2
+     ],
+     [
+      0,
+      1104,
+      3,
+      2,
+      4,
+      1,
+      0,
+      4,
+      3,
+      3
+     ],
+     [
+      0,
+      4,
+      952,
+      12,
+      4,
+      1,
+      5,
+      7,
+      5,
+      3
+     ],
+     [
+      3,
+      4,
+      13,
+      956,
+      0,
+      22,
+      0,
+      3,
+      15,
+      6
+     ],
+     [
+      2,
+      2,
+      1,
+      0,
+      934,
+      0,
+      4,
+      7,
+      4,
+      20
+     ],
+     [
+      2,
+      1,
+      0,
+      13,
+      3,
+      863,
+      5,
+      0,
+      12,
+      5
+     ],
+     [
+      2,
+      0,
+      3,
+      0,
+      6,
+      4,
+      970,
+      0,
+      0,
+      1
+     ],
+     [
+      1,
+      0,
+      8,
+      2,
+      6,
+      2,
+      0,
+      1016,
+      1,
+      8
+     ],
+     [
+      3,
+      3,
+      3,
+      10,
+      2,
+      5,
+      3,
+      3,
+      933,
+      10
+     ],
+     [
+      4,
+      0,
+      0,
+      4,
+      5,
+      5,
+      0,
+      17,
+      7,
+      949
+     ]
+    ]
+   },
+   "representation_diagnostics": {
+    "median_feature_variance": 0.5486487831367752,
+    "mean_feature_variance": 0.483812420833327,
+    "effective_rank": 90.00868318485229,
+    "active_feature_fraction": 0.9869791666666666,
+    "mean_absolute_offdiagonal_correlation": 0.0683390354555513,
+    "temporal_slowness": 0.9650321342748567
+   }
+  },
+  "online": {
+   "metrics": {
+    "accuracy": 0.9651,
+    "support": 10000,
+    "macro_f1": 0.9647691138075413,
+    "balanced_accuracy": 0.9648471485317922,
+    "confusion_matrix": [
+     [
+      972,
+      0,
+      0,
+      0,
+      1,
+      4,
+      6,
+      0,
+      2,
+      2
+     ],
+     [
+      0,
+      1103,
+      4,
+      2,
+      4,
+      1,
+      0,
+      5,
+      3,
+      2
+     ],
+     [
+      1,
+      2,
+      957,
+      11,
+      4,
+      2,
+      4,
+      5,
+      5,
+      2
+     ],
+     [
+      3,
+      3,
+      13,
+      956,
+      0,
+      22,
+      0,
+      4,
+      16,
+      5
+     ],
+     [
+      1,
+      2,
+      1,
+      0,
+      933,
+      0,
+      4,
+      8,
+      4,
+      21
+     ],
+     [
+      2,
+      1,
+      0,
+      13,
+      3,
+      864,
+      4,
+      0,
+      12,
+      5
+     ],
+     [
+      2,
+      0,
+      3,
+      0,
+      6,
+      4,
+      970,
+      0,
+      0,
+      1
+     ],
+     [
+      1,
+      0,
+      8,
+      2,
+      6,
+      2,
+      0,
+      1015,
+      2,
+      8
+     ],
+     [
+      3,
+      3,
+      3,
+      10,
+      2,
+      5,
+      3,
+      3,
+      933,
+      10
+     ],
+     [
+      3,
+      0,
+      0,
+      6,
+      4,
+      5,
+      0,
+      18,
+      7,
+      948
+     ]
+    ]
+   },
+   "representation_diagnostics": {
+    "median_feature_variance": 0.5507789248038092,
+    "mean_feature_variance": 0.484609992786498,
+    "effective_rank": 90.41451549427296,
+    "active_feature_fraction": 0.9869791666666666,
+    "mean_absolute_offdiagonal_correlation": 0.06857328328102316,
+    "temporal_slowness": 0.9666372903405838
+   }
+  },
+  "accuracy_difference": 0.00029999999999996696
+ },
+ "grid": [
+  {
+   "learning_rate": 0.3,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.9648,
+   "final_loss": 0.06691471487283707
+  }
+ ]
+}

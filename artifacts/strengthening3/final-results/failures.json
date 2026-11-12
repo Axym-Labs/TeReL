@@ -1,0 +1,16 @@
+{
+  "no-covariance": {
+    "dataset": "mnist",
+    "error": "FloatingPointError: TeReL objective became non-finite",
+    "failed_seeds": [
+      1101,
+      1202,
+      1303,
+      1404,
+      1505
+    ],
+    "manifest_configuration_sha256": "4d4b84fafe999e4982f18daa3355842b7af124575f8a02226d9585d73dd79fe2",
+    "run_id": "no-covariance",
+    "status": "non-finite"
+  }
+}

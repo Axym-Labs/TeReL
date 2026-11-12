@@ -1,0 +1,463 @@
+{
+  "code_commit": "036e8617c59ef6ed063a2f119467e870a8b44b6c",
+  "configuration": {
+    "datasets": {
+      "mnist": {
+        "data_root": "/home/davwis/main/data/mnist",
+        "num_classes": 10,
+        "runs": [
+          {
+            "encoder": {
+              "activation": "relu",
+              "augmentation": "none",
+              "batch_size": 1,
+              "chunk_size": 16,
+              "combined_lateral_state_weight": 0.5911099660677379,
+              "covariance_coefficient": 0.6061334936982908,
+              "epochs": 2,
+              "gradient_accumulation_steps": 1,
+              "hidden_dims": [
+                512,
+                256
+              ],
+              "inference_mode": "paired",
+              "lateral_matrix_mode": "combined",
+              "lateral_momentum": 0.995,
+              "learning_rate": 0.013870266872900201,
+              "method": "terel_residual",
+              "normalization": "none",
+              "optimizer": "plain_sgd",
+              "order_mode": "class_chunks",
+              "postsynaptic_state_mode": "exact",
+              "residual_lateral_coefficient": 0.5749502865863861,
+              "residual_lateral_include_diagonal": true,
+              "residual_lateral_moment_normalization": "none",
+              "residual_lateral_rule": "dual_inhibitory",
+              "residual_lateral_signal_offset": 0,
+              "residual_lateral_step_size": 0.1,
+              "residual_lateral_steps": 1,
+              "similarity_coefficient": 1.0,
+              "statistics_momentum": 0.99,
+              "temporal_term_enabled": true,
+              "training_mode": "joint",
+              "variance_coefficient": 3.001981471213246,
+              "variance_target": 1.0,
+              "weight_decay": 1e-06
+            },
+            "id": "terel",
+            "probe": {
+              "learning_rate": 0.3
+            }
+          },
+          {
+            "encoder": {
+              "activation": "relu",
+              "batch_size": 128,
+              "chunk_size": 16,
+              "covariance_coefficient": 0.021847119973486238,
+              "epochs": 20,
+              "hidden_dims": [
+                512,
+                256
+              ],
+              "learning_rate": 0.4,
+              "method": "terel_offline",
+              "normalization": "none",
+              "optimizer": "plain_sgd",
+              "order_mode": "class_chunks",
+              "similarity_coefficient": 1.0,
+              "variance_coefficient": 2.5299242416163943,
+              "variance_target": 0.8627892708624838,
+              "weight_decay": 1e-06
+            },
+            "id": "terel-offline",
+            "probe": {
+              "learning_rate": 1.0
+            }
+          },
+          {
+            "encoder": {
+              "activation": "relu",
+              "hidden_dims": [
+                512,
+                256
+              ],
+              "method": "random",
+              "normalization": "none"
+            },
+            "id": "random",
+            "probe": {
+              "learning_rate": 0.1
+            }
+          },
+          {
+            "encoder": {
+              "hidden_dims": [
+                512,
+                256
+              ],
+              "method": "supervised_linear"
+            },
+            "id": "supervised-linear",
+            "probe": {
+              "learning_rate": 0.1
+            }
+          },
+          {
+            "encoder": {
+              "activation": "relu",
+              "batch_size": 64,
+              "epochs": 10,
+              "hidden_dims": [
+                512,
+                256
+              ],
+              "learning_rate": 0.3,
+              "method": "bp",
+              "normalization": "none",
+              "optimizer": "plain_sgd",
+              "weight_decay": 0.0
+            },
+            "id": "supervised-offline",
+            "probe": {
+              "learning_rate": 0.3
+            }
+          },
+          {
+            "encoder": {
+              "activation": "leaky_relu",
+              "batch_size": 256,
+              "chunk_size": 16,
+              "contrastive_temperature": 0.1,
+              "epochs": 60,
+              "hidden_dims": [
+                512,
+                256
+              ],
+              "learning_rate": 0.3,
+              "method": "local_supcon",
+              "normalization": "batch_norm",
+              "optimizer": "plain_sgd",
+              "order_mode": "class_chunks",
+              "weight_decay": 0.0
+            },
+            "id": "layer-local-supcon",
+            "probe": {
+              "learning_rate": 0.3
+            }
+          },
+          {
+            "encoder": {
+              "chunk_size": 16,
+              "hidden_dims": [
+                256
+              ],
+              "method": "sfa",
+              "order_mode": "class_chunks",
+              "sfa_components": 256
+            },
+            "id": "batch-sfa",
+            "probe": {
+              "learning_rate": 1.0
+            }
+          },
+          {
+            "encoder": {
+              "chunk_size": 16,
+              "epochs": 1,
+              "hidden_dims": [
+                32
+              ],
+              "incsfa_learning_rate": 0.001,
+              "incsfa_output_dim": 32,
+              "incsfa_whitening_dim": 32,
+              "method": "incsfa",
+              "order_mode": "class_chunks"
+            },
+            "id": "incremental-sfa",
+            "probe": {
+              "learning_rate": 1.0
+            }
+          },
+          {
+            "encoder": {
+              "activation": "relu",
+              "augmentation": "none",
+              "batch_size": 1,
+              "chunk_size": 16,
+              "combined_lateral_state_weight": 0.5911099660677379,
+              "covariance_coefficient": 0.6061334936982908,
+              "epochs": 2,
+              "gradient_accumulation_steps": 1,
+              "hidden_dims": [
+                512,
+                256
+              ],
+              "inference_mode": "offline",
+              "lateral_matrix_mode": "combined",
+              "lateral_momentum": 0.995,
+              "learning_rate": 0.013870266872900201,
+              "method": "terel_residual",
+              "normalization": "none",
+              "optimizer": "plain_sgd",
+              "order_mode": "class_chunks",
+              "postsynaptic_state_mode": "exact",
+              "residual_lateral_coefficient": 0.5749502865863861,
+              "residual_lateral_include_diagonal": true,
+              "residual_lateral_moment_normalization": "none",
+              "residual_lateral_rule": "dual_inhibitory",
+              "residual_lateral_signal_offset": 0,
+              "residual_lateral_step_size": 0.1,
+              "residual_lateral_steps": 1,
+              "similarity_coefficient": 1.0,
+              "statistics_momentum": 0.99,
+              "temporal_term_enabled": false,
+              "training_mode": "joint",
+              "variance_coefficient": 3.001981471213246,
+              "variance_target": 1.0,
+              "weight_decay": 1e-06
+            },
+            "id": "no-temporal",
+            "probe": {
+              "learning_rate": 0.3
+            }
+          },
+          {
+            "encoder": {
+              "activation": "relu",
+              "augmentation": "none",
+              "batch_size": 1,
+              "chunk_size": 16,
+              "combined_lateral_state_weight": 0.5911099660677379,
+              "covariance_coefficient": 0.6061334936982908,
+              "epochs": 2,
+              "gradient_accumulation_steps": 1,
+              "hidden_dims": [
+                512,
+                256
+              ],
+              "inference_mode": "offline",
+              "lateral_matrix_mode": "combined",
+              "lateral_momentum": 0.995,
+              "learning_rate": 0.013870266872900201,
+              "method": "terel_residual",
+              "normalization": "none",
+              "optimizer": "plain_sgd",
+              "order_mode": "class_chunks",
+              "postsynaptic_state_mode": "exact",
+              "residual_lateral_coefficient": 0.5749502865863861,
+              "residual_lateral_include_diagonal": true,
+              "residual_lateral_moment_normalization": "none",
+              "residual_lateral_rule": "dual_inhibitory",
+              "residual_lateral_signal_offset": 0,
+              "residual_lateral_step_size": 0.1,
+              "residual_lateral_steps": 1,
+              "similarity_coefficient": 1.0,
+              "statistics_momentum": 0.99,
+              "temporal_term_enabled": true,
+              "training_mode": "joint",
+              "variance_coefficient": 0.0,
+              "variance_target": 1.0,
+              "weight_decay": 1e-06
+            },
+            "id": "no-variance",
+            "probe": {
+              "learning_rate": 0.3
+            }
+          },
+          {
+            "encoder": {
+              "activation": "relu",
+              "augmentation": "none",
+              "batch_size": 1,
+              "chunk_size": 16,
+              "combined_lateral_state_weight": 0.5911099660677379,
+              "covariance_coefficient": 0.0,
+              "epochs": 2,
+              "gradient_accumulation_steps": 1,
+              "hidden_dims": [
+                512,
+                256
+              ],
+              "inference_mode": "offline",
+              "lateral_matrix_mode": "combined",
+              "lateral_momentum": 0.995,
+              "learning_rate": 0.013870266872900201,
+              "method": "terel_residual",
+              "normalization": "none",
+              "optimizer": "plain_sgd",
+              "order_mode": "class_chunks",
+              "postsynaptic_state_mode": "exact",
+              "residual_lateral_coefficient": 0.5749502865863861,
+              "residual_lateral_include_diagonal": true,
+              "residual_lateral_moment_normalization": "none",
+              "residual_lateral_rule": "dual_inhibitory",
+              "residual_lateral_signal_offset": 0,
+              "residual_lateral_step_size": 0.1,
+              "residual_lateral_steps": 1,
+              "similarity_coefficient": 1.0,
+              "statistics_momentum": 0.99,
+              "temporal_term_enabled": true,
+              "training_mode": "joint",
+              "variance_coefficient": 3.001981471213246,
+              "variance_target": 1.0,
+              "weight_decay": 1e-06
+            },
+            "id": "no-covariance",
+            "probe": {
+              "learning_rate": 0.3
+            }
+          },
+          {
+            "encoder": {
+              "activation": "relu",
+              "augmentation": "none",
+              "batch_size": 1,
+              "chunk_size": 16,
+              "combined_lateral_state_weight": 0.5911099660677379,
+              "covariance_coefficient": 0.6061334936982908,
+              "epochs": 2,
+              "gradient_accumulation_steps": 1,
+              "hidden_dims": [
+                512,
+                256
+              ],
+              "inference_mode": "offline",
+              "lateral_matrix_mode": "combined",
+              "lateral_momentum": 0.995,
+              "learning_rate": 0.013870266872900201,
+              "method": "terel_residual",
+              "normalization": "none",
+              "optimizer": "plain_sgd",
+              "order_mode": "shuffled",
+              "postsynaptic_state_mode": "exact",
+              "residual_lateral_coefficient": 0.5749502865863861,
+              "residual_lateral_include_diagonal": true,
+              "residual_lateral_moment_normalization": "none",
+              "residual_lateral_rule": "dual_inhibitory",
+              "residual_lateral_signal_offset": 0,
+              "residual_lateral_step_size": 0.1,
+              "residual_lateral_steps": 1,
+              "similarity_coefficient": 1.0,
+              "statistics_momentum": 0.99,
+              "temporal_term_enabled": true,
+              "training_mode": "joint",
+              "variance_coefficient": 3.001981471213246,
+              "variance_target": 1.0,
+              "weight_decay": 1e-06
+            },
+            "id": "shuffled-order",
+            "probe": {
+              "learning_rate": 0.3
+            }
+          },
+          {
+            "encoder": {
+              "activation": "relu",
+              "augmentation": "none",
+              "batch_size": 1,
+              "chunk_size": 16,
+              "combined_lateral_state_weight": 0.5911099660677379,
+              "covariance_coefficient": 0.6061334936982908,
+              "epochs": 2,
+              "gradient_accumulation_steps": 1,
+              "hidden_dims": [
+                512,
+                256
+              ],
+              "inference_mode": "paired",
+              "lateral_matrix_mode": "combined",
+              "lateral_momentum": 0.995,
+              "learning_rate": 0.013870266872900201,
+              "method": "terel_residual",
+              "normalization": "none",
+              "online_learning_rate_scale": 0.001,
+              "optimizer": "plain_sgd",
+              "order_mode": "class_chunks",
+              "postsynaptic_state_mode": "exact",
+              "residual_lateral_coefficient": 0.5749502865863861,
+              "residual_lateral_include_diagonal": true,
+              "residual_lateral_moment_normalization": "none",
+              "residual_lateral_rule": "dual_inhibitory",
+              "residual_lateral_signal_offset": 0,
+              "residual_lateral_step_size": 0.1,
+              "residual_lateral_steps": 1,
+              "similarity_coefficient": 1.0,
+              "statistics_momentum": 0.99,
+              "temporal_term_enabled": true,
+              "training_mode": "joint",
+              "variance_coefficient": 3.001981471213246,
+              "variance_target": 1.0,
+              "weight_decay": 1e-06
+            },
+            "id": "terel-online-scaled",
+            "probe": {
+              "learning_rate": 0.3
+            }
+          }
+        ],
+        "selected_configuration_id": "terel-combined-trial-000"
+      }
+    },
+    "evaluation_split": "test",
+    "probe": {
+      "batch_size": 1024,
+      "epochs": 60,
+      "learning_rate": 0.3,
+      "optimizer": "plain_sgd",
+      "readout": "all",
+      "standardize": true,
+      "weight_decay": 0.0
+    },
+    "schema_version": 1,
+    "seeds": [
+      1101,
+      1202,
+      1303,
+      1404,
+      1505
+    ],
+    "selection_policy": "All gradient-trained components use plain SGD. Baseline learning rates and per-method probe learning rates were selected from strengthening3-validation-ledger.json; the TeReL configuration and continuation scale are unchanged from strengthening-2.",
+    "selection_seeds": [
+      401,
+      402,
+      403
+    ]
+  },
+  "configuration_sha256": "4d4b84fafe999e4982f18daa3355842b7af124575f8a02226d9585d73dd79fe2",
+  "environment": {
+    "cuda_devices": [
+      {
+        "compute_capability": "12.0",
+        "index": 0,
+        "name": "NVIDIA GeForce RTX 5090",
+        "total_memory_bytes": 33670758400
+      }
+    ],
+    "cuda_runtime": "13.0",
+    "cudnn": null,
+    "cudnn_error": "RuntimeError: cuDNN version incompatibility: PyTorch was compiled  against (9, 20, 0) but found runtime version (9, 19, 0). PyTorch already comes bundled with cuDNN. One option to resolving this error is to ensure PyTorch can find the bundled cuDNN. Looks like your LD_LIBRARY_PATH contains incompatible version of cudnn. Please either remove it from the path or install cudnn (9, 20, 0)",
+    "logical_cpu_count": 32,
+    "machine": "x86_64",
+    "packages": {
+      "PyYAML": "6.0.3",
+      "matplotlib": "3.11.1",
+      "numpy": "2.5.1",
+      "pandas": "3.0.5",
+      "scikit-learn": "1.9.0",
+      "scipy": "1.18.0",
+      "torch": "2.13.0",
+      "torchvision": "0.28.0"
+    },
+    "platform": "Linux-7.0.0-42-generic-x86_64-with-glibc2.43",
+    "python": "3.12.13",
+    "torch": "2.13.0+cu130"
+  },
+  "frozen": true,
+  "phase": "confirmatory",
+  "protocol_sha256": "c0dbf8fe16f40dfe227390b687ec339c2366eb8870eb9411e08e81557d2fd121",
+  "schema_version": 1,
+  "selection_complete": true,
+  "tracked_dirty": false,
+  "validation_ledger_sha256": "c8d7a3430eac779f7339a44099e7c02caaaaa87874a687fbbd5f135e9b91f98d"
+}

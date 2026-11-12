@@ -1,0 +1,347 @@
+schema_version: 1
+evaluation_split: test
+seeds:
+- 1101
+- 1202
+- 1303
+- 1404
+- 1505
+selection_seeds:
+- 401
+- 402
+- 403
+selection_policy: All gradient-trained components use plain SGD. Baseline learning
+  rates and per-method probe learning rates were selected from strengthening3-validation-ledger.json;
+  the TeReL configuration and continuation scale are unchanged from strengthening-2.
+probe:
+  epochs: 60
+  batch_size: 1024
+  optimizer: plain_sgd
+  learning_rate: 0.3
+  weight_decay: 0.0
+  readout: all
+  standardize: true
+datasets:
+  mnist:
+    data_root: /home/davwis/main/data/mnist
+    num_classes: 10
+    selected_configuration_id: terel-combined-trial-000
+    runs:
+    - id: terel
+      encoder:
+        method: terel_residual
+        hidden_dims:
+        - 512
+        - 256
+        activation: relu
+        normalization: none
+        training_mode: joint
+        augmentation: none
+        gradient_accumulation_steps: 1
+        epochs: 2
+        batch_size: 1
+        order_mode: class_chunks
+        chunk_size: 16
+        optimizer: plain_sgd
+        learning_rate: 0.013870266872900201
+        weight_decay: 1.0e-06
+        similarity_coefficient: 1.0
+        variance_coefficient: 3.001981471213246
+        covariance_coefficient: 0.6061334936982908
+        variance_target: 1.0
+        statistics_momentum: 0.99
+        lateral_momentum: 0.995
+        residual_lateral_rule: dual_inhibitory
+        residual_lateral_coefficient: 0.5749502865863861
+        residual_lateral_steps: 1
+        residual_lateral_step_size: 0.1
+        residual_lateral_include_diagonal: true
+        residual_lateral_moment_normalization: none
+        residual_lateral_signal_offset: 0
+        postsynaptic_state_mode: exact
+        lateral_matrix_mode: combined
+        combined_lateral_state_weight: 0.5911099660677379
+        temporal_term_enabled: true
+        inference_mode: paired
+      probe:
+        learning_rate: 0.3
+    - id: terel-offline
+      encoder:
+        method: terel_offline
+        hidden_dims:
+        - 512
+        - 256
+        activation: relu
+        normalization: none
+        epochs: 20
+        batch_size: 128
+        order_mode: class_chunks
+        chunk_size: 16
+        optimizer: plain_sgd
+        learning_rate: 0.4
+        weight_decay: 1.0e-06
+        similarity_coefficient: 1.0
+        variance_coefficient: 2.5299242416163943
+        covariance_coefficient: 0.021847119973486238
+        variance_target: 0.8627892708624838
+      probe:
+        learning_rate: 1.0
+    - id: random
+      encoder:
+        method: random
+        hidden_dims:
+        - 512
+        - 256
+        activation: relu
+        normalization: none
+      probe:
+        learning_rate: 0.1
+    - id: supervised-linear
+      encoder:
+        method: supervised_linear
+        hidden_dims:
+        - 512
+        - 256
+      probe:
+        learning_rate: 0.1
+    - id: supervised-offline
+      encoder:
+        method: bp
+        hidden_dims:
+        - 512
+        - 256
+        activation: relu
+        normalization: none
+        epochs: 10
+        batch_size: 64
+        optimizer: plain_sgd
+        learning_rate: 0.3
+        weight_decay: 0.0
+      probe:
+        learning_rate: 0.3
+    - id: layer-local-supcon
+      encoder:
+        method: local_supcon
+        hidden_dims:
+        - 512
+        - 256
+        activation: leaky_relu
+        normalization: batch_norm
+        epochs: 60
+        batch_size: 256
+        order_mode: class_chunks
+        chunk_size: 16
+        optimizer: plain_sgd
+        learning_rate: 0.3
+        weight_decay: 0.0
+        contrastive_temperature: 0.1
+      probe:
+        learning_rate: 0.3
+    - id: batch-sfa
+      encoder:
+        method: sfa
+        hidden_dims:
+        - 256
+        order_mode: class_chunks
+        chunk_size: 16
+        sfa_components: 256
+      probe:
+        learning_rate: 1.0
+    - id: incremental-sfa
+      encoder:
+        method: incsfa
+        hidden_dims:
+        - 32
+        epochs: 1
+        order_mode: class_chunks
+        chunk_size: 16
+        incsfa_whitening_dim: 32
+        incsfa_output_dim: 32
+        incsfa_learning_rate: 0.001
+      probe:
+        learning_rate: 1.0
+    - id: no-temporal
+      encoder:
+        method: terel_residual
+        hidden_dims: &id001
+        - 512
+        - 256
+        activation: relu
+        normalization: none
+        training_mode: joint
+        augmentation: none
+        gradient_accumulation_steps: 1
+        epochs: 2
+        batch_size: 1
+        order_mode: class_chunks
+        chunk_size: 16
+        optimizer: plain_sgd
+        learning_rate: 0.013870266872900201
+        weight_decay: 1.0e-06
+        similarity_coefficient: 1.0
+        variance_coefficient: 3.001981471213246
+        covariance_coefficient: 0.6061334936982908
+        variance_target: 1.0
+        statistics_momentum: 0.99
+        lateral_momentum: 0.995
+        residual_lateral_rule: dual_inhibitory
+        residual_lateral_coefficient: 0.5749502865863861
+        residual_lateral_steps: 1
+        residual_lateral_step_size: 0.1
+        residual_lateral_include_diagonal: true
+        residual_lateral_moment_normalization: none
+        residual_lateral_signal_offset: 0
+        postsynaptic_state_mode: exact
+        lateral_matrix_mode: combined
+        combined_lateral_state_weight: 0.5911099660677379
+        temporal_term_enabled: false
+        inference_mode: offline
+      probe:
+        learning_rate: 0.3
+    - id: no-variance
+      encoder:
+        method: terel_residual
+        hidden_dims: *id001
+        activation: relu
+        normalization: none
+        training_mode: joint
+        augmentation: none
+        gradient_accumulation_steps: 1
+        epochs: 2
+        batch_size: 1
+        order_mode: class_chunks
+        chunk_size: 16
+        optimizer: plain_sgd
+        learning_rate: 0.013870266872900201
+        weight_decay: 1.0e-06
+        similarity_coefficient: 1.0
+        variance_coefficient: 0.0
+        covariance_coefficient: 0.6061334936982908
+        variance_target: 1.0
+        statistics_momentum: 0.99
+        lateral_momentum: 0.995
+        residual_lateral_rule: dual_inhibitory
+        residual_lateral_coefficient: 0.5749502865863861
+        residual_lateral_steps: 1
+        residual_lateral_step_size: 0.1
+        residual_lateral_include_diagonal: true
+        residual_lateral_moment_normalization: none
+        residual_lateral_signal_offset: 0
+        postsynaptic_state_mode: exact
+        lateral_matrix_mode: combined
+        combined_lateral_state_weight: 0.5911099660677379
+        temporal_term_enabled: true
+        inference_mode: offline
+      probe:
+        learning_rate: 0.3
+    - id: no-covariance
+      encoder:
+        method: terel_residual
+        hidden_dims: *id001
+        activation: relu
+        normalization: none
+        training_mode: joint
+        augmentation: none
+        gradient_accumulation_steps: 1
+        epochs: 2
+        batch_size: 1
+        order_mode: class_chunks
+        chunk_size: 16
+        optimizer: plain_sgd
+        learning_rate: 0.013870266872900201
+        weight_decay: 1.0e-06
+        similarity_coefficient: 1.0
+        variance_coefficient: 3.001981471213246
+        covariance_coefficient: 0.0
+        variance_target: 1.0
+        statistics_momentum: 0.99
+        lateral_momentum: 0.995
+        residual_lateral_rule: dual_inhibitory
+        residual_lateral_coefficient: 0.5749502865863861
+        residual_lateral_steps: 1
+        residual_lateral_step_size: 0.1
+        residual_lateral_include_diagonal: true
+        residual_lateral_moment_normalization: none
+        residual_lateral_signal_offset: 0
+        postsynaptic_state_mode: exact
+        lateral_matrix_mode: combined
+        combined_lateral_state_weight: 0.5911099660677379
+        temporal_term_enabled: true
+        inference_mode: offline
+      probe:
+        learning_rate: 0.3
+    - id: shuffled-order
+      encoder:
+        method: terel_residual
+        hidden_dims: *id001
+        activation: relu
+        normalization: none
+        training_mode: joint
+        augmentation: none
+        gradient_accumulation_steps: 1
+        epochs: 2
+        batch_size: 1
+        order_mode: shuffled
+        chunk_size: 16
+        optimizer: plain_sgd
+        learning_rate: 0.013870266872900201
+        weight_decay: 1.0e-06
+        similarity_coefficient: 1.0
+        variance_coefficient: 3.001981471213246
+        covariance_coefficient: 0.6061334936982908
+        variance_target: 1.0
+        statistics_momentum: 0.99
+        lateral_momentum: 0.995
+        residual_lateral_rule: dual_inhibitory
+        residual_lateral_coefficient: 0.5749502865863861
+        residual_lateral_steps: 1
+        residual_lateral_step_size: 0.1
+        residual_lateral_include_diagonal: true
+        residual_lateral_moment_normalization: none
+        residual_lateral_signal_offset: 0
+        postsynaptic_state_mode: exact
+        lateral_matrix_mode: combined
+        combined_lateral_state_weight: 0.5911099660677379
+        temporal_term_enabled: true
+        inference_mode: offline
+      probe:
+        learning_rate: 0.3
+    - id: terel-online-scaled
+      encoder:
+        method: terel_residual
+        hidden_dims:
+        - 512
+        - 256
+        activation: relu
+        normalization: none
+        training_mode: joint
+        augmentation: none
+        gradient_accumulation_steps: 1
+        epochs: 2
+        batch_size: 1
+        order_mode: class_chunks
+        chunk_size: 16
+        optimizer: plain_sgd
+        learning_rate: 0.013870266872900201
+        weight_decay: 1.0e-06
+        similarity_coefficient: 1.0
+        variance_coefficient: 3.001981471213246
+        covariance_coefficient: 0.6061334936982908
+        variance_target: 1.0
+        statistics_momentum: 0.99
+        lateral_momentum: 0.995
+        residual_lateral_rule: dual_inhibitory
+        residual_lateral_coefficient: 0.5749502865863861
+        residual_lateral_steps: 1
+        residual_lateral_step_size: 0.1
+        residual_lateral_include_diagonal: true
+        residual_lateral_moment_normalization: none
+        residual_lateral_signal_offset: 0
+        postsynaptic_state_mode: exact
+        lateral_matrix_mode: combined
+        combined_lateral_state_weight: 0.5911099660677379
+        temporal_term_enabled: true
+        inference_mode: paired
+        online_learning_rate_scale: 0.001
+      probe:
+        learning_rate: 0.3

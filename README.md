@@ -9,12 +9,14 @@ an anti-Hebbian state--state contribution. No error signal crosses a learned
 layer or persists through time.
 
 On a class-chunked MNIST stream, the reported `784 → 512 → 256` encoder reaches
-**96.39 ± 0.19%** held-out linear-probe accuracy with plain SGD, batch size
+**96.48 ± 0.15%** held-out linear-probe accuracy with plain SGD, batch size
 one, and two presentations of the encoder-training observations. Random
-features reach 95.14 ± 0.27%, Layer-local SupCon reaches 96.95 ± 0.13%, and
-the spatially and temporally relaxed TeReL-Offline reference reaches
-98.39 ± 0.04%. Continued unlabeled updates with the validation-selected step
-reach 96.43 ± 0.15% using the same fitted probe.
+features reach 95.09 ± 0.23%, Layer-local SupCon reaches 96.95 ± 0.17%,
+supervised backpropagation reaches 98.44 ± 0.09%, and the spatially and
+temporally relaxed TeReL-Offline reference reaches 98.41 ± 0.04%. Continued
+unlabeled updates with the validation-selected step reach 96.50 ± 0.15% using
+the same fitted probe. Every trained component, including the linear probe and
+the references, uses plain SGD; the probe is trained on standardized features.
 
 The experiment uses class labels only to construct temporal adjacency; labels
 do not enter TeReL's target or synaptic updates. The paper therefore treats
@@ -52,22 +54,29 @@ not neuron independence or biological realism.
 
 ## Reproduce the reported analysis
 
-The complete comparison is declared in
-[`configs/strengthening2-final-matrix.yaml`](configs/strengthening2-final-matrix.yaml),
-and continued online evaluation is declared in
-[`configs/strengthening2-online-continuation.yaml`](configs/strengthening2-online-continuation.yaml).
-Held-out execution is guarded by a clean-repository manifest and an explicit
-authorization flag. Given the archived records, regenerate all reported
-summaries with:
+The complete comparison, including continued online evaluation, is declared in
+[`configs/strengthening3-final-matrix.yaml`](configs/strengthening3-final-matrix.yaml)
+under the protocol
+[`configs/strengthening3-protocol.yaml`](configs/strengthening3-protocol.yaml).
+Baseline and probe learning rates were selected on the validation split; the
+selection records are in [`validation/strengthening3/`](validation/strengthening3/)
+and were produced by `scripts/strengthening3_probe_selection.py`. Held-out
+execution (`scripts/strengthening3_run.sh`) is guarded by a clean-repository
+manifest and an explicit authorization flag. The held-out records are archived
+in [`artifacts/strengthening3/`](artifacts/strengthening3/); regenerate all
+reported summaries with:
 
 ```bash
 uv run python analysis/strengthening2_final_results.py \
-  --results artifacts/final-results \
-  --failure-ledger artifacts/final-results/failures.json \
+  --results artifacts/strengthening3/final-results \
+  --failure-ledger artifacts/strengthening3/final-results/failures.json \
   --online-continuation-results \
-    artifacts/online-continuation-final-results/mnist/terel-online-scaled \
-  --output artifacts/strengthening2-final-analysis-mnist.json
+    artifacts/strengthening3/final-results/mnist/terel-online-scaled \
+  --output artifacts/strengthening3/strengthening3-final-analysis-mnist.json
 ```
+
+The configuration files store the MNIST location as an absolute `data_root`;
+point it at a local copy to rerun (this changes the configuration hash).
 
 Execution commits, manifest hashes, and record digests are kept in
 [`ARTIFACT_README.md`](ARTIFACT_README.md), rather than in the manuscript.

@@ -6,7 +6,33 @@ audit the reported records. Runs use Python 3.12, deterministic PyTorch and
 cuDNN behavior, and the cuBLAS workspace configuration recorded by each
 manifest.
 
-## Held-out comparison matrix
+## Held-out comparison matrix (reported in the paper)
+
+All trained components use plain SGD and the linear probe is trained on
+standardized features (`configs/strengthening3-protocol.yaml`). The matrix
+includes the continued online evaluation.
+
+```text
+execution commit       036e8617c59ef6ed063a2f119467e870a8b44b6c
+manifest SHA-256       5a7edab7dd347e04a43b1a2eba3adea4dc992e49e10478afe692b9b8b47e8d71
+configuration SHA-256  4d4b84fafe999e4982f18daa3355842b7af124575f8a02226d9585d73dd79fe2
+protocol SHA-256       c0dbf8fe16f40dfe227390b687ec339c2366eb8870eb9411e08e81557d2fd121
+selection SHA-256      c8d7a3430eac779f7339a44099e7c02caaaaa87874a687fbbd5f135e9b91f98d
+record digest          e683b5172ea881eee488d967661c9b9b94d2fa5fc8f87f9d8882651cf9c592c0
+analysis SHA-256       8e72c3250ecb7dffaad2e6de8350990956db4edfba9217e076facb72ed46e8d0
+```
+
+The execution commit lies on the `cifar100` branch, which also holds
+exploratory CIFAR-100 code that is not part of the paper. The MNIST code path
+on `main` differs from it only by the absence of that code. Records, manifest,
+and analysis are archived in `artifacts/strengthening3/`. The probe learning
+rates were selected from {0.01, 0.03, 0.1, 0.3, 1}; the protocol file lists the
+candidates from 0.03, and 0.01 was never selected.
+
+The sections below document the preceding comparison (momentum and Adam
+optimizers for the references and the probe), kept for reference.
+
+## Earlier held-out comparison matrix
 
 ```text
 execution commit       fef59653cedc89d512f5a2298b30af7a485e2fd8
