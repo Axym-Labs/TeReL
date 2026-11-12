@@ -1,0 +1,1 @@
+bp-lc3264fc-lr0.3 reference 0.3672 best sgd {'learning_rate': 0.03, 'batch_size': 1024, 'weight_decay': 0.0, 'epochs': 60, 'accuracy': 0.3716, 'final_loss': 0.09531175345182419}

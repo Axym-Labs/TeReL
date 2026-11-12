@@ -1,0 +1,37 @@
+protocol_version: strengthening3-final-v1
+supersedes: strengthening2-final-v1
+change: >-
+  All gradient-trained components use plain SGD (no momentum, no Adam): the
+  linear probe, supervised backpropagation, TeReL-Offline, and layer-local
+  SupCon. Batch size remains a per-method choice. The linear probe is trained
+  on features standardized with training-split statistics, and its learning
+  rate is selected per method on the validation split.
+selection_split: validation
+evaluation_split: test
+selection_seeds: [401, 402, 403]
+evaluation_seeds: [1101, 1202, 1303, 1404, 1505]
+dataset:
+  name: MNIST
+  validation_size: 10000
+  split_seed: 1701
+representation_readout: concatenated_layers
+probe:
+  epochs: 60
+  batch_size: 1024
+  optimizer: plain_sgd
+  weight_decay: 0.0
+  standardize: true
+  learning_rate_candidates: [0.03, 0.1, 0.3, 1.0]
+selection_rules:
+  probe: >-
+    For each method, the probe learning rate with the highest mean validation
+    accuracy over the selection seeds. TeReL interventions inherit the TeReL
+    probe learning rate.
+  baselines: >-
+    Plain-SGD learning rates for supervised backpropagation, TeReL-Offline, and
+    layer-local SupCon were increased on selection seed 401 until accuracy
+    stopped improving or training diverged; the best value was repeated on
+    seeds 402 and 403.
+  local: >-
+    The TeReL configuration is unchanged from strengthening2-final-v1.
+reported_uncertainty: sample_standard_deviation_and_paired_student_t_interval

@@ -1,0 +1,142 @@
+evaluation_split: validation
+data_root: /home/davwis/main/data/mnist
+probe:
+  epochs: 60
+  batch_size: 1024
+  optimizer: plain_sgd
+  learning_rate: 0.01
+  weight_decay: 0.0
+  readout: all
+  standardize: true
+runs:
+- id: mnist-terel
+  encoder:
+    method: terel_residual
+    hidden_dims:
+    - 512
+    - 256
+    activation: relu
+    normalization: none
+    training_mode: joint
+    augmentation: none
+    gradient_accumulation_steps: 1
+    epochs: 2
+    batch_size: 1
+    order_mode: class_chunks
+    chunk_size: 16
+    optimizer: plain_sgd
+    learning_rate: 0.013870266872900201
+    weight_decay: 1.0e-06
+    similarity_coefficient: 1.0
+    variance_coefficient: 3.001981471213246
+    covariance_coefficient: 0.6061334936982908
+    variance_target: 1.0
+    statistics_momentum: 0.99
+    lateral_momentum: 0.995
+    residual_lateral_rule: dual_inhibitory
+    residual_lateral_coefficient: 0.5749502865863861
+    residual_lateral_steps: 1
+    residual_lateral_step_size: 0.1
+    residual_lateral_include_diagonal: true
+    residual_lateral_moment_normalization: none
+    residual_lateral_signal_offset: 0
+    postsynaptic_state_mode: exact
+    lateral_matrix_mode: combined
+    combined_lateral_state_weight: 0.5911099660677379
+    temporal_term_enabled: true
+    inference_mode: paired
+- id: mnist-random
+  encoder:
+    method: random
+    hidden_dims:
+    - 512
+    - 256
+    activation: relu
+    normalization: none
+- id: mnist-bp-lr0.3
+  encoder:
+    method: bp
+    hidden_dims:
+    - 512
+    - 256
+    activation: relu
+    normalization: none
+    epochs: 10
+    batch_size: 64
+    optimizer: plain_sgd
+    learning_rate: 0.3
+    weight_decay: 0.0
+- id: mnist-offline-lr0.4
+  encoder:
+    method: terel_offline
+    hidden_dims:
+    - 512
+    - 256
+    activation: relu
+    normalization: none
+    epochs: 20
+    batch_size: 128
+    order_mode: class_chunks
+    chunk_size: 16
+    optimizer: plain_sgd
+    learning_rate: 0.4
+    weight_decay: 1.0e-06
+    similarity_coefficient: 1.0
+    variance_coefficient: 2.5299242416163943
+    covariance_coefficient: 0.021847119973486238
+    variance_target: 0.8627892708624838
+- id: mnist-supcon-lr0.3
+  encoder:
+    method: local_supcon
+    hidden_dims: &id001
+    - 512
+    - 256
+    activation: leaky_relu
+    normalization: batch_norm
+    epochs: 60
+    batch_size: 256
+    order_mode: class_chunks
+    chunk_size: 16
+    optimizer: plain_sgd
+    learning_rate: 0.3
+    weight_decay: 0.0
+    contrastive_temperature: 0.1
+- id: mnist-supcon-lr1
+  encoder:
+    method: local_supcon
+    hidden_dims: *id001
+    activation: leaky_relu
+    normalization: batch_norm
+    epochs: 60
+    batch_size: 256
+    order_mode: class_chunks
+    chunk_size: 16
+    optimizer: plain_sgd
+    learning_rate: 1.0
+    weight_decay: 0.0
+    contrastive_temperature: 0.1
+- id: mnist-batch-sfa
+  encoder:
+    method: sfa
+    hidden_dims:
+    - 256
+    order_mode: class_chunks
+    chunk_size: 16
+    sfa_components: 256
+- id: mnist-incremental-sfa
+  encoder:
+    method: incsfa
+    hidden_dims:
+    - 32
+    epochs: 1
+    order_mode: class_chunks
+    chunk_size: 16
+    incsfa_whitening_dim: 32
+    incsfa_output_dim: 32
+    incsfa_learning_rate: 0.001
+- id: mnist-supervised-linear
+  encoder:
+    method: supervised_linear
+    hidden_dims:
+    - 512
+    - 256

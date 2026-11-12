@@ -1,0 +1,1 @@
+mnist-supcon-lr1 reference 0.9672 best sgd {'learning_rate': 0.1, 'batch_size': 1024, 'weight_decay': 0.0, 'epochs': 60, 'accuracy': 0.9702, 'final_loss': 0.03936603665351868}

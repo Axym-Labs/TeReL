@@ -1,0 +1,1 @@
+terel-lc3-lr1 reference 0.303 best sgd {'learning_rate': 0.03, 'batch_size': 1024, 'weight_decay': 0.0, 'epochs': 60, 'accuracy': 0.3064, 'final_loss': 1.1046521663665771}

@@ -232,7 +232,10 @@ def fit_linear_probe(
     learning_rate: float,
     weight_decay: float,
     device: torch.device,
+    standardize: bool = False,
 ):
+    """Fit a linear softmax head. With standardize=True the head is trained on features
+    z-scored with training statistics, and the affine map is folded into the returned layer."""
     if features.ndim != 2 or len(features) != len(labels):
         raise ValueError("features must be [samples, dimensions] and align with labels")
     if epochs <= 0 or batch_size <= 0:
@@ -246,6 +249,13 @@ def fit_linear_probe(
             momentum=0.9,
             weight_decay=weight_decay,
         )
+    elif optimizer_name == "plain_sgd":
+        optimizer = torch.optim.SGD(
+            probe.parameters(),
+            lr=learning_rate,
+            momentum=0.0,
+            weight_decay=weight_decay,
+        )
     elif optimizer_name == "adamw":
         optimizer = torch.optim.AdamW(
             probe.parameters(),
@@ -257,6 +267,12 @@ def fit_linear_probe(
 
     features = features.to(device)
     labels = labels.to(device)
+    if standardize:
+        mean = features.mean(dim=0)
+        scale = features.std(dim=0)
+        # Zero-variance features are left unscaled, as in scikit-learn's StandardScaler.
+        scale = torch.where(scale < 1e-6, torch.ones_like(scale), scale)
+        features = (features - mean) / scale
     generator = torch.Generator(device="cpu").manual_seed(seed)
     start_time = time.perf_counter()
     steps = 0
@@ -273,6 +289,10 @@ def fit_linear_probe(
             steps += 1
             final_loss = float(loss.detach())
     seconds = time.perf_counter() - start_time
+    if standardize:
+        with torch.no_grad():
+            probe.weight.div_(scale)
+            probe.bias.sub_(probe.weight @ mean)
     probe.eval()
     return probe, ProbeTrainingSummary(
         epochs=int(epochs),

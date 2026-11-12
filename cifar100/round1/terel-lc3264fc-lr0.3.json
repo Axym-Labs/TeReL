@@ -1,0 +1,118 @@
+{
+ "reference_probe": {
+  "epochs": 60,
+  "batch_size": 1024,
+  "optimizer": "plain_sgd",
+  "learning_rate": 0.01,
+  "weight_decay": 0.0,
+  "readout": "all"
+ },
+ "reference_accuracy": 0.294,
+ "encoder": {
+  "method": "terel_residual",
+  "hidden_dims": [
+   8192,
+   4096,
+   1024
+  ],
+  "activation": "relu",
+  "normalization": "streaming_norm",
+  "normalization_momentum": 0.99,
+  "normalization_affine": false,
+  "training_mode": "joint",
+  "augmentation": "none",
+  "gradient_accumulation_steps": 1,
+  "epochs": 2,
+  "batch_size": 1,
+  "order_mode": "class_chunks",
+  "chunk_size": 32,
+  "optimizer": "plain_sgd",
+  "learning_rate": 0.0017494806210948562,
+  "weight_decay": 1e-06,
+  "optimizer_momentum": 0.9,
+  "optimizer_beta1": 0.9,
+  "optimizer_beta2": 0.999,
+  "optimizer_epsilon": 1e-08,
+  "similarity_coefficient": 1.0,
+  "variance_coefficient": 1.1387811637298566,
+  "covariance_coefficient": 0.002174010554436946,
+  "variance_target": 0.397778513462228,
+  "statistics_momentum": 0.995,
+  "lateral_momentum": 0.99,
+  "contrastive_temperature": 0.2,
+  "sfa_components": null,
+  "incsfa_whitening_dim": null,
+  "incsfa_output_dim": null,
+  "incsfa_learning_rate": 0.001,
+  "audit_lateral_proxy": false,
+  "audit_residual_components": false,
+  "batch_norm_calibration_passes": 0,
+  "residual_lateral_steps": 1,
+  "residual_lateral_step_size": 0.1,
+  "residual_lateral_rule": "dual_inhibitory",
+  "residual_lateral_include_diagonal": true,
+  "residual_lateral_moment_normalization": "none",
+  "residual_lateral_coefficient": 0.03161859270876228,
+  "residual_lateral_signal_offset": 0,
+  "inference_mode": "offline",
+  "online_learning_rate_scale": 1.0,
+  "postsynaptic_state_mode": "exact",
+  "lateral_matrix_mode": "combined",
+  "combined_lateral_state_weight": 0.7736929831009864,
+  "temporal_term_enabled": true,
+  "locally_connected": [
+   [
+    32,
+    5,
+    2,
+    2
+   ],
+   [
+    64,
+    5,
+    2,
+    2
+   ],
+   null
+  ],
+  "input_shape": [
+   3,
+   32,
+   32
+  ]
+ },
+ "diagnostics": {
+  "median_feature_variance": 0.31989916829636006,
+  "mean_feature_variance": 0.33101771595608737,
+  "effective_rank": 55.50906127346912,
+  "active_feature_fraction": 1.0,
+  "mean_absolute_offdiagonal_correlation": 0.09745081315904974,
+  "temporal_slowness": 0.6624668900145747
+ },
+ "grid": [
+  {
+   "learning_rate": 0.003,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.2574,
+   "final_loss": 2.782700300216675
+  },
+  {
+   "learning_rate": 0.01,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.294,
+   "final_loss": 2.0809807777404785
+  },
+  {
+   "learning_rate": 0.03,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.301,
+   "final_loss": 1.290783166885376
+  }
+ ]
+}

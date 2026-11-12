@@ -1,0 +1,1 @@
+mnist-bp-lr0.03 reference 0.9751 best sgd {'learning_rate': 0.1, 'batch_size': 1024, 'weight_decay': 0.0, 'epochs': 60, 'accuracy': 0.979, 'final_loss': 0.02196531556546688}

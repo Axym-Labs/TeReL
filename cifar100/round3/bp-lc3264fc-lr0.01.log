@@ -1,0 +1,2 @@
+[W1112 12:30:13.128092028 CUDACachingAllocator.cpp:508] expandable_segments: memory mapping failed with OOM on device 0 while trying to map 20971520 bytes (free: 10813440, total: 33670758400).
+bp-lc3264fc-lr0.01 reference 0.314 best sgd {'learning_rate': 0.01, 'batch_size': 1024, 'weight_decay': 0.0, 'epochs': 60, 'accuracy': 0.314, 'final_loss': 1.5944408178329468}

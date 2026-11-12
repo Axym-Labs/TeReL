@@ -1,0 +1,2 @@
+[W1112 12:21:10.312854820 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 1291845632 bytes (free: 354025472, total: 33670758400).
+lcfc-lr0.3-chunk64 reference 0.2988 best sgd {'learning_rate': 0.01, 'batch_size': 1024, 'weight_decay': 0.0, 'epochs': 60, 'accuracy': 0.2988, 'final_loss': 1.7043726444244385}

@@ -1,0 +1,1 @@
+mnist-terel reference 0.9488 best sgd {'learning_rate': 0.1, 'batch_size': 1024, 'weight_decay': 0.0, 'epochs': 60, 'accuracy': 0.9649, 'final_loss': 0.08753938227891922}

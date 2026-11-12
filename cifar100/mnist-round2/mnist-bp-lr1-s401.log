@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/davwis/main/workspace/TeReL/cifar100/probe_grid.py", line 96, in <module>
+    main()
+  File "/home/davwis/main/workspace/TeReL/cifar100/probe_grid.py", line 83, in main
+    result, rows = run_with_grid(
+                   ^^^^^^^^^^^^^^
+  File "/home/davwis/main/workspace/TeReL/cifar100/probe_grid.py", line 37, in run_with_grid
+    result = experiments.run_representation_experiment(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/davwis/main/workspace/TeReL/terel/resubmission/experiments.py", line 1017, in run_representation_experiment
+    "representation_diagnostics": representation_diagnostics(
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/davwis/main/workspace/TeReL/terel/resubmission/evaluation.py", line 343, in representation_diagnostics
+    raise ValueError("representations contain non-finite values")
+ValueError: representations contain non-finite values

@@ -1,0 +1,71 @@
+evaluation_split: validation
+data_root: /home/davwis/main/data/cifar-100/cifar-100-python
+probe:
+  epochs: 60
+  batch_size: 1024
+  optimizer: plain_sgd
+  learning_rate: 0.01
+  weight_decay: 0.0
+  readout: all
+  standardize: true
+runs:
+- id: random-lc3264fc
+  encoder:
+    method: random
+    hidden_dims:
+    - 8192
+    - 4096
+    - 1024
+    locally_connected:
+    - - 32
+      - 5
+      - 2
+      - 2
+    - - 64
+      - 5
+      - 2
+      - 2
+    - null
+    activation: relu
+    normalization: none
+- id: random-lc3
+  encoder:
+    method: random
+    hidden_dims:
+    - 8192
+    - 4096
+    - 2048
+    locally_connected:
+    - - 32
+      - 5
+      - 2
+      - 2
+    - - 64
+      - 5
+      - 2
+      - 2
+    - - 128
+      - 3
+      - 2
+      - 1
+    activation: relu
+    normalization: none
+- id: random-lcfc
+  encoder:
+    method: random
+    hidden_dims:
+    - 4096
+    - 2048
+    - 1024
+    locally_connected:
+    - - 16
+      - 5
+      - 2
+      - 2
+    - - 32
+      - 5
+      - 2
+      - 2
+    - null
+    activation: relu
+    normalization: none

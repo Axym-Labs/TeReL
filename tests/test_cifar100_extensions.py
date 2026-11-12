@@ -48,3 +48,21 @@ def test_cifar_crop_flip_is_a_shifted_or_flipped_crop():
             for x in range(9)
         ]
         assert any(torch.equal(image, c) or torch.equal(image, c.flip(2)) for c in crops)
+
+
+def test_standardized_probe_ignores_constant_features():
+    import torch
+    from terel.resubmission.evaluation import fit_linear_probe
+
+    torch.manual_seed(0)
+    x = torch.randn(400, 4)
+    x[:, 3] = 0.0  # constant in training
+    y = (x[:, 0] > 0).long()
+    probe, _ = fit_linear_probe(x, y, num_classes=2, seed=0, epochs=30, batch_size=50,
+                                optimizer_name="plain_sgd", learning_rate=0.1, weight_decay=0.0,
+                                device=torch.device("cpu"), standardize=True)
+    test = torch.randn(200, 4)
+    test[:, 3] = 1.0  # active only at evaluation
+    logits = probe(test)
+    assert torch.isfinite(logits).all() and logits.abs().max() < 100
+    assert (logits.argmax(1) == (test[:, 0] > 0).long()).float().mean() > 0.9

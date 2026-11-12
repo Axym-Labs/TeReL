@@ -1,0 +1,1 @@
+random-lcfc reference 0.287 best sgd {'learning_rate': 0.01, 'batch_size': 1024, 'weight_decay': 0.0, 'epochs': 60, 'accuracy': 0.287, 'final_loss': 2.065599203109741}

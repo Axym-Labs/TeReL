@@ -1,0 +1,155 @@
+evaluation_split: validation
+data_root: /home/davwis/main/data/cifar-100/cifar-100-python
+probe:
+  epochs: 60
+  batch_size: 1024
+  optimizer: plain_sgd
+  learning_rate: 0.01
+  weight_decay: 0.0
+  readout: all
+  standardize: true
+runs:
+- id: bp-lcfc-lr0.01
+  encoder:
+    method: bp
+    hidden_dims: &id001
+    - 4096
+    - 2048
+    - 1024
+    locally_connected: &id002
+    - - 16
+      - 5
+      - 2
+      - 2
+    - - 32
+      - 5
+      - 2
+      - 2
+    - null
+    activation: relu
+    normalization: none
+    epochs: 20
+    batch_size: 64
+    optimizer: plain_sgd
+    learning_rate: 0.01
+    weight_decay: 0.0
+- id: bp-lcfc-lr0.03
+  encoder:
+    method: bp
+    hidden_dims: *id001
+    locally_connected: *id002
+    activation: relu
+    normalization: none
+    epochs: 20
+    batch_size: 64
+    optimizer: plain_sgd
+    learning_rate: 0.03
+    weight_decay: 0.0
+- id: bp-lcfc-lr0.1
+  encoder:
+    method: bp
+    hidden_dims: *id001
+    locally_connected: *id002
+    activation: relu
+    normalization: none
+    epochs: 20
+    batch_size: 64
+    optimizer: plain_sgd
+    learning_rate: 0.1
+    weight_decay: 0.0
+- id: bp-lc3264fc-lr0.01
+  encoder:
+    method: bp
+    hidden_dims: &id003
+    - 8192
+    - 4096
+    - 1024
+    locally_connected: &id004
+    - - 32
+      - 5
+      - 2
+      - 2
+    - - 64
+      - 5
+      - 2
+      - 2
+    - null
+    activation: relu
+    normalization: none
+    epochs: 20
+    batch_size: 64
+    optimizer: plain_sgd
+    learning_rate: 0.01
+    weight_decay: 0.0
+- id: bp-lc3264fc-lr0.03
+  encoder:
+    method: bp
+    hidden_dims: *id003
+    locally_connected: *id004
+    activation: relu
+    normalization: none
+    epochs: 20
+    batch_size: 64
+    optimizer: plain_sgd
+    learning_rate: 0.03
+    weight_decay: 0.0
+- id: bp-lc3264fc-lr0.1
+  encoder:
+    method: bp
+    hidden_dims: *id003
+    locally_connected: *id004
+    activation: relu
+    normalization: none
+    epochs: 20
+    batch_size: 64
+    optimizer: plain_sgd
+    learning_rate: 0.1
+    weight_decay: 0.0
+- id: bp-lcfc-lr0.3
+  encoder:
+    method: bp
+    hidden_dims:
+    - 4096
+    - 2048
+    - 1024
+    locally_connected:
+    - - 16
+      - 5
+      - 2
+      - 2
+    - - 32
+      - 5
+      - 2
+      - 2
+    - null
+    activation: relu
+    normalization: none
+    epochs: 20
+    batch_size: 64
+    optimizer: plain_sgd
+    learning_rate: 0.3
+    weight_decay: 0.0
+- id: bp-lc3264fc-lr0.3
+  encoder:
+    method: bp
+    hidden_dims:
+    - 8192
+    - 4096
+    - 1024
+    locally_connected:
+    - - 32
+      - 5
+      - 2
+      - 2
+    - - 64
+      - 5
+      - 2
+      - 2
+    - null
+    activation: relu
+    normalization: none
+    epochs: 20
+    batch_size: 64
+    optimizer: plain_sgd
+    learning_rate: 0.3
+    weight_decay: 0.0

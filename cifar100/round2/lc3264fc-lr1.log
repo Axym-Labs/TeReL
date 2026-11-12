@@ -1,0 +1,19 @@
+[W1112 12:37:50.190601004 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 2397044736 bytes (free: 1150943232, total: 33670758400).
+[W1112 12:37:50.580632055 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 150994944 bytes (free: 96075776, total: 33670758400).
+[W1112 12:37:50.580913524 CUDACachingAllocator.cpp:3933] memory allocation failed with OOM on device 0 while trying to allocate 150994944 bytes (free: 96075776, total: 33670758400).
+Traceback (most recent call last):
+  File "/home/davwis/main/workspace/TeReL/cifar100/probe_grid.py", line 95, in <module>
+    main()
+  File "/home/davwis/main/workspace/TeReL/cifar100/probe_grid.py", line 82, in main
+    result, rows = run_with_grid(
+                   ^^^^^^^^^^^^^^
+  File "/home/davwis/main/workspace/TeReL/cifar100/probe_grid.py", line 37, in run_with_grid
+    result = experiments.run_representation_experiment(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/davwis/main/workspace/TeReL/terel/resubmission/experiments.py", line 544, in run_representation_experiment
+    linear_probe, probe_training = fit_linear_probe(
+                                   ^^^^^^^^^^^^^^^^^
+  File "/home/davwis/main/workspace/TeReL/terel/resubmission/evaluation.py", line 271, in fit_linear_probe
+    mean = features.mean(dim=0)
+           ^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 144.00 MiB. GPU 0 has a total capacity of 31.36 GiB of which 91.62 MiB is free. Process 3563288 has 10.55 GiB memory in use. Process 3563290 has 10.55 GiB memory in use. Including non-PyTorch memory, this process has 4.27 GiB memory in use. Process 3570190 has 1.46 GiB memory in use. Process 3570386 has 1.46 GiB memory in use. Process 3570596 has 1.46 GiB memory in use. Process 3571925 has 1.46 GiB memory in use. Of the allocated memory 3.30 GiB is allocated by PyTorch, and 316.07 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)

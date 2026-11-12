@@ -1,0 +1,205 @@
+{
+ "reference_probe": {
+  "epochs": 60,
+  "batch_size": 2048,
+  "optimizer": "adamw",
+  "learning_rate": 0.003,
+  "weight_decay": 0.0001,
+  "readout": "all"
+ },
+ "reference_accuracy": 0.3418,
+ "grid": [
+  {
+   "learning_rate": 0.01,
+   "batch_size": 64,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.3436,
+   "final_loss": 0.015013337135314941
+  },
+  {
+   "learning_rate": 0.01,
+   "batch_size": 64,
+   "weight_decay": 0.0001,
+   "epochs": 60,
+   "accuracy": 0.3434,
+   "final_loss": 0.016419975087046623
+  },
+  {
+   "learning_rate": 0.01,
+   "batch_size": 256,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.3504,
+   "final_loss": 0.1583874523639679
+  },
+  {
+   "learning_rate": 0.01,
+   "batch_size": 256,
+   "weight_decay": 0.0001,
+   "epochs": 60,
+   "accuracy": 0.3504,
+   "final_loss": 0.16005641222000122
+  },
+  {
+   "learning_rate": 0.01,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.3558,
+   "final_loss": 0.49993202090263367
+  },
+  {
+   "learning_rate": 0.01,
+   "batch_size": 1024,
+   "weight_decay": 0.0001,
+   "epochs": 60,
+   "accuracy": 0.3558,
+   "final_loss": 0.5007789731025696
+  },
+  {
+   "learning_rate": 0.03,
+   "batch_size": 64,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.3384,
+   "final_loss": 0.0025100260972976685
+  },
+  {
+   "learning_rate": 0.03,
+   "batch_size": 64,
+   "weight_decay": 0.0001,
+   "epochs": 60,
+   "accuracy": 0.3368,
+   "final_loss": 0.005134689621627331
+  },
+  {
+   "learning_rate": 0.03,
+   "batch_size": 256,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.3448,
+   "final_loss": 0.048337507992982864
+  },
+  {
+   "learning_rate": 0.03,
+   "batch_size": 256,
+   "weight_decay": 0.0001,
+   "epochs": 60,
+   "accuracy": 0.3452,
+   "final_loss": 0.051006946712732315
+  },
+  {
+   "learning_rate": 0.03,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.3512,
+   "final_loss": 0.20056657493114471
+  },
+  {
+   "learning_rate": 0.03,
+   "batch_size": 1024,
+   "weight_decay": 0.0001,
+   "epochs": 60,
+   "accuracy": 0.3512,
+   "final_loss": 0.20209616422653198
+  },
+  {
+   "learning_rate": 0.1,
+   "batch_size": 64,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.3292,
+   "final_loss": 4.490657738642767e-05
+  },
+  {
+   "learning_rate": 0.1,
+   "batch_size": 64,
+   "weight_decay": 0.0001,
+   "epochs": 60,
+   "accuracy": 0.3288,
+   "final_loss": 0.00183106679469347
+  },
+  {
+   "learning_rate": 0.1,
+   "batch_size": 256,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.3402,
+   "final_loss": 0.008848601952195168
+  },
+  {
+   "learning_rate": 0.1,
+   "batch_size": 256,
+   "weight_decay": 0.0001,
+   "epochs": 60,
+   "accuracy": 0.3358,
+   "final_loss": 0.013977347873151302
+  },
+  {
+   "learning_rate": 0.1,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.3412,
+   "final_loss": 0.056594789028167725
+  },
+  {
+   "learning_rate": 0.1,
+   "batch_size": 1024,
+   "weight_decay": 0.0001,
+   "epochs": 60,
+   "accuracy": 0.34,
+   "final_loss": 0.05880678817629814
+  },
+  {
+   "learning_rate": 0.3,
+   "batch_size": 64,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.3294,
+   "final_loss": 0.0
+  },
+  {
+   "learning_rate": 0.3,
+   "batch_size": 64,
+   "weight_decay": 0.0001,
+   "epochs": 60,
+   "accuracy": 0.13,
+   "final_loss": 1.9004031419754028
+  },
+  {
+   "learning_rate": 0.3,
+   "batch_size": 256,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.3346,
+   "final_loss": 0.001299983006902039
+  },
+  {
+   "learning_rate": 0.3,
+   "batch_size": 256,
+   "weight_decay": 0.0001,
+   "epochs": 60,
+   "accuracy": 0.3312,
+   "final_loss": 0.003536417381837964
+  },
+  {
+   "learning_rate": 0.3,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.3338,
+   "final_loss": 0.011605584062635899
+  },
+  {
+   "learning_rate": 0.3,
+   "batch_size": 1024,
+   "weight_decay": 0.0001,
+   "epochs": 60,
+   "accuracy": 0.3396,
+   "final_loss": 0.010526560246944427
+  }
+ ]
+}

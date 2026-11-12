@@ -1,0 +1,380 @@
+{
+ "reference_probe": {
+  "epochs": 60,
+  "batch_size": 1024,
+  "optimizer": "plain_sgd",
+  "learning_rate": 0.01,
+  "weight_decay": 0.0,
+  "readout": "all",
+  "standardize": true
+ },
+ "reference_accuracy": 0.9483,
+ "encoder": {
+  "method": "terel_residual",
+  "hidden_dims": [
+   512,
+   256
+  ],
+  "activation": "relu",
+  "normalization": "none",
+  "training_mode": "joint",
+  "augmentation": "none",
+  "gradient_accumulation_steps": 1,
+  "epochs": 2,
+  "batch_size": 1,
+  "order_mode": "class_chunks",
+  "chunk_size": 16,
+  "optimizer": "plain_sgd",
+  "learning_rate": 0.013870266872900201,
+  "weight_decay": 1e-06,
+  "similarity_coefficient": 1.0,
+  "variance_coefficient": 3.001981471213246,
+  "covariance_coefficient": 0.6061334936982908,
+  "variance_target": 1.0,
+  "statistics_momentum": 0.99,
+  "lateral_momentum": 0.995,
+  "residual_lateral_rule": "dual_inhibitory",
+  "residual_lateral_coefficient": 0.5749502865863861,
+  "residual_lateral_steps": 1,
+  "residual_lateral_step_size": 0.1,
+  "residual_lateral_include_diagonal": true,
+  "residual_lateral_moment_normalization": "none",
+  "residual_lateral_signal_offset": 0,
+  "postsynaptic_state_mode": "exact",
+  "lateral_matrix_mode": "combined",
+  "combined_lateral_state_weight": 0.5911099660677379,
+  "temporal_term_enabled": true,
+  "inference_mode": "paired"
+ },
+ "diagnostics": {
+  "median_feature_variance": 0.553135245224143,
+  "mean_feature_variance": 0.49143875781294577,
+  "effective_rank": 90.72233825315544,
+  "active_feature_fraction": 0.9921875,
+  "mean_absolute_offdiagonal_correlation": 0.06712959457324318,
+  "temporal_slowness": 0.9797615581449256
+ },
+ "paired_inference": {
+  "same_trained_checkpoint": true,
+  "same_fitted_probe": true,
+  "offline": {
+   "metrics": {
+    "accuracy": 0.9483,
+    "support": 10000,
+    "macro_f1": 0.947837653254793,
+    "balanced_accuracy": 0.9479022169697229,
+    "confusion_matrix": [
+     [
+      973,
+      0,
+      0,
+      0,
+      0,
+      2,
+      7,
+      0,
+      3,
+      2
+     ],
+     [
+      1,
+      1098,
+      8,
+      2,
+      3,
+      2,
+      1,
+      1,
+      6,
+      2
+     ],
+     [
+      7,
+      6,
+      930,
+      12,
+      9,
+      0,
+      6,
+      9,
+      14,
+      0
+     ],
+     [
+      3,
+      3,
+      19,
+      935,
+      0,
+      29,
+      2,
+      6,
+      17,
+      8
+     ],
+     [
+      2,
+      3,
+      6,
+      1,
+      918,
+      3,
+      3,
+      6,
+      4,
+      28
+     ],
+     [
+      7,
+      0,
+      0,
+      18,
+      1,
+      846,
+      11,
+      2,
+      14,
+      5
+     ],
+     [
+      5,
+      3,
+      4,
+      0,
+      3,
+      6,
+      965,
+      0,
+      0,
+      0
+     ],
+     [
+      1,
+      6,
+      19,
+      3,
+      8,
+      0,
+      2,
+      991,
+      3,
+      11
+     ],
+     [
+      7,
+      14,
+      9,
+      11,
+      2,
+      8,
+      6,
+      4,
+      908,
+      6
+     ],
+     [
+      4,
+      3,
+      0,
+      7,
+      20,
+      5,
+      0,
+      26,
+      7,
+      919
+     ]
+    ]
+   },
+   "representation_diagnostics": {
+    "median_feature_variance": 0.553135245224143,
+    "mean_feature_variance": 0.49143875781294577,
+    "effective_rank": 90.72233825315544,
+    "active_feature_fraction": 0.9921875,
+    "mean_absolute_offdiagonal_correlation": 0.06712959457324318,
+    "temporal_slowness": 0.9797615581449256
+   }
+  },
+  "online": {
+   "metrics": {
+    "accuracy": 0.3286,
+    "support": 10000,
+    "macro_f1": 0.31661779092465303,
+    "balanced_accuracy": 0.33126683667181417,
+    "confusion_matrix": [
+     [
+      370,
+      0,
+      29,
+      54,
+      10,
+      219,
+      0,
+      238,
+      67,
+      0
+     ],
+     [
+      39,
+      164,
+      86,
+      124,
+      132,
+      316,
+      1,
+      164,
+      96,
+      2
+     ],
+     [
+      27,
+      6,
+      304,
+      225,
+      40,
+      159,
+      5,
+      108,
+      119,
+      0
+     ],
+     [
+      18,
+      0,
+      130,
+      546,
+      3,
+      129,
+      0,
+      145,
+      51,
+      0
+     ],
+     [
+      11,
+      1,
+      92,
+      115,
+      213,
+      187,
+      10,
+      233,
+      112,
+      0
+     ],
+     [
+      37,
+      0,
+      57,
+      118,
+      17,
+      503,
+      1,
+      143,
+      28,
+      0
+     ],
+     [
+      12,
+      1,
+      143,
+      42,
+      23,
+      384,
+      164,
+      127,
+      90,
+      0
+     ],
+     [
+      14,
+      0,
+      100,
+      40,
+      4,
+      322,
+      0,
+      546,
+      18,
+      0
+     ],
+     [
+      16,
+      1,
+      152,
+      55,
+      6,
+      227,
+      2,
+      107,
+      408,
+      1
+     ],
+     [
+      13,
+      0,
+      62,
+      193,
+      36,
+      207,
+      10,
+      270,
+      132,
+      68
+     ]
+    ]
+   },
+   "representation_diagnostics": {
+    "median_feature_variance": 0.6268187747257944,
+    "mean_feature_variance": 1.19044347889583,
+    "effective_rank": 12.415427542380709,
+    "active_feature_fraction": 0.9986979166666666,
+    "mean_absolute_offdiagonal_correlation": 0.060076146989119505,
+    "temporal_slowness": 2.3694849279621373
+   }
+  },
+  "accuracy_difference": -0.6197
+ },
+ "grid": [
+  {
+   "learning_rate": 0.01,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.9483,
+   "final_loss": 0.16181142628192902
+  },
+  {
+   "learning_rate": 0.03,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.9576,
+   "final_loss": 0.11246778070926666
+  },
+  {
+   "learning_rate": 0.1,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.9614,
+   "final_loss": 0.07982297986745834
+  },
+  {
+   "learning_rate": 0.3,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.963,
+   "final_loss": 0.05969488248229027
+  },
+  {
+   "learning_rate": 1.0,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.9578,
+   "final_loss": 0.04427164047956467
+  }
+ ]
+}

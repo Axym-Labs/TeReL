@@ -1,0 +1,1 @@
+mnist-offline-lr0.8 reference 0.9789 best sgd {'learning_rate': 0.1, 'batch_size': 1024, 'weight_decay': 0.0, 'epochs': 60, 'accuracy': 0.9821, 'final_loss': 0.016969485208392143}

@@ -97,6 +97,75 @@ FAMILIES = {"terel": configuration, "offline": offline_configuration, "snorm": s
             "snorm-lcfc": snorm_lcfc_configuration}
 
 
+LAYOUTS = {
+    "mnist": ((512, 256), None),
+    "lc1632": ((4096, 2048), ((16, 5, 2, 2), (32, 5, 2, 2))),
+    "lcfc": ((4096, 2048, 1024), ((16, 5, 2, 2), (32, 5, 2, 2), None)),
+    "lc3264": ((8192, 4096), ((32, 5, 2, 2), (64, 5, 2, 2))),
+    "lc3264fc": ((8192, 4096, 1024), ((32, 5, 2, 2), (64, 5, 2, 2), None)),
+    "lc3": ((8192, 4096, 2048), ((32, 5, 2, 2), (64, 5, 2, 2), (128, 3, 2, 1))),
+}
+
+
+def bp_sgd_configuration(trial, layout):
+    hidden, local = LAYOUTS[layout]
+    return EncoderExperimentConfig(
+        method="bp", hidden_dims=hidden, locally_connected=local, activation="relu",
+        normalization="none", optimizer="plain_sgd",
+        epochs=trial.suggest_categorical("epochs", (10, 20, 40)),
+        batch_size=trial.suggest_categorical("batch_size", (16, 32, 64, 128, 256)),
+        learning_rate=trial.suggest_float("learning_rate", 1e-3, 0.3, log=True),
+        weight_decay=trial.suggest_categorical("weight_decay", (0.0, 1e-5, 1e-4, 5e-4)),
+    )
+
+
+def offline_sgd_configuration(trial, layout):
+    hidden, local = LAYOUTS[layout]
+    return EncoderExperimentConfig(
+        method="terel_offline", hidden_dims=hidden, locally_connected=local, activation="relu",
+        normalization="none", order_mode="class_chunks", chunk_size=16, optimizer="plain_sgd",
+        epochs=trial.suggest_categorical("epochs", (5, 10, 20)),
+        batch_size=trial.suggest_categorical("subsequence_size", (32, 64, 128, 256)),
+        learning_rate=trial.suggest_float("learning_rate", 1e-3, 0.3, log=True),
+        weight_decay=trial.suggest_categorical("weight_decay", (0.0, 1e-6, 1e-5, 1e-4)),
+        similarity_coefficient=1.0,
+        variance_coefficient=trial.suggest_float("variance_coefficient", 0.1, 5.0, log=True),
+        covariance_coefficient=trial.suggest_float("covariance_coefficient", 0.001, 0.5, log=True),
+        variance_target=trial.suggest_float("variance_target", 0.5, 1.5),
+    )
+
+
+def terel_wide_configuration(trial, layout):
+    """TeReL-specific search: normalization, stream, lateral dynamics, and momenta."""
+    hidden, local = LAYOUTS[layout]
+    values = dict(BASE["runs"][0]["encoder"])
+    normalization = trial.suggest_categorical("normalization", ("none", "streaming_norm"))
+    values.update(
+        hidden_dims=hidden, locally_connected=local,
+        normalization=normalization, normalization_affine=False,
+        normalization_momentum=0.99,
+        epochs=trial.suggest_categorical("epochs", (1, 2, 4)),
+        chunk_size=trial.suggest_categorical("chunk_size", (8, 16, 32, 64)),
+        learning_rate=trial.suggest_float("learning_rate", 3e-4, 2e-2, log=True),
+        weight_decay=trial.suggest_categorical("weight_decay", (0.0, 1e-6, 1e-5)),
+        variance_coefficient=trial.suggest_float("variance_coefficient", 0.3, 5.0, log=True),
+        covariance_coefficient=trial.suggest_float("covariance_coefficient", 0.001, 0.2, log=True),
+        variance_target=trial.suggest_float("variance_target", 0.2, 1.2, log=True),
+        statistics_momentum=trial.suggest_categorical("statistics_momentum", (0.99, 0.995, 0.999)),
+        lateral_momentum=trial.suggest_categorical("lateral_momentum", (0.99, 0.995, 0.999)),
+        residual_lateral_coefficient=trial.suggest_float("lateral_coefficient", 3e-4, 0.3, log=True),
+        residual_lateral_steps=trial.suggest_categorical("lateral_steps", (1, 2)),
+        combined_lateral_state_weight=trial.suggest_float("combined_lateral_state_weight", 0.3, 0.95),
+    )
+    return EncoderExperimentConfig(**values)
+
+
+for _layout in LAYOUTS:
+    FAMILIES[f"bp-sgd-{_layout}"] = lambda trial, l=_layout: bp_sgd_configuration(trial, l)
+    FAMILIES[f"offline-sgd-{_layout}"] = lambda trial, l=_layout: offline_sgd_configuration(trial, l)
+    FAMILIES[f"terel-{_layout}"] = lambda trial, l=_layout: terel_wide_configuration(trial, l)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--storage", required=True)
@@ -104,9 +173,16 @@ def main():
     parser.add_argument("--output", required=True)
     parser.add_argument("--family", default="terel", choices=sorted(FAMILIES))
     parser.add_argument("--study", default="terel-cifar100-lc")
+    parser.add_argument("--probe", help="JSON overrides of the probe configuration")
+    parser.add_argument("--dataset", default="cifar100", choices=("cifar100", "mnist"))
+    parser.add_argument("--seed", type=int, default=401)
     arguments = parser.parse_args()
-    splits = load_cifar100_protocol(BASE["data_root"])
-    probe = ProbeExperimentConfig(**BASE["probe"])
+    if arguments.dataset == "mnist":
+        from terel.resubmission.data import load_mnist_protocol
+        splits, num_classes = load_mnist_protocol("/home/davwis/main/data/mnist"), 10
+    else:
+        splits, num_classes = load_cifar100_protocol(BASE["data_root"]), 100
+    probe = ProbeExperimentConfig(**(BASE["probe"] | json.loads(arguments.probe or "{}")))
     output = Path(arguments.output)
     output.mkdir(parents=True, exist_ok=True)
 
@@ -115,7 +191,8 @@ def main():
         start = time.time()
         try:
             result = run_representation_experiment(
-                splits=splits, dataset_name="cifar100", num_classes=100, seed=401,
+                splits=splits, dataset_name=arguments.dataset, num_classes=num_classes,
+                seed=arguments.seed,
                 encoder=encoder, probe=probe, evaluation_split="validation",
                 device=torch.device("cuda"),
             )
@@ -126,7 +203,7 @@ def main():
         accuracy = result["metrics"]["accuracy"]
         (output / f"trial-{trial.number:03d}.json").write_text(json.dumps(
             {"params": trial.params, "accuracy": accuracy, "seconds": time.time() - start,
-             "diagnostics": result["representation_diagnostics"]}, indent=1, default=str))
+             "probe": probe.__dict__, "diagnostics": result["representation_diagnostics"]}, indent=1, default=str))
         return accuracy if accuracy == accuracy else 0.0
 
     optuna.load_study(study_name=arguments.study, storage=arguments.storage).optimize(

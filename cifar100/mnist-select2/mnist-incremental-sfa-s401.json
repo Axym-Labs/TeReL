@@ -1,0 +1,75 @@
+{
+ "reference_probe": {
+  "epochs": 60,
+  "batch_size": 1024,
+  "optimizer": "plain_sgd",
+  "learning_rate": 0.01,
+  "weight_decay": 0.0,
+  "readout": "all",
+  "standardize": true
+ },
+ "reference_accuracy": 0.86,
+ "encoder": {
+  "method": "incsfa",
+  "hidden_dims": [
+   32
+  ],
+  "epochs": 1,
+  "order_mode": "class_chunks",
+  "chunk_size": 16,
+  "incsfa_whitening_dim": 32,
+  "incsfa_output_dim": 32,
+  "incsfa_learning_rate": 0.001
+ },
+ "diagnostics": {
+  "median_feature_variance": 0.9914481921932505,
+  "mean_feature_variance": 0.9935280209425047,
+  "effective_rank": 31.529327534085866,
+  "active_feature_fraction": 1.0,
+  "mean_absolute_offdiagonal_correlation": 0.01672118700801223,
+  "temporal_slowness": 1.9617990555232088
+ },
+ "paired_inference": null,
+ "grid": [
+  {
+   "learning_rate": 0.01,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.86,
+   "final_loss": 0.5971982479095459
+  },
+  {
+   "learning_rate": 0.03,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.878,
+   "final_loss": 0.4869217276573181
+  },
+  {
+   "learning_rate": 0.1,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.8895,
+   "final_loss": 0.4313390254974365
+  },
+  {
+   "learning_rate": 0.3,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.8936,
+   "final_loss": 0.41151684522628784
+  },
+  {
+   "learning_rate": 1.0,
+   "batch_size": 1024,
+   "weight_decay": 0.0,
+   "epochs": 60,
+   "accuracy": 0.8949,
+   "final_loss": 0.40978413820266724
+  }
+ ]
+}
