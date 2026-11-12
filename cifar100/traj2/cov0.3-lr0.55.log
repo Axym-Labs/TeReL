@@ -1,0 +1,10 @@
+/home/davwis/main/workspace/TeReL/cifar100/trajectory.py:77: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  "weight_norm": float(layer.weight.norm()),
+accuracy 0.2602
+1 loss 0 var 0.998 gate 0.86 |W| 59.2 lat 0.136 t/v/c 0/0/0 | var 0.996 gate 0.93 |W| 40.2 lat 0.0392 t/v/c 0/0/0
+100 loss 0.25 var 0.716 gate 0.97 |W| 59 lat 3.63 t/v/c 0.549/0.5/0.039 | var 0.648 gate 1.00 |W| 40.2 lat 1.85 t/v/c 0.351/0.427/0.0478
+300 loss 1.63 var 0.424 gate 1.00 |W| 59.4 lat 2.24 t/v/c 0.471/0.851/0.103 | var 0.603 gate 0.95 |W| 40.9 lat 8.22 t/v/c 0.728/1.28/0.682
+10000 loss 0.868 var 0.585 gate 0.99 |W| 65.2 lat 4.68 t/v/c 0.697/0.586/0.0612 | var 0.961 gate 0.66 |W| 41.3 lat 13.2 t/v/c 0.68/0.579/0.155
+20000 loss 1.26 var 0.618 gate 0.98 |W| 67 lat 7.72 t/v/c 0.822/0.612/0.0967 | var 0.994 gate 0.69 |W| 41.3 lat 11.1 t/v/c 0.806/0.885/0.288
+30000 loss 0.665 var 0.661 gate 0.99 |W| 67.6 lat 3.1 t/v/c 0.758/0.606/0.0536 | var 0.839 gate 0.76 |W| 41 lat 8.08 t/v/c 0.506/0.601/0.237

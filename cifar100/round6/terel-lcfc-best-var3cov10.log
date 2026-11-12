@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "/home/davwis/main/workspace/TeReL/cifar100/probe_grid.py", line 106, in <module>
+    main()
+  File "/home/davwis/main/workspace/TeReL/cifar100/probe_grid.py", line 93, in main
+    result, rows = run_with_grid(
+                   ^^^^^^^^^^^^^^
+  File "/home/davwis/main/workspace/TeReL/cifar100/probe_grid.py", line 37, in run_with_grid
+    result = experiments.run_representation_experiment(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/davwis/main/workspace/TeReL/terel/resubmission/experiments.py", line 473, in run_representation_experiment
+    encoder_training = train_local_encoder(
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "/home/davwis/main/workspace/TeReL/terel/resubmission/training.py", line 386, in train_local_encoder
+    metrics = local_train_step(
+              ^^^^^^^^^^^^^^^^^
+  File "/home/davwis/main/workspace/TeReL/terel/resubmission/training.py", line 842, in local_train_step
+    raise FloatingPointError("TeReL objective became non-finite")
+FloatingPointError: TeReL objective became non-finite

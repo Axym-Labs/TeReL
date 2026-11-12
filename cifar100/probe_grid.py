@@ -62,6 +62,9 @@ def main():
     parser.add_argument("--dataset", default="cifar100", choices=("cifar100", "mnist"))
     parser.add_argument("--grid", help="JSON grid overriding GRID")
     parser.add_argument("--seed", type=int, default=401)
+    parser.add_argument("--train-samples", type=int, help="truncate the training split (short screens)")
+    parser.add_argument("--set", default="{}", help="JSON encoder overrides")
+    parser.add_argument("--tag", default="", help="suffix for the output id")
     arguments = parser.parse_args()
     config = yaml.safe_load(Path(arguments.config).read_text())
     if arguments.dataset == "cifar100":
@@ -69,13 +72,20 @@ def main():
     else:
         from terel.resubmission.data import load_mnist_protocol
         splits, num_classes = load_mnist_protocol(config["data_root"]), 10
+    if arguments.train_samples:
+        from terel.resubmission.data import DatasetSplits, TemporalTensorDataset
+        n, train = arguments.train_samples, splits.train
+        splits = DatasetSplits(
+            train=TemporalTensorDataset(features=train.features[:n], labels=train.labels[:n],
+                                        boundaries=train.boundaries[:n]),
+            validation=splits.validation, test=splits.test, metadata=splits.metadata)
     probe = experiments.ProbeExperimentConfig(**config["probe"])
     output = Path(arguments.output)
     output.mkdir(parents=True, exist_ok=True)
     for run in config["runs"]:
         if arguments.runs and run["id"] not in arguments.runs:
             continue
-        values = dict(run["encoder"])
+        values = dict(run["encoder"], **json.loads(arguments.set))
         for key in ("hidden_dims", "locally_connected"):
             if values.get(key) is not None:
                 values[key] = tuple(tuple(v) if isinstance(v, list) else v for v in values[key])
@@ -86,9 +96,9 @@ def main():
             grid=json.loads(arguments.grid) if arguments.grid else GRID)
         best = max(rows, key=lambda r: r["accuracy"])
         print(run["id"], "reference", result["metrics"]["accuracy"], "best sgd", best, flush=True)
-        (output / f"{run['id']}-s{arguments.seed}.json").write_text(json.dumps(
+        (output / f"{run['id']}{arguments.tag}-s{arguments.seed}.json").write_text(json.dumps(
             {"reference_probe": config["probe"], "reference_accuracy": result["metrics"]["accuracy"],
-             "encoder": run["encoder"], "diagnostics": result["representation_diagnostics"],
+             "encoder": values, "train_samples": arguments.train_samples, "diagnostics": result["representation_diagnostics"],
              "paired_inference": result.get("paired_inference"), "grid": rows}, indent=1, default=str))
 
 

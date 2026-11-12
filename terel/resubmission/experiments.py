@@ -84,6 +84,9 @@ class EncoderExperimentConfig:
     combined_lateral_state_weight: float = 0.5
     temporal_term_enabled: bool = True
     locally_connected: tuple | None = None
+    # Block-diagonal lateral matrices: locally connected layers use one block per spatial
+    # position (all channels of that position); dense layers use contiguous blocks of this size.
+    lateral_block_size: int | None = None
     input_shape: tuple = (3, 32, 32)
 
 
@@ -441,6 +444,12 @@ def run_representation_experiment(
         ).to(device)
         if encoder.locally_connected:
             localize(model.layers, encoder.locally_connected, encoder.input_shape)
+        if encoder.lateral_block_size:
+            spec = encoder.locally_connected or (None,) * len(encoder.hidden_dims)
+            for state, width, entry in zip(model.states, encoder.hidden_dims, spec, strict=True):
+                index = torch.arange(width)
+                block_ids = index // encoder.lateral_block_size if entry is None else index % (width // entry[0])
+                state.set_lateral_blocks(block_ids)
         if encoder.batch_norm_calibration_passes and method != "random":
             raise ValueError(
                 "BatchNorm calibration is only defined for random encoders"

@@ -1,0 +1,40 @@
+{
+ "overrides": {
+  "hidden_dims": [
+   4096
+  ],
+  "locally_connected": [
+   [
+    16,
+    5,
+    2,
+    2
+   ]
+  ],
+  "normalization": "none",
+  "variance_coefficient": 3.002,
+  "variance_target": 1.0,
+  "covariance_coefficient": 0.1
+ },
+ "samples": 2000,
+ "accuracy": null,
+ "trajectory": [
+  {
+   "step": 1,
+   "loss": 0.0,
+   "L0": {
+    "variance_mean": 0.9986828565597534,
+    "gate_open": 0.810546875,
+    "weight_norm": 59.29805374145508,
+    "lateral_spectral": 6.8154096603393555,
+    "temporal": 0.0,
+    "variance": 0.0,
+    "covariance": 0.0
+   }
+  },
+  {
+   "step": 32,
+   "diverged": true
+  }
+ ]
+}

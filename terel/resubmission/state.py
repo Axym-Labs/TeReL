@@ -24,6 +24,8 @@ class TeReLState(nn.Module):
         self.register_buffer("variance", torch.ones(features))
         self.register_buffer("lateral", torch.zeros(features, features))
         self.register_buffer("residual_lateral", None)
+        # Optional block-diagonal restriction of the lateral matrices (None: dense).
+        self.register_buffer("lateral_mask", None)
         self.register_buffer("previous", torch.zeros(features))
         self.register_buffer("previous_centered", None)
         self.register_buffer("previous_neuron_state", None)
@@ -46,6 +48,17 @@ class TeReLState(nn.Module):
         if self.residual_lateral is not None:
             total += self.residual_lateral.numel()
         return total
+
+    @torch.no_grad()
+    def set_lateral_blocks(self, block_ids: torch.Tensor) -> None:
+        """Keep lateral entries only between neurons with the same block id."""
+        block_ids = block_ids.to(self.lateral.device)
+        if block_ids.shape != (self.lateral.shape[0],):
+            raise ValueError("block_ids must hold one id per feature")
+        self.lateral_mask = (block_ids[:, None] == block_ids[None, :]).to(self.lateral.dtype)
+
+    def _masked(self, moment: torch.Tensor) -> torch.Tensor:
+        return moment if self.lateral_mask is None else moment * self.lateral_mask
 
     @torch.no_grad()
     def ensure_residual_lateral(self) -> torch.Tensor:
@@ -109,7 +122,7 @@ class TeReLState(nn.Module):
             moment.fill_diagonal_(0.0)
         residual_lateral = self.ensure_residual_lateral()
         residual_lateral.mul_(self.lateral_momentum).add_(
-            moment, alpha=1.0 - self.lateral_momentum
+            self._masked(moment), alpha=1.0 - self.lateral_momentum
         )
 
     @torch.no_grad()
@@ -120,7 +133,7 @@ class TeReLState(nn.Module):
                 f"got {tuple(moment.shape)}"
             )
         self.lateral.mul_(self.lateral_momentum).add_(
-            moment.detach(), alpha=1.0 - self.lateral_momentum
+            self._masked(moment.detach()), alpha=1.0 - self.lateral_momentum
         )
 
     @torch.no_grad()
@@ -143,7 +156,7 @@ class TeReLState(nn.Module):
         self.mean.mul_(sm).add_(batch_mean, alpha=1.0 - sm)
         self.variance.mul_(sm).add_(batch_variance, alpha=1.0 - sm)
         if update_lateral:
-            self.lateral.mul_(lm).add_(covariance, alpha=1.0 - lm)
+            self.lateral.mul_(lm).add_(self._masked(covariance), alpha=1.0 - lm)
         self.previous.copy_(values[-1])
         if self.previous_centered is not None:
             self.previous_centered.copy_(centered[-1])

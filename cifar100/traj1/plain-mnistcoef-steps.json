@@ -1,0 +1,105 @@
+{
+ "overrides": {
+  "hidden_dims": [
+   4096
+  ],
+  "locally_connected": [
+   [
+    16,
+    5,
+    2,
+    2
+   ]
+  ],
+  "normalization": "none",
+  "variance_coefficient": 3.002,
+  "covariance_coefficient": 0.606,
+  "variance_target": 1.0
+ },
+ "samples": 300,
+ "accuracy": null,
+ "trajectory": [
+  {
+   "step": 1,
+   "loss": 0.0,
+   "L0": {
+    "variance_mean": 0.9997469186782837,
+    "gate_open": 0.781494140625,
+    "weight_norm": 59.29805374145508,
+    "lateral_spectral": 8.786133766174316,
+    "temporal": 0.0,
+    "variance": 0.0,
+    "covariance": 0.0
+   }
+  },
+  {
+   "step": 2,
+   "loss": 0.04345746710896492,
+   "L0": {
+    "variance_mean": 0.9956971406936646,
+    "gate_open": 0.830078125,
+    "weight_norm": 59.29805374145508,
+    "lateral_spectral": 9.500968933105469,
+    "temporal": 0.0,
+    "variance": 0.005291301291435957,
+    "covariance": 0.21373721957206726
+   }
+  },
+  {
+   "step": 3,
+   "loss": 9.995345115661621,
+   "L0": {
+    "variance_mean": 0.9971214532852173,
+    "gate_open": 0.78173828125,
+    "weight_norm": 59.297855377197266,
+    "lateral_spectral": 334.8706359863281,
+    "temporal": 1.064031958580017,
+    "variance": 0.016381273046135902,
+    "covariance": 2.4392387866973877
+   }
+  },
+  {
+   "step": 4,
+   "loss": 4.698470115661621,
+   "L0": {
+    "variance_mean": 0.9929550886154175,
+    "gate_open": 0.81787109375,
+    "weight_norm": 59.29782485961914,
+    "lateral_spectral": 396.22900390625,
+    "temporal": 0.0,
+    "variance": 0.01456694956868887,
+    "covariance": 2.097372055053711
+   }
+  },
+  {
+   "step": 5,
+   "loss": 7886.53662109375,
+   "L0": {
+    "variance_mean": 0.9910538792610168,
+    "gate_open": 0.823486328125,
+    "weight_norm": 59.29984664916992,
+    "lateral_spectral": 250291.21875,
+    "temporal": 0.7497578263282776,
+    "variance": 0.01494479738175869,
+    "covariance": 61.55276870727539
+   }
+  },
+  {
+   "step": 6,
+   "loss": 80046110801920.0,
+   "L0": {
+    "variance_mean": 0.9876062273979187,
+    "gate_open": 0.83642578125,
+    "weight_norm": 3352.748046875,
+    "lateral_spectral": 2536697879330816.0,
+    "temporal": 0.0,
+    "variance": 0.025533009320497513,
+    "covariance": 8459.3173828125
+   }
+  },
+  {
+   "step": 6,
+   "diverged": true
+  }
+ ]
+}

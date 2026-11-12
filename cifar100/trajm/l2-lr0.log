@@ -1,0 +1,19 @@
+/home/davwis/main/workspace/TeReL/cifar100/trajectory.py:76: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  "weight_norm": float(layer.weight.norm()),
+accuracy 0.9058
+1 loss 0 var 0.993 gate 0.90 |W| 13.1 lat 0.307 t/v/c 0/0/0 | var 0.99 gate 1.00 |W| 9.24 lat 0.0227 t/v/c 0/0/0
+100 loss 0.1 var 0.446 gate 1.00 |W| 13.1 lat 5.95 t/v/c 0.12/0.354/0.0567 | var 0.377 gate 1.00 |W| 9.24 lat 0.593 t/v/c 0.046/0.135/0.00157
+300 loss 0.217 var 0.137 gate 1.00 |W| 13.1 lat 4.47 t/v/c 0.369/0.592/0.071 | var 0.0599 gate 1.00 |W| 9.24 lat 0.817 t/v/c 0.146/0.24/0.00247
+1000 loss 0.24 var 0.0921 gate 1.00 |W| 13.1 lat 4.45 t/v/c 0.395/0.759/0.0984 | var 0.0111 gate 1.00 |W| 9.24 lat 0.825 t/v/c 0.144/0.312/0.00799
+2000 loss 0.157 var 0.095 gate 1.00 |W| 13.1 lat 4.75 t/v/c 0.401/0.747/0.217 | var 0.0115 gate 1.00 |W| 9.24 lat 0.858 t/v/c 0.121/0.28/0.00949
+3000 loss 0.171 var 0.0924 gate 1.00 |W| 13.1 lat 4.04 t/v/c 0.329/0.599/0.114 | var 0.0111 gate 1.00 |W| 9.24 lat 0.686 t/v/c 0.115/0.246/0.00529
+4000 loss 0.261 var 0.095 gate 1.00 |W| 13.1 lat 4.57 t/v/c 0.284/0.655/0.0909 | var 0.0116 gate 1.00 |W| 9.24 lat 0.881 t/v/c 0.119/0.251/0.00354
+5000 loss 0.224 var 0.0911 gate 1.00 |W| 13.1 lat 4.75 t/v/c 0.307/0.684/0.124 | var 0.011 gate 1.00 |W| 9.24 lat 0.889 t/v/c 0.104/0.294/0.00907
+6000 loss 0.233 var 0.0889 gate 1.00 |W| 13.1 lat 4.21 t/v/c 0.319/0.673/0.105 | var 0.0106 gate 1.00 |W| 9.24 lat 0.702 t/v/c 0.104/0.222/0.00391
+7000 loss 0.165 var 0.0866 gate 1.00 |W| 13.1 lat 4.1 t/v/c 0.245/0.608/0.121 | var 0.0106 gate 1.00 |W| 9.24 lat 0.727 t/v/c 0.091/0.246/0.00746
+8000 loss 0.347 var 0.093 gate 1.00 |W| 13.1 lat 4.48 t/v/c 0.4/0.85/0.129 | var 0.0112 gate 1.00 |W| 9.24 lat 0.794 t/v/c 0.144/0.33/0.00541
+9000 loss 0.217 var 0.0918 gate 1.00 |W| 13.1 lat 4.17 t/v/c 0.275/0.562/0.0715 | var 0.011 gate 1.00 |W| 9.24 lat 0.597 t/v/c 0.0892/0.199/0.00418
+10000 loss 0.185 var 0.0878 gate 1.00 |W| 13.1 lat 4.31 t/v/c 0.113/0.505/0.14 | var 0.0105 gate 1.00 |W| 9.24 lat 0.697 t/v/c 0.0433/0.18/0.00782
+11000 loss 0.163 var 0.086 gate 1.00 |W| 13.1 lat 4.43 t/v/c 0.337/0.724/0.193 | var 0.0105 gate 1.00 |W| 9.24 lat 0.789 t/v/c 0.118/0.248/0.00604
+12000 loss 0.244 var 0.0915 gate 1.00 |W| 13.1 lat 4.46 t/v/c 0.318/0.585/0.105 | var 0.011 gate 1.00 |W| 9.24 lat 0.814 t/v/c 0.115/0.199/0.00544

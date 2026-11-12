@@ -1,0 +1,143 @@
+{
+ "overrides": {
+  "normalization": "none",
+  "variance_coefficient": 3.002,
+  "variance_target": 1.0,
+  "lateral_block_size": 32,
+  "covariance_coefficient": 1.2,
+  "hidden_dims": [
+   4096
+  ],
+  "locally_connected": null,
+  "learning_rate": 0.0
+ },
+ "samples": 12000,
+ "accuracy": 0.1922,
+ "diagnostics": {
+  "median_feature_variance": 0.09552624004353905,
+  "mean_feature_variance": 0.11362928657064279,
+  "effective_rank": 13.09110669576385,
+  "active_feature_fraction": 1.0,
+  "mean_absolute_offdiagonal_correlation": 0.17140069788155113,
+  "temporal_slowness": 0.2281160422895838
+ },
+ "trajectory": [
+  {
+   "step": 1,
+   "loss": 0.0,
+   "L0": {
+    "variance_mean": 0.9955126643180847,
+    "gate_open": 0.98779296875,
+    "weight_norm": 36.95473861694336,
+    "lateral_spectral": 0.014359344728291035,
+    "temporal": 0.0,
+    "variance": 0.0,
+    "covariance": 0.0
+   }
+  },
+  {
+   "step": 100,
+   "loss": 0.133316770195961,
+   "L0": {
+    "variance_mean": 0.6888037323951721,
+    "gate_open": 0.988037109375,
+    "weight_norm": 36.95473861694336,
+    "lateral_spectral": 3.1507387161254883,
+    "temporal": 0.5019229650497437,
+    "variance": 0.43487846851348877,
+    "covariance": 0.21823923289775848
+   }
+  },
+  {
+   "step": 300,
+   "loss": 0.5388579964637756,
+   "L0": {
+    "variance_mean": 0.33301883935928345,
+    "gate_open": 1.0,
+    "weight_norm": 36.95473861694336,
+    "lateral_spectral": 136.81719970703125,
+    "temporal": 0.6056821942329407,
+    "variance": 1.0862513780593872,
+    "covariance": 0.5378602743148804
+   }
+  },
+  {
+   "step": 2000,
+   "loss": 0.17890754342079163,
+   "L0": {
+    "variance_mean": 0.10086564719676971,
+    "gate_open": 1.0,
+    "weight_norm": 36.95473861694336,
+    "lateral_spectral": 55.67658996582031,
+    "temporal": 0.3692139983177185,
+    "variance": 0.41053906083106995,
+    "covariance": 0.0481736958026886
+   }
+  },
+  {
+   "step": 4000,
+   "loss": 0.8312168121337891,
+   "L0": {
+    "variance_mean": 0.10093594342470169,
+    "gate_open": 1.0,
+    "weight_norm": 36.95473861694336,
+    "lateral_spectral": 120.06732940673828,
+    "temporal": 0.6164736151695251,
+    "variance": 1.2921733856201172,
+    "covariance": 2.091731071472168
+   }
+  },
+  {
+   "step": 6000,
+   "loss": 0.35237911343574524,
+   "L0": {
+    "variance_mean": 0.14460167288780212,
+    "gate_open": 0.998291015625,
+    "weight_norm": 36.95473861694336,
+    "lateral_spectral": 137.72006225585938,
+    "temporal": 0.3285538852214813,
+    "variance": 0.8330080509185791,
+    "covariance": 0.18970665335655212
+   }
+  },
+  {
+   "step": 8000,
+   "loss": 0.47107747197151184,
+   "L0": {
+    "variance_mean": 0.12533539533615112,
+    "gate_open": 1.0,
+    "weight_norm": 36.95473861694336,
+    "lateral_spectral": 132.61386108398438,
+    "temporal": 0.4311445653438568,
+    "variance": 0.9920716881752014,
+    "covariance": 0.3559042811393738
+   }
+  },
+  {
+   "step": 10000,
+   "loss": 0.40047121047973633,
+   "L0": {
+    "variance_mean": 0.11279471218585968,
+    "gate_open": 1.0,
+    "weight_norm": 36.95473861694336,
+    "lateral_spectral": 76.26264190673828,
+    "temporal": 0.4082482159137726,
+    "variance": 0.8248093128204346,
+    "covariance": 0.20454038679599762
+   }
+  },
+  {
+   "step": 12000,
+   "loss": 0.11262749880552292,
+   "L0": {
+    "variance_mean": 0.09873020648956299,
+    "gate_open": 1.0,
+    "weight_norm": 36.95473861694336,
+    "lateral_spectral": 1.0337152481079102,
+    "temporal": 0.25268304347991943,
+    "variance": 0.43946143984794617,
+    "covariance": 0.02133694849908352
+   }
+  }
+ ]
+}

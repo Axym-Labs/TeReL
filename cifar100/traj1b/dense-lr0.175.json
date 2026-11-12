@@ -1,0 +1,74 @@
+{
+ "overrides": {
+  "normalization": "none",
+  "variance_coefficient": 3.002,
+  "variance_target": 1.0,
+  "lateral_block_size": 32,
+  "covariance_coefficient": 1.2,
+  "hidden_dims": [
+   4096
+  ],
+  "locally_connected": null,
+  "learning_rate": 0.175
+ },
+ "samples": 12000,
+ "accuracy": null,
+ "trajectory": [
+  {
+   "step": 1,
+   "loss": 0.0,
+   "L0": {
+    "variance_mean": 0.9955126643180847,
+    "gate_open": 0.98779296875,
+    "weight_norm": 36.95472717285156,
+    "lateral_spectral": 0.014359344728291035,
+    "temporal": 0.0,
+    "variance": 0.0,
+    "covariance": 0.0
+   }
+  },
+  {
+   "step": 100,
+   "loss": 0.19917674362659454,
+   "L0": {
+    "variance_mean": 0.7624852657318115,
+    "gate_open": 0.88916015625,
+    "weight_norm": 36.94775390625,
+    "lateral_spectral": 2.957332134246826,
+    "temporal": 0.43183472752571106,
+    "variance": 0.37780556082725525,
+    "covariance": 0.27460306882858276
+   }
+  },
+  {
+   "step": 300,
+   "loss": 0.5380042791366577,
+   "L0": {
+    "variance_mean": 0.5894540548324585,
+    "gate_open": 0.9619140625,
+    "weight_norm": 37.10554885864258,
+    "lateral_spectral": 3.7191238403320312,
+    "temporal": 1.1208691596984863,
+    "variance": 1.3387789726257324,
+    "covariance": 0.3924441635608673
+   }
+  },
+  {
+   "step": 2000,
+   "loss": 1.185157060623169,
+   "L0": {
+    "variance_mean": 0.720110297203064,
+    "gate_open": 0.849609375,
+    "weight_norm": 37.9575309753418,
+    "lateral_spectral": 8.969151496887207,
+    "temporal": 1.061724305152893,
+    "variance": 0.32204699516296387,
+    "covariance": 0.16574698686599731
+   }
+  },
+  {
+   "step": 2041,
+   "diverged": true
+  }
+ ]
+}
