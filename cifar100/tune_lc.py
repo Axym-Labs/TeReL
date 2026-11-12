@@ -85,7 +85,16 @@ def snorm_configuration(trial):
     return EncoderExperimentConfig(**values)
 
 
-FAMILIES = {"terel": configuration, "offline": offline_configuration, "snorm": snorm_configuration}
+def snorm_lcfc_configuration(trial):
+    values = snorm_configuration(trial).__dict__ | {
+        "hidden_dims": (4096, 2048, 1024),
+        "locally_connected": ((16, 5, 2, 2), (32, 5, 2, 2), None),
+    }
+    return EncoderExperimentConfig(**values)
+
+
+FAMILIES = {"terel": configuration, "offline": offline_configuration, "snorm": snorm_configuration,
+            "snorm-lcfc": snorm_lcfc_configuration}
 
 
 def main():

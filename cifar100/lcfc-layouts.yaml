@@ -1,0 +1,9 @@
+evaluation_split: validation
+data_root: /home/davwis/main/data/cifar-100/cifar-100-python
+seeds: [401]
+probe: {epochs: 60, batch_size: 2048, optimizer: adamw, learning_rate: 0.003, weight_decay: 0.0001, readout: all}
+runs:
+  - id: bp-lcfc
+    encoder: {method: bp, hidden_dims: [4096, 2048, 1024], locally_connected: [[16,5,2,2],[32,5,2,2],null], activation: relu, normalization: none, epochs: 20, batch_size: 256, optimizer: adamw, learning_rate: 0.0003, weight_decay: 0.0001}
+  - id: random-lcfc
+    encoder: {method: random, hidden_dims: [4096, 2048, 1024], locally_connected: [[16,5,2,2],[32,5,2,2],null], activation: relu, normalization: none}

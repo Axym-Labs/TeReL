@@ -1,0 +1,22 @@
+{
+ "params": {
+  "epochs": 10,
+  "subsequence_size": 128,
+  "optimizer_momentum": 0.95,
+  "learning_rate": 0.0006619653983387904,
+  "weight_decay": 1e-05,
+  "variance_coefficient": 0.4118817497154787,
+  "covariance_coefficient": 0.07658164607171268,
+  "variance_target": 0.9004745974014583
+ },
+ "accuracy": 0.2736,
+ "seconds": 56.82677340507507,
+ "diagnostics": {
+  "median_feature_variance": 0.10165926816926628,
+  "mean_feature_variance": 0.18642525292543777,
+  "effective_rank": 13.136145400137499,
+  "active_feature_fraction": 0.9988606770833334,
+  "mean_absolute_offdiagonal_correlation": 0.10494300106019719,
+  "temporal_slowness": 0.3740789874270614
+ }
+}

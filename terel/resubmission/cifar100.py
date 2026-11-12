@@ -124,7 +124,7 @@ def main(argv=None):
         encoder_raw = dict(run["encoder"])
         encoder_raw["hidden_dims"] = tuple(encoder_raw["hidden_dims"])
         if encoder_raw.get("locally_connected"):
-            encoder_raw["locally_connected"] = tuple(tuple(x) for x in encoder_raw["locally_connected"])
+            encoder_raw["locally_connected"] = tuple(None if x is None else tuple(x) for x in encoder_raw["locally_connected"])
         encoder = EncoderExperimentConfig(**encoder_raw)
         for seed in raw["seeds"]:
             path = output / run["id"] / f"seed-{seed}.json"

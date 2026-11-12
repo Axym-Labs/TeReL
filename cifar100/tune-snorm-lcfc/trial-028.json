@@ -1,0 +1,26 @@
+{
+ "params": {
+  "normalization_momentum": 0.999,
+  "epochs": 4,
+  "learning_rate": 0.0015022860000367146,
+  "weight_decay": 0.0001,
+  "variance_coefficient": 1.1588319121472748,
+  "covariance_coefficient": 0.004671241117707013,
+  "variance_target": 0.6149342314218749,
+  "statistics_momentum": 0.99,
+  "lateral_momentum": 0.99,
+  "lateral_coefficient": 0.004786051986040656,
+  "combined_lateral_state_weight": 0.620763509545636,
+  "chunk_size": 16
+ },
+ "accuracy": 0.2786,
+ "seconds": 2382.9419226646423,
+ "diagnostics": {
+  "median_feature_variance": 0.3241820381173189,
+  "mean_feature_variance": 0.321576196583986,
+  "effective_rank": 65.52109544147727,
+  "active_feature_fraction": 1.0,
+  "mean_absolute_offdiagonal_correlation": 0.09005212606843165,
+  "temporal_slowness": 0.6438654584433782
+ }
+}

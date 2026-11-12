@@ -48,7 +48,13 @@ def localize(layers: nn.ModuleList, spec, input_shape):
     if len(spec) != len(layers):
         raise ValueError("locally_connected needs one (channels, kernel, stride, padding) per layer")
     shape = tuple(input_shape)
-    for index, (channels, kernel, stride, padding) in enumerate(spec):
+    for index, entry in enumerate(spec):
+        if entry is None:  # dense layer on top of the local layers
+            shape = None
+            continue
+        if shape is None:
+            raise ValueError("locally connected layers must precede dense layers")
+        channels, kernel, stride, padding = entry
         mask, shape = receptive_field_mask(shape, channels, kernel, stride, padding)
         dense = layers[index]
         if tuple(mask.shape) != (dense.out_features, dense.in_features):

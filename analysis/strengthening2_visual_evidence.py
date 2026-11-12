@@ -69,7 +69,7 @@ def _load_configuration(path: Path) -> tuple[dict, EncoderExperimentConfig]:
     values = dict(raw["encoder"])
     values["hidden_dims"] = tuple(values["hidden_dims"])
     if values.get("locally_connected"):
-        values["locally_connected"] = tuple(tuple(x) for x in values["locally_connected"])
+        values["locally_connected"] = tuple(None if x is None else tuple(x) for x in values["locally_connected"])
     return raw, EncoderExperimentConfig(**values)
 
 
